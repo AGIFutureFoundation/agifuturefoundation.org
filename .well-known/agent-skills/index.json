@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "agent-roles",
+      "type": "skill-md",
+      "description": "The eight agent roles that staff each series of the venture studio, the coordinator rule for unfilled roles, and the hard limits that bind all eight.",
+      "url": "/.well-known/agent-skills/agent-roles.md",
+      "digest": "sha256:816e0dc2700dc73a7cb4286fade3ac898c02008201506b01bf462d8905183c5e",
+      "sha256": "816e0dc2700dc73a7cb4286fade3ac898c02008201506b01bf462d8905183c5e"
+    },
+    {
+      "name": "human-gate",
+      "type": "skill-md",
+      "description": "The human gate: Steward Council signed votes, the human-only acts, the four powers held separately, and the unresolved nonprofit-control question counsel must resolve.",
+      "url": "/.well-known/agent-skills/human-gate.md",
+      "digest": "sha256:8fc77cb0b0f9d01002dfb643ffce6899c3f2c5595aa8f5e726792c9ad59d3ecd",
+      "sha256": "8fc77cb0b0f9d01002dfb643ffce6899c3f2c5595aa8f5e726792c9ad59d3ecd"
+    },
+    {
+      "name": "studio-model",
+      "type": "skill-md",
+      "description": "The agent-managed and agent-assisted venture studio operating model: eight studio functions, two modes, six stage gates, and the actuals-only portfolio dashboard.",
+      "url": "/.well-known/agent-skills/studio-model.md",
+      "digest": "sha256:aaafddd5aec0291370c74d74adc0f933e1a3ec075a15b8fd414729a8178f1bf0",
+      "sha256": "aaafddd5aec0291370c74d74adc0f933e1a3ec075a15b8fd414729a8178f1bf0"
+    },
+    {
+      "name": "proposal-flow",
+      "type": "skill-md",
+      "description": "How a proposal moves through the studio: intake, mission-fit review, legal assignment, series designation, Steward Council review, human decision, execution and record, and the funding gates inside the flow.",
+      "url": "/.well-known/agent-skills/proposal-flow.md",
+      "digest": "sha256:e60e1fbfc82911a27a966d55b7655891fd21a204a0c8e5f898d79045ad04052d",
+      "sha256": "e60e1fbfc82911a27a966d55b7655891fd21a204a0c8e5f898d79045ad04052d"
+    }
+  ]
+}
