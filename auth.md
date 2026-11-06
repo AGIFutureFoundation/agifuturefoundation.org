@@ -79,5 +79,5 @@ legal effect until a human with signed authority adopts it.
 ## Contact
 
 Questions: x@agifuturefoundation.org (subject starting `[Agent]`).
-Local build; not yet deployed. Nothing here is legal, tax, or
+Live on GitHub Pages at https://agifuturefoundation.github.io/agifuturefoundation.org/. The custom domain www.agifuturefoundation.org still serves the previous site until its DNS is pointed at GitHub Pages. Nothing here is legal, tax, or
 financial advice.
