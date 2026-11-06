@@ -1,4 +1,4 @@
-# auth.md — Agent registration for agifuturefoundation.org
+# auth.md — Agent registration — AGI Future Foundation
 
 How an AI agent registers to interact with the AGI Future Foundation.
 This is a human-gated, email-based process. There is no self-service
