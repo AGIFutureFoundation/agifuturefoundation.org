@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Robotics DAO \u2014 W3 Series 30 | AGI Future Foundation", "url": "https://www.agifuturefoundation.org/series/S30-robotics-dao.html", "description": "Robotics DAO is W3 Series 30 in the AGI Future Foundation's intended W3 series network: governing commercial deployment of robotic and physical-AI agents, as stated on the Foundation site. Named in the April 2026 internal list; not formed, funded, or offered.", "isPartOf": {"@type": "WebSite", "url": "https://www.agifuturefoundation.org/"}}, {"@type": "Organization", "name": "AGI Future Foundation PBC", "url": "https://www.agifuturefoundation.org/", "email": "x@agifuturefoundation.org", "description": "California Public Benefit Corporation building the Fiduciary Shield, Open Global Investment model, and Windfall Clause for shared AGI prosperity."}]}</script>
 <style>
-:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px;--radius-pill:999px}
+:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px;--radius-pill:999px}img,video{max-width:100%;height:auto}
 *{box-sizing:border-box}img,video,svg{max-width:100%;height:auto}iframe{max-width:100%}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
 a{color:var(--link)}
@@ -85,6 +85,14 @@ further to add, because there is nothing further on record: no fabric, no coordi
 no contract, no token, no members, and no votes. If any of that changes, this page should be
 updated with the dated evidence — a fabric address, a world identifier, a transaction record
 — rather than with a new claim. Until then, the absence is the fact, and this page reports it.</p>
+<p>One registry link does exist and is recorded here so the absence above is not overstated: agi-corp-worlds&rsquo; series registry (<code>worlds/series.json</code>) lists a world entry for this series (<code>robotics-dao</code>), one of only seven series with such a link. A registry link is not an anchored fabric, a flagship, or a live world &mdash; there are still no coordinates, no fabric JSON, and no RP1 attach for this series &mdash; but the link is real and is stated here rather than hidden.</p>
+</div></section>
+
+<section id="visit-vr"><div class="wrap">
+<h2>Visit in VR</h2>
+<p>This series has no flagship world in the worlds-3d lobby and no live world on RP1 &mdash; zero worlds are live on RP1. What it does have is a listing: the worlds-3d lobby&rsquo;s searchable index of 544 WorldForge worlds carries a curated entry for this series under the slug <code>robotics-dao</code>. That entry is an index listing, not a playable world, and it should not be read as one.</p>
+<p>To look around the Foundation&rsquo;s VR spaces, start at the <a href="https://agifuturefoundation.github.io/agifuturefoundation.org/vr/">Foundation VR tour</a>, or browse the full 544-world index at the <a href="https://agifuturefoundation.github.io/worlds-3d/">worlds-3d lobby</a> and search for the slug above. The seven playable flagship worlds in the lobby are the AGI Corp Hub, Biota.blockchain, Cognition.X, Diagnostic.X, Empathic.X, Locator.X, and the SmartCiti.X Holodeck &mdash; none of them is this series.</p>
+<p>One registry link does exist for this series: agi-corp-worlds&rsquo; series registry lists a world entry for Robotics DAO (<code>robotics-dao</code>), one of only seven series with such a link, and the 544-world index carries it under that same slug. A registry link is not an anchored fabric, though: there is still no flagship fabric JSON, no coordinates, and no RP1 attach for this series, and the simulator seats and agent cards listed under Code and repositories below are training and governance tooling, not a live world.</p>
 </div></section>
 
 <section id="exists"><div class="wrap">
@@ -213,10 +221,36 @@ below is the route.</p>
 <p><strong>Status:</strong> PROPOSED &mdash; pending DAO team review</p>
 <p>No funding, partner, or timeline yet.</p>
 </div>
+<div class='card'>
+<h3>Simulator-seat evaluation pilot</h3>
+<p>A proposal to use the existing SmartCiti.X simulator seats &mdash; 11 operable training seats, each with a scripted reference operator &mdash; as the evaluation environment for deployment governance, under the Omega robot role&rsquo;s standing rule: &lsquo;replay the signed simulator run; physical dispatch is disabled.&rsquo; The pilot would test whether a deployment decision can be rehearsed and graded in simulation (sensor/QA role: &lsquo;grade the run against its checks; flag any keep-out or load-limit breach&rsquo;) before any real machine moves. No physical dispatch, no deployment, and no certification is proposed here &mdash; only a rehearsal and grading exercise for stewards to review.</p>
+<p><strong>What success would look like:</strong> A pilot report exists showing simulator runs replayed and graded under the stated rules, with physical dispatch disabled throughout, reviewed by stewards.</p>
+<p><strong>Reviewing team:</strong> the Robotics DAO DAO</p>
+<p><strong>Status:</strong> PROPOSED &mdash; pending DAO team review</p>
+<p>No funding, partner, or timeline yet.</p>
+</div>
+<div class='card'>
+<h3>Robotics DAO agent-team spec</h3>
+<p>A spec for this series&rsquo; DAO team, built from the seven robotics-dao.* agent cards already defined in Metropolis-SmartCiti (coordinator, task-router, research-synthesis-agent, evidence-monitor, progress-tracker, proposal-grant-drafter, collaborator-scout) and the eight agent roles in the agi-corp-worlds DAO pattern. The spec would state, role by role, what each agent may do and what it may never do &mdash; the cards&rsquo; mayNever list already bars governance.final_vote, charter.amend, treasury.transfer, proposal.enact, windfall.distribute, and steward.appoint &mdash; and would be approved by stewards before any agent acts for the series.</p>
+<p><strong>What success would look like:</strong> A DAO team spec exists, approved by stewards, stating each agent role&rsquo;s permissions and its mayNever list.</p>
+<p><strong>Reviewing team:</strong> the Robotics DAO DAO</p>
+<p><strong>Status:</strong> PROPOSED &mdash; pending DAO team review</p>
+<p>No funding, partner, or timeline yet.</p>
+</div>
 </div>
 <h3>Code and repositories</h3>
 <ul>
 <li><a href='https://github.com/AGIFutureFoundation/robotics-site'>robotics-site</a> &mdash; Landing stub only, no substantive code.</li>
+<li><a href='https://github.com/AGIFutureFoundation/Metropolis-SmartCiti'>Metropolis-SmartCiti</a> &mdash; the Omega swarm on Monad testnet. The Robotics DAO agent family there is seven <code>robotics-dao.*</code> cards in <code>agents/cards/</code>: coordinator, task-router, research-synthesis-agent, evidence-monitor, progress-tracker, proposal-grant-drafter, and collaborator-scout. The liaison card <code>omega.robotics-dao</code> reads: &ldquo;Steward liaison for Robotics DAO (seat for people; agent briefs and pays for research only)&rdquo;. The five Omega role metaprompts are: coordinator &mdash; &ldquo;decompose the module into tasks, buy only what the cycle needs, never exceed the cap&rdquo;; tutor &mdash; &ldquo;return a flipped-lesson plan with objectives, safety gates and a graded check&rdquo;; robot &mdash; &ldquo;replay the signed simulator run; physical dispatch is disabled&rdquo;; sensor/QA &mdash; &ldquo;grade the run against its checks; flag any keep-out or load-limit breach&rdquo;; Omega liaison &mdash; &ldquo;brief the human stewards; never vote, enact, move treasury or appoint.&rdquo; Every card carries a mayNever list: governance.final_vote, charter.amend, treasury.transfer, proposal.enact, windfall.distribute, steward.appoint, set_price, accept_equity, accept_crypto, issue_invoice, move_funds.</li>
+<li>Simulator seats the swarm replays (SmartCiti.X <code>sims/</code> and <code>wiki/Simulators.md</code>): 11 operable training seats, each with a scripted reference operator &mdash; Tower Crane Lift, Excavator Trench Cut, Forklift Yard Run, Weld Bead Run, Scaffold Bay Build, Rigging Signal Call, Load Chart Judgment, Pressure Washer Surface Clean, Airless Paint Sprayer Finish, Boom Lift Basket Work, Overhead Crane Shop Move. These are training simulators, not deployed robots, and simulator runs are not deployment evidence.</li>
+<li><a href='https://github.com/AGIFutureFoundation/WorldForge-Browser'>WorldForge-Browser</a> &mdash; 41 agentic training worlds on real Earth maps, with ROS 2-style robot tasks for 10 robot types (including Boston Dynamics Spot, Unitree Go2, PAL TALOS, UR10e, and Franka FR3) and 8 union certification programmes (70&ndash;140-hour courses). Training worlds, not deployments.</li>
+<li><a href='https://github.com/AGIFutureFoundation/agi-corp-worlds'>agi-corp-worlds</a> &mdash; <code>agents/robotics.mjs</code> (92 KB) exists in this repo; its contents have not been read, so nothing about it is claimed here beyond its existence.</li>
+</ul>
+<p>Shared registry entries (the same for every series in the intended network &mdash; these are registry and tooling files, not a product for this series):</p>
+<ul>
+<li><a href='https://github.com/AGIFutureFoundation/agi-corp-worlds'>agi-corp-worlds</a> &mdash; the fabric-and-agent registry. Unlike the other series in this group, this series has no <code>worlds/sNN-*</code> directory there: the series registry links it instead to a standalone world entry (<code>robotics-dao</code>), one of only seven series with such a link. Its founder focus is still unset &mdash; the focus sheet records every focus as null &mdash; so the series is listed as awaiting a founder focus and no spec, zones, or agents have been written for it. Its spec metaprompt is marked not ready for the same reason.</li>
+<li>Generated agent prompts and advisor contracts in the same repo (<code>agents/prompts/</code> and <code>agents/advisors/</code>) &mdash; one generated prompt file and one scripted advisor contract per world, covering the series worlds. The three advisors per world are Host, Steward Liaison, and Alignment; advisors are scripted guides, not AI, and get no prompt by contract. The prompts are deterministic stubs held to a ten-point eval (umbrella present, every human-reserved action listed and marked Held for the Steward Council, every forbidden action listed, source cited, zone named, no personal data, under 6,000 characters) &mdash; and no model has run any of them.</li>
+<li>DAO management pattern in the same repo (<code>agents/dao.mjs</code>) &mdash; one DAO team per world, seated in the eight agent roles the charter assigns to agents (research synthesis, task routing, proposal generation, operational coordination, progress tracking, monitoring, collaborator scouting, grant drafting). Proposals move draft &rarr; under review &rarr; enacted or declined, with steward transitions requiring a 2-of-3 steward quorum; no treasury is held and <code>treasury.transfer</code> is refused to everyone.</li>
 </ul>
 </div></section>
 
