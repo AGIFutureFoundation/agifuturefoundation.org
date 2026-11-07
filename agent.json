@@ -19,7 +19,7 @@
   "count": 21,
   "hero_images": "/assets/images/features/feat-NN-*.jpg (AI-generated illustrations)",
   "hub": "/features/index.html",
-  "note": "magazine-style features, zero invented quotes/people/dates/statistics; grounded in the GitHub review (only 8 of 33 series have repo coverage; 21 flagged repo-copy claims never stated as fact); Prev/Next chain 01-21; home page carries a studio spotlight section linking to feature 11 plus a second-wave paragraph; features 12-21 written 2026-11-06, hero images feat-01..feat-21 present in /assets/images/features/; features 12-21 carry video embeds (12, 13, 14, 15, 16, 18), a Ken Burns fallback on 17, and pending-slot comments on 19-21",
+  "note": "magazine-style features, zero invented quotes/people/dates/statistics; grounded in the GitHub review (only 8 of 33 series have repo coverage; 21 flagged repo-copy claims never stated as fact); Prev/Next chain 01-21; home page carries a studio spotlight section linking to feature 11 plus a second-wave paragraph; features 12-21 written 2026-11-06, hero images feat-01..feat-21 present in /assets/images/features/; features 12-21 carry video embeds (12, 13, 14, 15, 16, 18, 19, 20, 21), a Ken Burns fallback on 17",
   "path": "/features/",
   "spotlight": "/features/feature-11-agentic-venture-studio.html",
   "word_target": "4000-5000 words each"
@@ -129,7 +129,7 @@
     "/press/governance-operations.html"
    ],
    "path": "/press/",
-   "status": "draft releases, not for distribution; each needs Mike's approval of the exact text and carries one [QUOTE \u2014 for Mike to approve]; new-features HOLD (features 12-21 not yet live); deep-articles, magazine-features, governance-operations HOLD (live on GitHub Pages only, www cutover pending); metaverse-fabrics is a status account, no HOLD on the facts",
+   "status": "draft releases, not for distribution; each needs Mike's approval of the exact text and carries one [QUOTE \u2014 for Mike to approve]; new-features HOLD (features 12-21 live on GitHub Pages; release body still says not-yet-live and needs rewording before distribution); deep-articles, magazine-features, governance-operations HOLD (live on GitHub Pages only, www cutover pending); metaverse-fabrics is a status account, no HOLD on the facts",
    "media_contact": "x@agifuturefoundation.org"
   },
   "projects": {
