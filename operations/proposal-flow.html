@@ -9,23 +9,41 @@
 <meta property="og:description" content="From intake to record: how a proposal moves, and what does not exist yet.">
 <meta property="og:type" content="website">
 <style>
-:root{--navy:#0b1e3a;--gold:#c9a227;--teal:#0e7c7b;--bg:#f6f7f9;--ink:#14202e}
-*{box-sizing:border-box}img,video,svg{max-width:100%;height:auto}iframe{max-width:100%}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
-a{color:#0b5cab}.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
-header.top{background:var(--navy);color:#fff;padding:1rem 0}.top .wrap{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
-.top nav a{color:#fff;text-decoration:none;display:inline-block;padding:.55rem .35rem;margin-left:.35rem}.top nav a:hover{text-decoration:underline}
-.hero{background:linear-gradient(135deg,#0b1e3a,#123a6b);color:#fff;padding:3.5rem 0}.hero h1{font-size:2.6rem;line-height:1.15;margin:.25rem 0}.hero p{max-width:720px;color:#dbe6f5}.eyebrow{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
-.btn{display:inline-block;background:var(--gold);color:#111;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;margin-right:.75rem}.btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
-section{padding:2.5rem 0}h2{font-size:1.9rem;line-height:1.25;margin:0 0 1rem}
+:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px;--radius-pill:999px}
+*{box-sizing:border-box}img,video,svg{max-width:100%;height:auto}iframe{max-width:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+header.top{background:var(--navy);color:#fff;padding:1rem 0}
+.top .wrap{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.top nav a{color:#fff;text-decoration:none;display:inline-block;padding:.7rem .8rem;min-height:44px}
+.top nav a:hover{text-decoration:underline}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:3.5rem 0}
+.hero h1{font-size:clamp(2rem,5vw,2.6rem);line-height:1.15;margin:.25rem 0}
+.hero p{max-width:720px;color:#dbe6f5}
+.eyebrow{color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
+.btn{display:inline-block;background:var(--gold);color:#111;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;margin-right:.75rem;min-height:44px}
+.btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
+section{padding:2.5rem 0}
+h2{font-size:1.9rem;line-height:1.25;margin:0 0 1rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-.card{background:#fff;border:1px solid #e2e6ec;border-radius:14px;padding:1.25rem}.card h3{margin-top:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem}
+.card h3{margin-top:0}
+.card:hover{border-color:var(--teal)}
 .kpi{display:flex;gap:2rem;flex-wrap:wrap}.kpi strong{font-size:1.8rem;display:block}
+.badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid}
 .banner{background:#fff8e1;border:1px solid #e6c200;border-radius:12px;padding:1rem}
-footer{background:#0b1e3a;color:#cbd5e1;padding:2rem 0}footer a{color:#fff}
-small{color:#5b6b7d}
-table{width:100%;border-collapse:collapse;background:#fff}th,td{border:1px solid #e2e6ec;padding:.6rem .75rem;text-align:left;vertical-align:top}th{background:var(--navy);color:#fff}
+footer{background:var(--navy);color:#cbd5e1;padding:2rem 0}
+footer a{color:#fff}
+small{color:var(--ink-2)}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+@media(max-width:640px){.hero h1{font-size:2rem}h2{font-size:1.6rem}.hero{padding:2rem 0 1.5rem}section{padding:1.75rem 0}.kpi{gap:1rem}.kpi strong{font-size:1.5rem}}
+/* Page-specific styles preserved from the original file (selectors/declarations not in the shared brand base) */
+table{width:100%;border-collapse:collapse;background:#fff}
+th,td{border:1px solid #e2e6ec;padding:.6rem .75rem;text-align:left;vertical-align:top}
+th{background:var(--navy);color:#fff}
 svg.diagram{max-width:100%;height:auto;display:block;margin:1rem auto}
-@media(max-width:640px){.hero h1{font-size:2rem}h2{font-size:1.6rem}}
+.top nav a{margin-left:.35rem}
 </style>
 <link rel="api-catalog" href="/.well-known/api-catalog">
 <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
