@@ -33,10 +33,31 @@ h2{font-size:1.6rem;line-height:1.25;margin:0 0 1rem}
 .mode-badge{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.04em;padding:.4rem .8rem;border-radius:999px;border:1px solid var(--teal);color:var(--teal);background:#fff}
 #vr-stage{position:relative;background:var(--navy);border-radius:var(--radius);overflow:hidden;height:min(72vh,620px);min-height:380px}
 #vr-canvas{display:block;width:100%;height:100%;touch-action:none}
-#guide-panel{position:absolute;left:1rem;right:1rem;bottom:1rem;background:rgba(11,30,58,.92);color:#fff;border:1px solid var(--gold);border-radius:12px;padding:1rem 1.25rem}
+#guide-panel{position:absolute;left:1rem;right:1rem;bottom:1rem;max-width:640px;background:rgba(11,30,58,.92);color:#fff;border:1px solid var(--gold);border-radius:12px;padding:.75rem 1.25rem 1rem}
+#guide-panel.ui-size-s{max-width:380px}#guide-panel.ui-size-s .panel-body p{font-size:.9rem}
+#guide-panel.ui-size-l{max-width:860px}
 #guide-panel h2{font-size:1.15rem;margin:0 0 .35rem;color:var(--gold-bright)}
 #guide-panel p{margin:0;font-size:.98rem;color:#e6eef8}
 #guide-panel .guide-who{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-bright);font-weight:700}
+/* --- UI controls: close / minimise / size, on every panel (VR fix 2026-11-07) --- */
+.panel-header{display:flex;align-items:center;justify-content:space-between;gap:.5rem;min-height:36px}
+.panel-title{font-weight:700;font-size:.9rem;letter-spacing:.02em}
+.panel-controls{display:flex;gap:.3rem;flex:none}
+.panel-controls button,.ui-ctl{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.45);border-radius:8px;min-width:36px;min-height:36px;padding:.2rem .45rem;cursor:pointer;font-size:1rem;line-height:1}
+.panel-controls button:hover,.ui-ctl:hover{background:rgba(255,255,255,.25)}
+#series-panel .panel-controls button,.step-row .panel-controls button,#webgl-fallback .panel-controls button{background:#eef2f6;color:var(--ink);border-color:var(--line)}
+#series-panel .panel-controls button:hover,.step-row .panel-controls button:hover,#webgl-fallback .panel-controls button:hover{background:#dfe7ef}
+[data-ui-panel].is-collapsed .panel-body{display:none}
+[data-ui-panel].is-hidden{display:none !important}
+#series-panel.ui-size-s .panel-body{font-size:.92rem}#series-panel.ui-size-l .panel-body{font-size:1.05rem}
+.step-row.ui-size-s .step-btn small{display:none}
+#ui-hide-all{position:fixed;right:1rem;bottom:1rem;z-index:999;background:var(--navy);color:#fff;border:2px solid var(--gold);border-radius:999px;padding:.7rem 1.1rem;min-height:48px;font-weight:700;font-size:.95rem;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.35)}
+#ui-hide-all:hover{background:var(--navy-2)}
+#ui-restore-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:1rem;z-index:999;display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center;max-width:min(92vw,720px);background:rgba(11,30,58,.95);border:1px solid var(--gold);border-radius:999px;padding:.5rem .7rem}
+#ui-restore-bar button{background:#fff;color:var(--navy);border:none;border-radius:999px;padding:.5rem .85rem;min-height:40px;font-weight:700;cursor:pointer;font-size:.9rem}
+#ui-restore-bar .restore-all{background:var(--gold)}
+body.ui-all-hidden [data-ui-panel]{display:none !important}
+@media(max-width:640px){#ui-hide-all{right:.5rem;bottom:.5rem;padding:.6rem .9rem}#ui-restore-bar{bottom:.5rem;border-radius:14px}}
 .step-row{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
 .step-btn{flex:1;min-width:180px;text-align:left;background:var(--surface);border:2px solid var(--line);border-radius:var(--radius);padding:.9rem 1rem;cursor:pointer;font:inherit;color:var(--ink)}
 .step-btn strong{display:block;font-size:1.02rem}
@@ -47,6 +68,8 @@ h2{font-size:1.6rem;line-height:1.25;margin:0 0 1rem}
 .chip{background:#fff;border:1px solid var(--teal);color:var(--teal);border-radius:999px;padding:.45rem .8rem;min-height:40px;cursor:pointer;font:inherit;font-size:.9rem}
 .chip:hover{background:#eef8f7}
 #series-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;margin-top:1rem}
+.dest-list{columns:2;column-gap:2rem;font-size:.95rem}
+.dest-list li{break-inside:avoid}
 #webgl-fallback{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem}
 #webgl-fallback ol{margin:.5rem 0}
 #webgl-fallback .fallback-series{columns:2;column-gap:2rem;font-size:.95rem}
@@ -61,6 +84,7 @@ small{color:var(--ink-2)}
   #vr-stage{height:62vh;min-height:340px}
   #guide-panel{left:.5rem;right:.5rem;bottom:.5rem;padding:.8rem}
   #webgl-fallback .fallback-series{columns:1}
+  .dest-list{columns:1}
   section{padding:1.5rem 0}
 }
 @media (prefers-reduced-motion: reduce){
@@ -92,20 +116,27 @@ small{color:var(--ink-2)}
 
 <div id="vr-stage">
 <canvas id="vr-canvas" aria-label="Interactive 3D tour of the Foundation: a gold mission beacon at the centre, a ring of 33 teal orbs for the proposed series, and three guide gates. Drag to look around; tap or click an orb to open a series."></canvas>
-<div id="guide-panel" aria-live="polite">
-<p class="guide-who">✦ Steward Guide</p>
+<div id="guide-panel" data-ui-panel data-panel-label="Steward Guide" aria-live="polite">
+<div class="panel-header"><span class="panel-title guide-who">✦ Steward Guide</span><span class="panel-controls"><button type="button" data-ui-size aria-label="Change panel size" title="Change size (small / medium / large)">⤢</button><button type="button" data-ui-min aria-label="Minimise Steward Guide panel" title="Minimise">–</button><button type="button" data-ui-close aria-label="Close Steward Guide panel" title="Close">×</button></span></div>
+<div class="panel-body">
 <h2 id="guide-title">Step 1 — See the mission</h2>
 <p id="guide-body">Loading the tour…</p>
 </div>
 </div>
+</div>
 
-<div class="step-row" role="group" aria-label="Guided path">
+<div class="step-row" role="group" aria-label="Guided path" data-ui-panel data-panel-label="Guided path steps">
+<div class="panel-header" style="flex-basis:100%"><span class="panel-title">Guided path</span><span class="panel-controls"><button type="button" data-ui-size aria-label="Change steps size" title="Change size (small / medium / large)">⤢</button><button type="button" data-ui-min aria-label="Minimise guided path steps" title="Minimise">–</button><button type="button" data-ui-close aria-label="Close guided path steps" title="Close">×</button></span></div>
+<div class="panel-body" style="display:contents">
 <button class="step-btn active" type="button" data-step="1" aria-pressed="true"><strong>1 · See the mission</strong><small>The gold beacon: safe, equitable, socially beneficial AI.</small></button>
 <button class="step-btn" type="button" data-step="2" aria-pressed="false"><strong>2 · Explore the 33 series</strong><small>Tap an orb — each proposed series opens its own page.</small></button>
 <button class="step-btn" type="button" data-step="3" aria-pressed="false"><strong>3 · Support the mission</strong><small>Donations and grants only. No tax-deductible claim.</small></button>
 </div>
+</div>
 
-<div id="webgl-fallback" hidden>
+<div id="webgl-fallback" hidden data-ui-panel data-panel-label="2D guided tour">
+<div class="panel-header"><span class="panel-title">2D guided tour</span><span class="panel-controls"><button type="button" data-ui-size aria-label="Change tour size" title="Change size (small / medium / large)">⤢</button><button type="button" data-ui-min aria-label="Minimise 2D guided tour" title="Minimise">–</button><button type="button" data-ui-close aria-label="Close 2D guided tour" title="Close">×</button></span></div>
+<div class="panel-body">
 <h2>2D guided tour — same three steps, no 3D needed</h2>
 <p>Your browser could not start WebGL, so here is the whole tour as plain text and links. Nothing is lost: the mission, the series, and the support step are all below.</p>
 <ol>
@@ -149,15 +180,139 @@ small{color:var(--ink-2)}
 <li><strong>Step 3 — Support the mission.</strong> The Foundation takes donations and grants only, in its own account, for charitable purposes. No donation is tax-deductible (no IRS 501(c)(3) determination letter is in the files), and no donation buys a seat, a vote, or a share. Nothing here is an offering of securities. <a href="../get-involved/index.html">Get involved →</a></li>
 </ol>
 </div>
+</div>
 
-<div id="series-panel">
-<h2>Explore the 33 proposed series</h2>
+<div id="series-panel" data-ui-panel data-panel-label="Explore the 33 series">
+<div class="panel-header"><span class="panel-title">Explore the 33 proposed series</span><span class="panel-controls"><button type="button" data-ui-size aria-label="Change series panel size" title="Change size (small / medium / large)">⤢</button><button type="button" data-ui-min aria-label="Minimise series panel" title="Minimise">–</button><button type="button" data-ui-close aria-label="Close series panel" title="Close">×</button></span></div>
+<div class="panel-body">
 <p>Tap a chip — or tap its orb in the scene above — to open that series page. All 33 are <strong>proposed</strong>: named in an internal list of 33 W3 sub-series, not formed, funded, or offered.</p>
 <div id="series-chips"></div>
 <p><strong id="series-name">No series selected yet.</strong><br>
 <a id="series-link" href="../series/index.html" hidden>Open the series page →</a></p>
-<p><small>Keyboard: arrow keys look around, keys 1 / 2 / 3 jump between the three steps. Reduced-motion visitors get the same text panels without camera movement prompts.</small></p>
+<p><small>Keyboard: arrow keys look around, keys 1 / 2 / 3 jump between the three steps. Press <strong>H</strong> to hide all panels for a clear view (press again to bring them back). Every panel also has its own × close, – minimise, and ⤢ size buttons. Reduced-motion visitors get the same text panels without camera movement prompts.</small></p>
+<p><a href="#destinations">Series destinations — all 33, with worlds-3d doors where they exist ↓</a></p>
 </div>
+</div>
+</div></section>
+
+<section id="destinations"><div class="wrap">
+<h2>Series destinations — step through a door</h2>
+<p>Every proposed series has a page on this site. Five of them also have a playable world in worlds-3d — those doors open the 3D player. The other 28 open their series page only, for now. All 33 are <strong>proposed</strong>: named in an internal list of 33 W3 sub-series, not formed, funded, or offered. In the worlds registry (<code>worlds/focus.json</code>) every series focus is still null — each world is awaiting a founder focus, not filled in with a guess.</p>
+<h3>Flagship worlds — open in worlds-3d</h3>
+<div class="grid">
+<div class="card"><h3>S01 · Cognition.X</h3><p>Cognition.X Campus — 25 packs, 6,750 learning blocks. A flagship fabric in worlds-3d.</p><p><a href="../series/S01-cognition-x.html">Series page →</a> · <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=cognition-x">Enter in worlds-3d ↗</a></p></div>
+<div class="card"><h3>S02 · Empathic.X</h3><p>An anchored world — one of the six fabrics placed on RP1 Earth. A flagship in worlds-3d.</p><p><a href="../series/S02-empathic-x.html">Series page →</a> · <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=empathic-x">Enter in worlds-3d ↗</a></p></div>
+<div class="card"><h3>S03 · Diagnostic.X</h3><p>An anchored world — one of the six fabrics placed on RP1 Earth. A flagship in worlds-3d.</p><p><a href="../series/S03-diagnostic-x.html">Series page →</a> · <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=diagnostic-x">Enter in worlds-3d ↗</a></p></div>
+<div class="card"><h3>S08 · Locator.X</h3><p>An anchored world — one of the six fabrics placed on RP1 Earth. A flagship in worlds-3d.</p><p><a href="../series/S08-locator-x.html">Series page →</a> · <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=locator-x">Enter in worlds-3d ↗</a></p></div>
+<div class="card"><h3>S10 · SmartCiti.X Holodeck</h3><p>The SmartCiti.X Holodeck — 8 districts, 111 union halls, and the Simulator Yard with 11 trade simulators at its centre. A flagship in worlds-3d.</p><p><a href="../series/S10-smartciti-x.html">Series page →</a> · <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=smartciti-holodeck">Enter in worlds-3d ↗</a></p></div>
+</div>
+<h3>All 33 proposed series</h3>
+<p>Each name opens its series page. The five flagships above also open their worlds-3d world.</p>
+<ul class="dest-list">
+<li><a href="../series/S01-cognition-x.html">S01 · Cognition.X</a> — <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=cognition-x">worlds-3d ↗</a></li>
+<li><a href="../series/S02-empathic-x.html">S02 · Empathic.X</a> — <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=empathic-x">worlds-3d ↗</a></li>
+<li><a href="../series/S03-diagnostic-x.html">S03 · Diagnostic.X</a> — <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=diagnostic-x">worlds-3d ↗</a></li>
+<li><a href="../series/S04-curable-x.html">S04 · Curable.X</a></li>
+<li><a href="../series/S05-biopharma-go.html">S05 · BioPharma.Go</a></li>
+<li><a href="../series/S06-blockchain.html">S06 · Blockchain</a></li>
+<li><a href="../series/S07-divine-dao.html">S07 · Divine DAO</a></li>
+<li><a href="../series/S08-locator-x.html">S08 · Locator.X</a> — <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=locator-x">worlds-3d ↗</a></li>
+<li><a href="../series/S09-astrological-x.html">S09 · Astrological.X</a></li>
+<li><a href="../series/S10-smartciti-x.html">S10 · SmartCiti.X</a> — <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=smartciti-holodeck">worlds-3d ↗</a></li>
+<li><a href="../series/S11-molecular.html">S11 · Molecular.</a></li>
+<li><a href="../series/S12-parking-smart-x.html">S12 · ParkingSmart.X</a></li>
+<li><a href="../series/S13-gonstead-x.html">S13 · Gonstead.X</a></li>
+<li><a href="../series/S14-askdoc-x.html">S14 · AskDoc.X</a></li>
+<li><a href="../series/S15-romanbridge-dao.html">S15 · RomanBridge.DAO</a></li>
+<li><a href="../series/S16-echodawn-dao.html">S16 · EchoDawn DAO</a></li>
+<li><a href="../series/S17-curable-blockchain-dao.html">S17 · Curable.Blockchain DAO</a></li>
+<li><a href="../series/S18-biodao-blockchain.html">S18 · BioDAO.blockchain DAO</a></li>
+<li><a href="../series/S19-moscone-x.html">S19 · Moscone.X</a></li>
+<li><a href="../series/S20-cmmc.html">S20 · CMMC</a></li>
+<li><a href="../series/S21-incubator-dao.html">S21 · Incubator DAO</a></li>
+<li><a href="../series/S22-get-delivery-dao.html">S22 · Get.Delivery DAO</a></li>
+<li><a href="../series/S23-avatar-chat-dao.html">S23 · Avatar.Chat DAO</a></li>
+<li><a href="../series/S24-donatello-dao.html">S24 · Donatello DAO</a></li>
+<li><a href="../series/S25-mypet-ai.html">S25 · Mypet.AI</a></li>
+<li><a href="../series/S26-lyka-dao.html">S26 · Lyka DAO</a></li>
+<li><a href="../series/S27-genomic-dao.html">S27 · Genomic DAO</a></li>
+<li><a href="../series/S28-genome-blockchain.html">S28 · Genome.Blockchain</a></li>
+<li><a href="../series/S29-metaverse-dao.html">S29 · Metaverse DAO</a></li>
+<li><a href="../series/S30-robotics-dao.html">S30 · Robotics DAO</a></li>
+<li><a href="../series/S31-aerospace-dao.html">S31 · Aerospace DAO</a></li>
+<li><a href="../series/S32-solar-dao.html">S32 · Solar DAO</a></li>
+<li><a href="../series/S33-infogurus.html">S33 · InfoGurus</a></li>
+</ul>
+<p><small>Not one of the 33: <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=biota-blockchain">Biota.blockchain</a> is a playable worlds-3d world, but it is not a W3 series — it has no series number. Do not confuse it with S18 BioDAO.blockchain DAO.</small></p>
+</div></section>
+
+<section id="holodeck-depth"><div class="wrap">
+<h2>Inside the Holodeck — the environment behind the tour</h2>
+<p>The deepest environment this tour points into is the SmartCiti.X Holodeck (S10): 8 districts, 111 union halls, the Simulator Yard with 11 trade simulators at its centre, nine scripted advisors, and a low-poly building kit the halls are built from. The numbers below come from the Trade Craft Academy specification (ACP v3.2) and the Holodeck fabric (<code>my-fabric/holodeck.json</code>). SmartCiti.X itself is proposed, not formed, funded, or offered.</p>
+<h3>Meet the guides — nine scripted advisors</h3>
+<p>A hall is a building until somebody in it will answer a question. Nine advisors stand in the rooms and on the campus green, each one of the Academy's own rigged avatars — breathing, turning its head toward you — and each able to answer exactly <strong>35 questions</strong> between them. An advisor is a scripted guide, not an instructor and not an AI: no model runs behind one, and nothing is generated at view time. An answer is either <strong>say</strong> (written and cited) or <strong>read</strong> (bound to a live record, such as the PPE conditions, a seat rubric, or a hall's rooms). Twenty-one of the 35 topics carry no words. Advisors are not scored, and no grader reads advisor state.</p>
+<ul>
+<li>🧭 <strong>Orientation guide</strong> — hall door — “What is this hall?”</li>
+<li>🦺 <strong>Safety steward</strong> — safety room — PPE, hazards, light, air, noise — “Can I refuse the work?”</li>
+<li>🧰 <strong>Crib keeper</strong> — tools room</li>
+<li>📐 <strong>Layout hand</strong> — layout room — control points</li>
+<li>🔍 <strong>Inspector</strong> — inspection room — “Can I talk my way to a pass?”</li>
+<li>📋 <strong>Foreman</strong> — coordination room — shift brief, walkaround, hand-offs</li>
+<li>🗂️ <strong>Records clerk</strong> — documentation room — progress, certification, school partners</li>
+<li>👷 <strong>Operator</strong> — at the running seat's own yard — task, controls, gauges, rubric, walkaround, reference procedure</li>
+<li>📡 <strong>Dispatcher</strong> — campus green — campus districts, other campuses, nearby anchors; 10- and 15-minute walk bands (800 m / 1,200 m)</li>
+</ul>
+<h3>The Simulator Yard — 11 training seats</h3>
+<p>Eleven operable training seats stand in the Simulator Yard at the centre of the Holodeck, each with a scripted reference operator.</p>
+<ul>
+<li><strong>Tower Crane Lift</strong> — machine</li>
+<li><strong>Excavator Trench Cut</strong> — machine</li>
+<li><strong>Forklift Yard Run</strong> — driving</li>
+<li><strong>Weld Bead Run</strong> — process</li>
+<li><strong>Scaffold Bay Build</strong> — process</li>
+<li><strong>Rigging Signal Call</strong> — process</li>
+<li><strong>Load Chart Judgment</strong> — process</li>
+<li><strong>Pressure Washer Surface Clean</strong> — process</li>
+<li><strong>Airless Paint Sprayer Finish</strong> — process</li>
+<li><strong>Boom Lift Basket Work</strong> — machine — in-headset control mapping</li>
+<li><strong>Overhead Crane Shop Move</strong> — machine — in-headset control mapping</li>
+</ul>
+<h3>Eight districts, 111 halls</h3>
+<p>Each hall is a model built from its real room plan, and its rooms are tinted by skill strand. A strip along the front of each hall shows its course state: cyan means real training stations back the course (11 halls); amber means a draft outline (100 halls).</p>
+<ul class="dest-list">
+<li><strong>Structural</strong> — 12 halls</li>
+<li><strong>Envelope &amp; Finish</strong> — 21 halls</li>
+<li><strong>Building Systems</strong> — 18 halls</li>
+<li><strong>Energy &amp; Utilities</strong> — 17 halls</li>
+<li><strong>Earthworks &amp; Plant</strong> — 12 halls</li>
+<li><strong>Heavy Industry</strong> — 10 halls</li>
+<li><strong>Transport &amp; Mobility</strong> — 10 halls</li>
+<li><strong>Survey, Safety &amp; Environment</strong> — 11 halls</li>
+</ul>
+<p><a href="../series/S10-smartciti-x.html">S10 · SmartCiti.X series page →</a> · <a href="https://agifuturefoundation.github.io/worlds-3d/player.html?world=smartciti-holodeck">Enter the Holodeck in worlds-3d ↗</a></p>
+<h3>How the halls are built — the building kit</h3>
+<p>The halls are assembled from an 18-piece low-poly building vocabulary — 43 primitives (36 boxes + 7 cylinders), 12–72 triangles per piece (median 34; the whole vocabulary 556 triangles). A hall envelope is 12.0 m wide, 6 + (depth % 3) × 0.7 m high, with its door toward local −z. Measured reference: one residential city block, 21,893 triangles / 93 meshes.</p>
+<ul class="dest-list">
+<li>Entrance stoop</li>
+<li>Entrance tread</li>
+<li>Kerb run</li>
+<li>Parapet coping run</li>
+<li>Parapet corner block</li>
+<li>Eaves gutter</li>
+<li>Downpipe run</li>
+<li>Downpipe shoe</li>
+<li>Wall vent hood</li>
+<li>Louvred vent panel</li>
+<li>Door awning</li>
+<li>Bollard</li>
+<li>Wall-mounted hand rail</li>
+<li>Sign bracket</li>
+<li>Surface conduit run</li>
+<li>Meter box</li>
+<li>Planter tub</li>
+<li>Caged roof ladder</li>
+</ul>
+<p>Interiors follow the same discipline: six authored custom spaces — a welding bay, a rigging yard, an electrical lab, a scaffold court, a flipped classroom, a crane simulator bay — with floor plans drawn at 40 px/m; 29 interior props over 7 families, 5,082 instances across 1,221 rooms; wall runs first, then authored islands with a 1.5 m aisle; and the 11 room strands mirror the 11 skill strands.</p>
 </div></section>
 
 <section><div class="wrap">
@@ -175,6 +330,8 @@ small{color:var(--ink-2)}
 </div></section>
 </main>
 <footer><div class="wrap"><p>AGI Future Foundation PBC · Architecting Global AGI Prosperity · <a href="https://www.agifuturefoundation.org/">agifuturefoundation.org</a> · VR Tour — local build, not yet deployed. Nothing on this page is legal, tax, or financial advice, and no signing, membership, or payment is offered here.</p></div></footer>
+<button type="button" id="ui-hide-all" aria-pressed="false" title="Hide all panels (H)">👁 Hide UI (H)</button>
+<div id="ui-restore-bar" hidden aria-label="Hidden panels"></div>
 <script src="../assets/js/vendor/three.min.js"></script>
 <script src="vr-tour.js"></script>
 </body>
