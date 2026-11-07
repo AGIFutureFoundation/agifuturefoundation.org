@@ -10,10 +10,10 @@
 <meta property="og:type" content="website">
 <style>
 :root{--navy:#0b1e3a;--gold:#c9a227;--teal:#0e7c7b;--bg:#f6f7f9;--ink:#14202e}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+*{box-sizing:border-box}img,video,svg{max-width:100%;height:auto}iframe{max-width:100%}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
 a{color:#0b5cab}.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
 header.top{background:var(--navy);color:#fff;padding:1rem 0}.top .wrap{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
-.top nav a{color:#fff;text-decoration:none;margin-left:1rem}.top nav a:hover{text-decoration:underline}
+.top nav a{color:#fff;text-decoration:none;display:inline-block;padding:.55rem .35rem;margin-left:.35rem}.top nav a:hover{text-decoration:underline}
 .hero{background:linear-gradient(135deg,#0b1e3a,#123a6b);color:#fff;padding:3.5rem 0}.hero h1{font-size:2.6rem;line-height:1.15;margin:.25rem 0}.hero p{max-width:720px;color:#dbe6f5}.eyebrow{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
 .btn{display:inline-block;background:var(--gold);color:#111;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;margin-right:.75rem}.btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
 section{padding:2.5rem 0}h2{font-size:1.9rem;line-height:1.25;margin:0 0 1rem}
@@ -25,7 +25,7 @@ footer{background:#0b1e3a;color:#cbd5e1;padding:2rem 0}footer a{color:#fff}
 small{color:#5b6b7d}
 table{width:100%;border-collapse:collapse;background:#fff}th,td{border:1px solid #e2e6ec;padding:.6rem .75rem;text-align:left;vertical-align:top}th{background:var(--navy);color:#fff}
 svg.diagram{max-width:100%;height:auto;display:block;margin:1rem auto}
-@media(max-width:640px){.hero h1{font-size:2rem}}
+@media(max-width:640px){.hero h1{font-size:2rem}h2{font-size:1.6rem}}
 </style>
 <link rel="api-catalog" href="/.well-known/api-catalog">
 <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
@@ -80,14 +80,14 @@ This section describes an <strong>intended operating model</strong>, stated by M
 
 <h2>Who governs what</h2>
 <p>The humans in step two differ at each layer, and keeping the layers separate is the point. No single human, and no agent, holds all of the powers below.</p>
-<table>
+<div style="overflow-x:auto"><table style="min-width:480px">
 <tr><th>Layer</th><th>Who decides</th><th>What they decide</th></tr>
 <tr><td>AGI Corp (intended Wyoming head corporation)</td><td>AGI Corp board</td><td>Family strategy, portfolio allocation, studio fees, SAFE and equity authorization with securities counsel, hiring studio leadership, and final kill or pivot decisions where the series agreements give the studio that right.</td></tr>
 <tr><td>AGI Future Foundation (California nonprofit, filed)</td><td>Foundation board</td><td>Mission statement and standards, mission-fit approval for every studio project, mission-standards enforcement, and grant decisions. It can withdraw mission approval for a project; that project then loses Foundation support and Foundation branding, even if AGI Corp wants to continue it commercially.</td></tr>
 <tr><td>Each series (W3 Wyoming or Delaware cohort)</td><td>Steward Council — 3 humans, 2-of-3 signed votes</td><td>Budget, charter changes, movement of funds, major contracts, and pivot or kill recommendations for its series. Until the three stewards are named, consenting, and holding signing keys, the series has no effective council.</td></tr>
 <tr><td>Each series, day to day</td><td>Agent team in the 8 roles, under the Council</td><td>Drafting, research, building, coordination, monitoring, and reporting. Advisory and operational only: a DAO or agent vote does not sign a contract, move funds, or issue securities.</td></tr>
 <tr><td>AGI Fellowship (separate church, partner)</td><td>Fellowship board</td><td>Partnership approval and doctrinal and pastoral decisions for its own programs; it can end a partnership without ending a studio project, and vice versa. Never a portfolio company, never a series.</td></tr>
-</table>
+</table></div>
 <p>Three money flows run through this structure, and the paperwork insists they stay separate. The philanthropic flow runs from donor to the Foundation, then to grants or charitable programs, or to a series only under a written grant or agreement that serves a charitable purpose, with reporting back to the Foundation. The commercial flow runs from customer or investor to AGI Corp or to a specific series by contract, into that entity's own account, for its own costs; SAFE money goes only to AGI Corp or to a formed series entity if counsel structures it that way, and never to the Foundation. The management flow — any fee for AGI Corp managing a series, or the Foundation managing a company to mission standards — exists only under a signed management agreement, approved by disinterested directors of the managed entity, at a documented fair-market rate. There is no handshake management. No fee is charged by default.</p>
 
 <h2>The structure this loop runs inside</h2>

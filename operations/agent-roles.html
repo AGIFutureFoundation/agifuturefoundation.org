@@ -10,10 +10,10 @@
 <meta property="og:type" content="website">
 <style>
 :root{--navy:#0b1e3a;--gold:#c9a227;--teal:#0e7c7b;--bg:#f6f7f9;--ink:#14202e}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+*{box-sizing:border-box}img,video,svg{max-width:100%;height:auto}iframe{max-width:100%}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
 a{color:#0b5cab}.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
 header.top{background:var(--navy);color:#fff;padding:1rem 0}.top .wrap{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
-.top nav a{color:#fff;text-decoration:none;margin-left:1rem}.top nav a:hover{text-decoration:underline}
+.top nav a{color:#fff;text-decoration:none;display:inline-block;padding:.55rem .35rem;margin-left:.35rem}.top nav a:hover{text-decoration:underline}
 .hero{background:linear-gradient(135deg,#0b1e3a,#123a6b);color:#fff;padding:3.5rem 0}.hero h1{font-size:2.6rem;line-height:1.15;margin:.25rem 0}.hero p{max-width:720px;color:#dbe6f5}.eyebrow{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
 .btn{display:inline-block;background:var(--gold);color:#111;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;margin-right:.75rem}.btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
 section{padding:2.5rem 0}h2{font-size:1.9rem;line-height:1.25;margin:0 0 1rem}
@@ -25,7 +25,7 @@ footer{background:#0b1e3a;color:#cbd5e1;padding:2rem 0}footer a{color:#fff}
 small{color:#5b6b7d}
 table{width:100%;border-collapse:collapse;background:#fff}th,td{border:1px solid #e2e6ec;padding:.6rem .75rem;text-align:left;vertical-align:top}th{background:var(--navy);color:#fff}
 svg.diagram{max-width:100%;height:auto;display:block;margin:1rem auto}
-@media(max-width:640px){.hero h1{font-size:2rem}}
+@media(max-width:640px){.hero h1{font-size:2rem}h2{font-size:1.6rem}}
 </style>
 <link rel="api-catalog" href="/.well-known/api-catalog">
 <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
@@ -94,7 +94,7 @@ The eight roles below come from the Venture Studio Operating Model (corporate pa
 <p>When a role is unfilled, a coordinator covers it. The studio model names the coordinator as the fallback for any unfilled role, and each series' charter must name the human coordinator or manager alongside the agent role assignments. The coordinator's job is continuity, not accumulation of power: covering a role means doing that role's work inside that role's limits, and saying so in the record, until the role is filled. Agent roles carry no authority to absorb — they carry work. The coverage is minuted, and the charter is updated when the role is filled. A series that runs long with several roles covered by one coordinator should treat that as a staffing problem to fix, not a normal state.</p>
 
 <h2>Hard limits — the same for all eight roles</h2>
-<table>
+<div style="overflow-x:auto"><table style="min-width:480px">
 <tr><th>Agents NEVER</th><th>What happens instead</th></tr>
 <tr><td>Sign a legal document</td><td>A human with signed authority signs; the agent prepares the document and the signing is minuted.</td></tr>
 <tr><td>Move funds</td><td>Only the Steward Council, by 2-of-3 signed votes; default agent spending limit is $0.</td></tr>
@@ -103,7 +103,7 @@ The eight roles below come from the Venture Studio Operating Model (corporate pa
 <tr><td>Enact doctrine or charter changes</td><td>Fellowship doctrine by the human board and minister; charters only by the Steward Council. Agents draft; humans enact.</td></tr>
 <tr><td>Represent the Foundation or a series to regulators, banks, or the public as a decision-maker</td><td>Agents may summarize, cite, and route inquiries to a human steward; commitments come only from humans.</td></tr>
 <tr><td>Hold equity, tokens, or profit interests</td><td>Agents are tools, not owners. Humans may hold equity only as stated in a signed agreement for that series.</td></tr>
-</table>
+</table></div>
 <p>These limits are not suspended in either studio mode: in agent-managed mode agents run the daily work within written human-set limits while the Council reviews; in agent-assisted mode a human does the work with agents as co-workers, deciding, signing, and remaining accountable. The modes differ in how much daily work agents carry, not in whether the limits apply. Any task needing a signature, a bank transfer, or a filing is human-only by definition in both modes.</p>
 
 <h2>Identity, turnover, and the record</h2>

@@ -19,7 +19,7 @@
   "count": 21,
   "hero_images": "/assets/images/features/feat-NN-*.jpg (AI-generated illustrations)",
   "hub": "/features/index.html",
-  "note": "magazine-style features, zero invented quotes/people/dates/statistics; grounded in the GitHub review (only 8 of 33 series have repo coverage; 21 flagged repo-copy claims never stated as fact); Prev/Next chain 01-21; home page carries a studio spotlight section linking to feature 11 plus a second-wave paragraph; features 12-21 written 2026-11-06, hero images feat-12..feat-21 pending a follow-up image batch",
+  "note": "magazine-style features, zero invented quotes/people/dates/statistics; grounded in the GitHub review (only 8 of 33 series have repo coverage; 21 flagged repo-copy claims never stated as fact); Prev/Next chain 01-21; home page carries a studio spotlight section linking to feature 11 plus a second-wave paragraph; features 12-21 written 2026-11-06, hero images feat-01..feat-21 present in /assets/images/features/; features 12-21 carry video embeds (12, 13, 14, 15, 16, 18), a Ken Burns fallback on 17, and pending-slot comments on 19-21",
   "path": "/features/",
   "spotlight": "/features/feature-11-agentic-venture-studio.html",
   "word_target": "4000-5000 words each"
@@ -148,6 +148,7 @@
     "status": "partner, not a series or subsidiary"
    },
    "ambiguous_mapping": "genomic-go-platform may relate to S27 Genomic DAO or S28 Genome.Blockchain; no merger invented",
+   "biodao_tools": {"page": "/projects/biodao-tools.html", "verified": "2026-11-06/07 inventory; 15 public BioDAO-related repos + 1 private; no repos for S4/S5/S11 dedicated/S14/S28; charts from verified numbers only"},
    "hub": "/projects/index.html",
    "pages": [
     "/projects/worldforge.html",
@@ -160,7 +161,8 @@
     "/projects/dyva.html",
     "/projects/rp1-ecosystem.html",
     "/projects/agi-corp.html",
-    "/projects/agi-fellowship.html"
+    "/projects/agi-fellowship.html",
+    "/projects/biodao-tools.html"
    ],
    "path": "/projects/",
    "rp1_verified_facts": {
@@ -245,7 +247,7 @@
   }
  },
  "sitemap": "/sitemap.xml",
- "sitemap_url_count": 161,
+ "sitemap_url_count": 162,
  "status": "draft_not_live",
  "url": "https://www.agifuturefoundation.org/",
  "video_count": 40

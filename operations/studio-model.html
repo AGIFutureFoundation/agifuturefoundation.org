@@ -10,10 +10,10 @@
 <meta property="og:type" content="website">
 <style>
 :root{--navy:#0b1e3a;--gold:#c9a227;--teal:#0e7c7b;--bg:#f6f7f9;--ink:#14202e}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+*{box-sizing:border-box}img,video,svg{max-width:100%;height:auto}iframe{max-width:100%}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
 a{color:#0b5cab}.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
 header.top{background:var(--navy);color:#fff;padding:1rem 0}.top .wrap{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
-.top nav a{color:#fff;text-decoration:none;margin-left:1rem}.top nav a:hover{text-decoration:underline}
+.top nav a{color:#fff;text-decoration:none;display:inline-block;padding:.55rem .35rem;margin-left:.35rem}.top nav a:hover{text-decoration:underline}
 .hero{background:linear-gradient(135deg,#0b1e3a,#123a6b);color:#fff;padding:3.5rem 0}.hero h1{font-size:2.6rem;line-height:1.15;margin:.25rem 0}.hero p{max-width:720px;color:#dbe6f5}.eyebrow{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
 .btn{display:inline-block;background:var(--gold);color:#111;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;margin-right:.75rem}.btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
 section{padding:2.5rem 0}h2{font-size:1.9rem;line-height:1.25;margin:0 0 1rem}
@@ -25,7 +25,7 @@ footer{background:#0b1e3a;color:#cbd5e1;padding:2rem 0}footer a{color:#fff}
 small{color:#5b6b7d}
 table{width:100%;border-collapse:collapse;background:#fff}th,td{border:1px solid #e2e6ec;padding:.6rem .75rem;text-align:left;vertical-align:top}th{background:var(--navy);color:#fff}
 svg.diagram{max-width:100%;height:auto;display:block;margin:1rem auto}
-@media(max-width:640px){.hero h1{font-size:2rem}}
+@media(max-width:640px){.hero h1{font-size:2rem}h2{font-size:1.6rem}}
 </style>
 <link rel="api-catalog" href="/.well-known/api-catalog">
 <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
@@ -52,7 +52,7 @@ This page describes an <strong>intended operating model</strong> from the Ventur
 
 <h2>The eight studio functions</h2>
 <p>The studio does eight kinds of work. For each, the model splits the work the same way: agents draft, research, build, coordinate, monitor, and report; humans review, decide, approve, sign, and are accountable. The table below is the model's own split; the paragraphs after it explain the functions where the boundary is most often misunderstood.</p>
-<table>
+<div style="overflow-x:auto"><table style="min-width:480px">
 <tr><th>Studio function</th><th>Agent-managed work</th><th>Human (assisted / governing) work</th></tr>
 <tr><td>1 · Ideation / sourcing</td><td>Scan research, markets, repos, community input; draft briefs; rank against mission and market criteria.</td><td>Founder or steward reviews briefs and selects which ideas enter validation. No idea becomes a series on agent ranking alone.</td></tr>
 <tr><td>2 · Validation</td><td>Customer/problem research, competitor mapping, feasibility drafts, financial model drafts, risk registers.</td><td>Human interviews, judgment on problem/solution fit, approval to proceed to Build. Financial models are drafts until a human founder or CFO adopts them.</td></tr>
@@ -62,7 +62,7 @@ This page describes an <strong>intended operating model</strong> from the Ventur
 <tr><td>6 · Portfolio management</td><td>Portfolio dashboard, stage-gate tracking, KPI reporting, risk flags.</td><td>Studio and AGI Corp boards: allocate resources, kill/pivot/scale decisions, SAFE/equity decisions with securities counsel.</td></tr>
 <tr><td>7 · Fundraising support</td><td>Draft decks, data rooms, investor lists, grant drafts, diligence packs.</td><td>Human founder/CEO pitches; human board authorizes any SAFE/equity; counsel reviews all offering materials. Agents do not solicit investment.</td></tr>
 <tr><td>8 · Mission + compliance</td><td>Mission-fit checklists, standards tracking, conflict-disclosure drafts, filing calendars.</td><td>Foundation board: mission approval. Counsel and CPA: filings, tax, securities, and Attorney General compliance.</td></tr>
-</table>
+</table></div>
 <p>Three functions deserve extra attention. In validation, the model requires human interviews, not agent assertions alone — the gate checklist asks how many interviews were done and for the summary to be filed. An agent can draft the guide and summarize the notes, but it cannot stand in for the humans interviewed, and a financial model stays labelled "draft, not adopted" until a human adopts it. In launch, the claims check is absolute: no invented partners, users, revenue, venues, or outcomes, and the claims list is filed before launch approval is signed. Pricing must be set and approved, or the launch is stated expressly as free or demo-only — no invented prices. In fundraising support, agents draft decks, data rooms, investor lists, grant drafts, and diligence packs, and do not solicit investment.</p>
 <p>The eight agent roles on the <a href="agent-roles.html">Agent Roles</a> page are the staffing that performs these eight functions inside each series — the functions are the work, the roles are who does it — and the mapping is recorded in each series' DAO charter, which names which agent holds which role, who the human coordinator or manager is, and what each agent may and may not do.</p>
 

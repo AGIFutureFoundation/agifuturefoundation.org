@@ -35,10 +35,10 @@
 ]}</script>
 <style>
 :root{--navy:#0b1e3a;--gold:#c9a227;--teal:#0e7c7b;--bg:#f6f7f9;--ink:#14202e}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+*{box-sizing:border-box}img,video,svg{max-width:100%;height:auto}iframe{max-width:100%}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
 a{color:#0b5cab}.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
 header.top{background:var(--navy);color:#fff;padding:1rem 0}.top .wrap{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
-.top nav a{color:#fff;text-decoration:none;margin-left:1rem}.top nav a:hover{text-decoration:underline}
+.top nav a{color:#fff;text-decoration:none;display:inline-block;padding:.55rem .35rem;margin-left:.35rem}.top nav a:hover{text-decoration:underline}
 .hero{background:linear-gradient(135deg,#0b1e3a,#123a6b);color:#fff;padding:3.5rem 0}.hero h1{font-size:2.6rem;line-height:1.15;margin:.25rem 0}.hero p{max-width:720px;color:#dbe6f5}.eyebrow{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
 .btn{display:inline-block;background:var(--gold);color:#111;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;margin-right:.75rem}.btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
 section{padding:2.5rem 0}h2{font-size:1.9rem;line-height:1.25;margin:0 0 1rem}
@@ -46,7 +46,7 @@ section{padding:2.5rem 0}h2{font-size:1.9rem;line-height:1.25;margin:0 0 1rem}
 .card{background:#fff;border:1px solid #e2e6ec;border-radius:14px;padding:1.25rem}.card h3{margin-top:0}
 .banner{background:#fff8e1;border:1px solid #e6c200;border-radius:12px;padding:1rem}
 .banner.filed{background:#eef6f6;border-color:var(--teal)}
-table.cal{width:100%;border-collapse:collapse;background:#fff;margin:0 0 2rem}
+table.cal{width:100%;min-width:560px;border-collapse:collapse;background:#fff;margin:0 0 2rem}
 table.cal caption{text-align:left;font-weight:700;font-size:1.25rem;padding:.5rem 0}
 table.cal th,table.cal td{border:1px solid #dbe1e8;padding:.45rem .5rem;vertical-align:top;width:14.28%}
 table.cal th{background:var(--navy);color:#fff;text-align:left}
@@ -57,6 +57,7 @@ table.cal td span.t{font-size:.85rem;color:#33475e;display:block}
 footer{background:#0b1e3a;color:#cbd5e1;padding:2rem 0}footer a{color:#fff}
 small{color:#5b6b7d}
 @media(max-width:640px){.hero h1{font-size:2rem}table.cal th,table.cal td{padding:.3rem;font-size:.85rem}}
+@media(max-width:640px){iframe{height:560px}}
 </style>
 <link rel="api-catalog" href="/.well-known/api-catalog">
 <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
@@ -101,7 +102,7 @@ small{color:#5b6b7d}
 <h2>Month by month</h2>
 <p>All times Central. &ldquo;Online&rdquo; means the event is online; anything else is location TBD. Multi-day events appear on each date they span.</p>
 
-<table class="cal">
+<div style="overflow-x:auto"><table class="cal">
 <caption>November 2026</caption>
 <thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead>
 <tbody>
@@ -111,9 +112,9 @@ small{color:#5b6b7d}
 <tr><td><span class="d">22</span></td><td><span class="d">23</span></td><td><span class="d">24</span></td><td><span class="d">25</span></td><td><span class="d">26</span></td><td><span class="d">27</span></td><td><span class="d">28</span></td></tr>
 <tr><td><span class="d">29</span></td><td><span class="d">30</span></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody>
-</table>
+</table></div>
 
-<table class="cal">
+<div style="overflow-x:auto"><table class="cal">
 <caption>December 2026</caption>
 <thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead>
 <tbody>
@@ -123,9 +124,9 @@ small{color:#5b6b7d}
 <tr><td><span class="d">20</span></td><td><span class="d">21</span></td><td><span class="d">22</span></td><td><span class="d">23</span></td><td><span class="d">24</span></td><td><span class="d">25</span></td><td><span class="d">26</span></td></tr>
 <tr><td><span class="d">27</span></td><td><span class="d">28</span></td><td><span class="d">29</span></td><td><span class="d">30</span></td><td><span class="d">31</span></td><td></td><td></td></tr>
 </tbody>
-</table>
+</table></div>
 
-<table class="cal">
+<div style="overflow-x:auto"><table class="cal">
 <caption>January 2027</caption>
 <thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead>
 <tbody>
@@ -136,9 +137,9 @@ small{color:#5b6b7d}
 <tr><td><span class="d">24</span></td><td><span class="d">25</span></td><td><span class="d">26</span></td><td><span class="d">27</span></td><td><span class="d">28</span></td><td><span class="d">29</span></td><td><span class="d">30</span></td></tr>
 <tr><td><span class="d">31</span></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody>
-</table>
+</table></div>
 
-<table class="cal">
+<div style="overflow-x:auto"><table class="cal">
 <caption>February 2027</caption>
 <thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead>
 <tbody>
@@ -148,9 +149,9 @@ small{color:#5b6b7d}
 <tr><td><span class="d">21</span></td><td><span class="d">22</span></td><td><span class="d">23</span></td><td><span class="d">24</span></td><td><span class="d">25</span></td><td><span class="d">26</span></td><td><span class="d">27</span></td></tr>
 <tr><td><span class="d">28</span></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody>
-</table>
+</table></div>
 
-<table class="cal">
+<div style="overflow-x:auto"><table class="cal">
 <caption>March 2027</caption>
 <thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead>
 <tbody>
@@ -160,9 +161,9 @@ small{color:#5b6b7d}
 <tr><td><span class="d">21</span></td><td><span class="d">22</span></td><td><span class="d">23</span></td><td><span class="d">24</span></td><td><span class="d">25</span></td><td class="ev"><span class="d">26</span><span class="t"><a href="https://luma.com/qdsb042p">Prairie AgTech Build Weekend</a><br>starts 5:00pm CT &middot; TBD &middot; Day 1 of 3</span></td><td class="ev"><span class="d">27</span><span class="t"><a href="https://luma.com/qdsb042p">Prairie AgTech Build Weekend</a><br>Day 2 of 3 &middot; TBD</span></td></tr>
 <tr><td class="ev"><span class="d">28</span><span class="t"><a href="https://luma.com/qdsb042p">Prairie AgTech Build Weekend</a><br>Day 3 of 3 &middot; end time TBD &middot; TBD</span></td><td><span class="d">29</span></td><td><span class="d">30</span></td><td><span class="d">31</span></td><td></td><td></td><td></td></tr>
 </tbody>
-</table>
+</table></div>
 
-<table class="cal">
+<div style="overflow-x:auto"><table class="cal">
 <caption>April 2027</caption>
 <thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead>
 <tbody>
@@ -172,9 +173,9 @@ small{color:#5b6b7d}
 <tr><td><span class="d">18</span></td><td><span class="d">19</span></td><td><span class="d">20</span></td><td><span class="d">21</span></td><td class="ev"><span class="d">22</span><span class="t"><a href="https://luma.com/ullf3byz">BuildFest Skills &amp; Certs Day</a><br>3:00&ndash;5:00pm CT &middot; TBD</span></td><td><span class="d">23</span></td><td><span class="d">24</span></td></tr>
 <tr><td><span class="d">25</span></td><td><span class="d">26</span></td><td><span class="d">27</span></td><td><span class="d">28</span></td><td><span class="d">29</span></td><td><span class="d">30</span></td><td></td></tr>
 </tbody>
-</table>
+</table></div>
 
-<table class="cal">
+<div style="overflow-x:auto"><table class="cal">
 <caption>May 2027</caption>
 <thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead>
 <tbody>
@@ -185,7 +186,7 @@ small{color:#5b6b7d}
 <tr><td><span class="d">23</span></td><td><span class="d">24</span></td><td><span class="d">25</span></td><td><span class="d">26</span></td><td><span class="d">27</span></td><td><span class="d">28</span></td><td><span class="d">29</span></td></tr>
 <tr><td><span class="d">30</span></td><td><span class="d">31</span></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody>
-</table>
+</table></div>
 </div></section>
 
 <section id="list"><div class="wrap">
