@@ -11,8 +11,10 @@
   "builderspace": "https://www.agifuturefoundation.org/events/builderspace.html",
   "calendar": "https://www.agifuturefoundation.org/events/calendar.html",
   "hub": "https://www.agifuturefoundation.org/events/",
-  "note": "BuilderSpace: 5 online onboarding events Nov-Dec 2026 + 11 tour events Jan-May 2027; all Private/unlisted on Luma; locations TBD unless Online; Luma embeds use lu.ma/embed/event/evt-XXXX/simple with text fallback.",
+  "itinerary": "https://www.agifuturefoundation.org/events/itinerary.html",
+  "note": "BuilderSpace: 5 online onboarding events Nov-Dec 2026 + 11 tour events Jan-May 2027; all Private/unlisted on Luma; locations TBD unless Online; each event links to its Luma registration page by text link; itinerary page quotes each Luma description; Call for Sponsors page: no sponsor/tier/price/benefit confirmed.",
   "onboarding": "https://www.agifuturefoundation.org/events/onboarding.html",
+  "sponsors": "https://www.agifuturefoundation.org/events/sponsors.html",
   "tour": "https://www.agifuturefoundation.org/events/tour.html"
  },
  "features": {
