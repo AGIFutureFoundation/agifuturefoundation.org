@@ -76,6 +76,87 @@
   var xrBtn = document.getElementById('enter-vr');
   var stepBtns = document.querySelectorAll('[data-step]');
 
+  /* ---- UI controls (VR fix 2026-11-07): every panel gets close (×),
+     minimise (–, collapsed header bar), and size cycle (⤢ S/M/L);
+     a global Hide-UI toggle (button + H key) hides all panels at once
+     for a clear view, leaving a minimal restore bar visible.
+     Works on the DOM panels only — in an immersive-VR session the
+     browser does not render these DOM panels, so nothing changes there.
+     Existing tour behaviour (steps, chips, orbs, XR) is untouched. ---- */
+  var SIZES = ['ui-size-s', 'ui-size-m', 'ui-size-l'];
+  var hideAllBtn = document.getElementById('ui-hide-all');
+  var restoreBar = document.getElementById('ui-restore-bar');
+  var panels = Array.prototype.slice.call(document.querySelectorAll('[data-ui-panel]'));
+  function panelLabel(p) { return p.getAttribute('data-panel-label') || p.id || 'Panel'; }
+  function syncRestoreBar() {
+    if (!restoreBar) return;
+    var closed = panels.filter(function (p) { return p.classList.contains('is-hidden'); });
+    var allHidden = document.body.classList.contains('ui-all-hidden');
+    restoreBar.innerHTML = '';
+    if (!closed.length && !allHidden) { restoreBar.hidden = true; return; }
+    restoreBar.hidden = false;
+    if (allHidden) {
+      var showAll = document.createElement('button');
+      showAll.type = 'button'; showAll.className = 'restore-all';
+      showAll.textContent = 'Show all panels';
+      showAll.addEventListener('click', showAllPanels);
+      restoreBar.appendChild(showAll);
+    }
+    closed.forEach(function (p) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = 'Show: ' + panelLabel(p);
+      b.addEventListener('click', function () { showPanel(p); });
+      restoreBar.appendChild(b);
+    });
+  }
+  function closePanel(p) {
+    p.classList.add('is-hidden'); p.hidden = true; syncRestoreBar();
+  }
+  function showPanel(p) {
+    p.classList.remove('is-hidden'); p.classList.remove('is-collapsed');
+    p.hidden = false; // an explicit Show always unhides, whatever hid it before
+    var minBtn = p.querySelector('[data-ui-min]');
+    if (minBtn) minBtn.textContent = '–';
+    syncRestoreBar();
+  }
+  function showAllPanels() {
+    document.body.classList.remove('ui-all-hidden');
+    if (hideAllBtn) { hideAllBtn.textContent = '👁 Hide UI (H)'; hideAllBtn.setAttribute('aria-pressed', 'false'); }
+    panels.forEach(function (p) { if (p.classList.contains('is-hidden')) showPanel(p); });
+    syncRestoreBar();
+  }
+  function hideAllPanels() {
+    document.body.classList.add('ui-all-hidden');
+    if (hideAllBtn) { hideAllBtn.textContent = '👁 Show UI (H)'; hideAllBtn.setAttribute('aria-pressed', 'true'); }
+    syncRestoreBar();
+  }
+  panels.forEach(function (p) {
+    var sizeBtn = p.querySelector('[data-ui-size]');
+    if (sizeBtn) sizeBtn.addEventListener('click', function () {
+      var cur = SIZES.findIndex(function (s) { return p.classList.contains(s); });
+      SIZES.forEach(function (s) { p.classList.remove(s); });
+      p.classList.add(SIZES[(cur + 1) % SIZES.length]);
+    });
+    var minBtn = p.querySelector('[data-ui-min]');
+    if (minBtn) minBtn.addEventListener('click', function () {
+      var collapsed = p.classList.toggle('is-collapsed');
+      minBtn.textContent = collapsed ? '+' : '–';
+      minBtn.setAttribute('aria-label', (collapsed ? 'Expand ' : 'Minimise ') + panelLabel(p) + ' panel');
+    });
+    var closeBtn = p.querySelector('[data-ui-close]');
+    if (closeBtn) closeBtn.addEventListener('click', function () { closePanel(p); });
+  });
+  if (hideAllBtn) hideAllBtn.addEventListener('click', function () {
+    if (document.body.classList.contains('ui-all-hidden')) showAllPanels(); else hideAllPanels();
+  });
+  window.addEventListener('keydown', function (e) {
+    if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if (e.key === 'h' || e.key === 'H') {
+      if (document.body.classList.contains('ui-all-hidden')) showAllPanels(); else hideAllPanels();
+    }
+  });
+  syncRestoreBar();
+
   function setStep(n) {
     var s = STEPS[n];
     if (!s) return;
@@ -86,7 +167,7 @@
       b.classList.toggle('active', on);
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    if (typeof goTo === 'function') goTo(s.az, s.el, s.dist, s.lookY);
+    if (typeof goTo === 'function' && typeof target !== 'undefined') goTo(s.az, s.el, s.dist, s.lookY);
   }
 
   stepBtns.forEach(function (b) {
@@ -110,7 +191,7 @@
     seriesLink.href = '../series/' + s[2];
     seriesLink.textContent = 'Open the ' + s[1] + ' series page →';
     seriesLink.hidden = false;
-    if (fromChip && typeof focusOrb === 'function') focusOrb(Number(s[0]));
+    if (fromChip && typeof focusOrb === 'function' && typeof orbs !== 'undefined') focusOrb(Number(s[0]));
   }
 
   // ---- WebGL availability: honest fallback, full 2D tour still works ----
