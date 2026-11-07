@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VR Tour — AGI Future Foundation</title>
+<meta name="description" content="A guided VR entry to the AGI Future Foundation: see the mission, explore the 33 proposed W3 series, and learn how to support the mission. Works in a VR headset, a desktop browser, or on a phone.">
+<meta property="og:title" content="VR Tour — AGI Future Foundation">
+<meta property="og:description" content="Three steps: see the mission, explore the 33 proposed series, support the mission. Headset, desktop, or mobile.">
+<style>
+:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px}
+*{box-sizing:border-box}img,video{max-width:100%;height:auto}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+header.top{background:var(--navy);color:#fff;padding:1rem 0}
+.top .wrap{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.top nav a{color:#fff;text-decoration:none;display:inline-block;padding:.7rem .8rem;min-height:44px}
+.top nav a:hover{text-decoration:underline}
+.top nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:4px}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:2.5rem 0}
+.hero h1{font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.15;margin:.25rem 0}
+.hero p{max-width:720px;color:#dbe6f5}
+.eyebrow{color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
+.btn{display:inline-block;background:var(--gold);color:#111;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;margin:.25rem .75rem .25rem 0;min-height:44px;border:1px solid transparent;cursor:pointer;font-size:1rem}
+.btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.btn.teal{background:var(--teal);color:#fff}
+section{padding:2rem 0}
+h2{font-size:1.6rem;line-height:1.25;margin:0 0 1rem}
+.banner{background:#fff8e1;border:1px solid #e6c200;border-radius:12px;padding:1rem}
+.mode-row{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.mode-badge{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.04em;padding:.4rem .8rem;border-radius:999px;border:1px solid var(--teal);color:var(--teal);background:#fff}
+#vr-stage{position:relative;background:var(--navy);border-radius:var(--radius);overflow:hidden;height:min(72vh,620px);min-height:380px}
+#vr-canvas{display:block;width:100%;height:100%;touch-action:none}
+#guide-panel{position:absolute;left:1rem;right:1rem;bottom:1rem;background:rgba(11,30,58,.92);color:#fff;border:1px solid var(--gold);border-radius:12px;padding:1rem 1.25rem}
+#guide-panel h2{font-size:1.15rem;margin:0 0 .35rem;color:var(--gold-bright)}
+#guide-panel p{margin:0;font-size:.98rem;color:#e6eef8}
+#guide-panel .guide-who{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-bright);font-weight:700}
+.step-row{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.step-btn{flex:1;min-width:180px;text-align:left;background:var(--surface);border:2px solid var(--line);border-radius:var(--radius);padding:.9rem 1rem;cursor:pointer;font:inherit;color:var(--ink)}
+.step-btn strong{display:block;font-size:1.02rem}
+.step-btn small{color:var(--ink-2)}
+.step-btn.active{border-color:var(--gold);background:#fffaf0}
+.step-btn:focus-visible,.chip:focus-visible,.btn:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+#series-chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:.75rem 0}
+.chip{background:#fff;border:1px solid var(--teal);color:var(--teal);border-radius:999px;padding:.45rem .8rem;min-height:40px;cursor:pointer;font:inherit;font-size:.9rem}
+.chip:hover{background:#eef8f7}
+#series-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;margin-top:1rem}
+#webgl-fallback{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem}
+#webgl-fallback ol{margin:.5rem 0}
+#webgl-fallback .fallback-series{columns:2;column-gap:2rem;font-size:.95rem}
+#webgl-fallback .fallback-series li{break-inside:avoid}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+footer{background:var(--navy);color:#cbd5e1;padding:2rem 0}
+footer a{color:#fff}
+small{color:var(--ink-2)}
+#vr-status{font-size:.95rem}
+@media(max-width:640px){
+  #vr-stage{height:62vh;min-height:340px}
+  #guide-panel{left:.5rem;right:.5rem;bottom:.5rem;padding:.8rem}
+  #webgl-fallback .fallback-series{columns:1}
+  section{padding:1.5rem 0}
+}
+@media (prefers-reduced-motion: reduce){
+  *{scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+<a href="#main" style="position:absolute;left:-9999px">Skip to content</a>
+<header class="top"><div class="wrap"><strong>AGI Future Foundation PBC</strong><nav aria-label="Site sections"><a href="../index.html">Home</a><a href="../series/index.html">Series</a><a href="../projects/index.html">Projects</a><a href="../governance/index.html">Governance</a><a href="../get-involved/index.html">Get Involved</a><a href="index.html" aria-current="page">VR Tour</a></nav></div></header>
+<main id="main">
+<section class="hero"><div class="wrap">
+<p class="eyebrow">Guided VR entry &middot; IWSDK-patterned</p>
+<h1>Walk the mission in three steps</h1>
+<p>A guided entry to the Foundation: see the mission, explore the 33 proposed W3 series, and learn how to support the mission. No headset required — the same tour works on a phone or in a desktop browser.</p>
+<div class="mode-row" aria-label="Three ways to take the tour">
+<span class="mode-badge">🥽 VR headset — WebXR, where supported</span>
+<span class="mode-badge">🖥️ Desktop — drag, scroll, arrow keys</span>
+<span class="mode-badge">📱 Mobile — drag, tap, pinch</span>
+</div>
+<p><button class="btn" id="enter-vr" type="button" disabled>Enter VR — checking for a headset…</button>
+<a class="btn ghost" href="#tour">Take the tour without a headset ↓</a></p>
+<p id="vr-status" role="status">Checking this browser for WebGL and headset support…</p>
+</div></section>
+
+<section id="tour"><div class="wrap">
+<h2>Your guide: the Steward Guide</h2>
+<p>The gold figure waiting at the entrance is the <strong>Steward Guide</strong> — an illustrated guide, not a real person. It walks you through three steps and stays with you: every stop explains itself in plain language, and every series orb opens its own page. Agents operate and people govern here too — nothing in this tour signs, moves funds, or commits the Foundation.</p>
+
+<div id="vr-stage">
+<canvas id="vr-canvas" aria-label="Interactive 3D tour of the Foundation: a gold mission beacon at the centre, a ring of 33 teal orbs for the proposed series, and three guide gates. Drag to look around; tap or click an orb to open a series."></canvas>
+<div id="guide-panel" aria-live="polite">
+<p class="guide-who">✦ Steward Guide</p>
+<h2 id="guide-title">Step 1 — See the mission</h2>
+<p id="guide-body">Loading the tour…</p>
+</div>
+</div>
+
+<div class="step-row" role="group" aria-label="Guided path">
+<button class="step-btn active" type="button" data-step="1" aria-pressed="true"><strong>1 · See the mission</strong><small>The gold beacon: safe, equitable, socially beneficial AI.</small></button>
+<button class="step-btn" type="button" data-step="2" aria-pressed="false"><strong>2 · Explore the 33 series</strong><small>Tap an orb — each proposed series opens its own page.</small></button>
+<button class="step-btn" type="button" data-step="3" aria-pressed="false"><strong>3 · Support the mission</strong><small>Donations and grants only. No tax-deductible claim.</small></button>
+</div>
+
+<div id="webgl-fallback" hidden>
+<h2>2D guided tour — same three steps, no 3D needed</h2>
+<p>Your browser could not start WebGL, so here is the whole tour as plain text and links. Nothing is lost: the mission, the series, and the support step are all below.</p>
+<ol>
+<li><strong>Step 1 — See the mission.</strong> The Foundation exists for safe, equitable, socially beneficial AI: the Fiduciary Shield, Open Global Investment, and the Windfall Clause, working as one system to replace the incentive for conflict with a mechanism for shared prosperity.</li>
+<li><strong>Step 2 — Explore the 33 proposed series.</strong> Each name below opens its series page. These series are proposed, not formed, funded, or offered.
+<ol class="fallback-series">
+<li><a href="../series/S01-cognition-x.html">S01 · Cognition.X</a></li>
+<li><a href="../series/S02-empathic-x.html">S02 · Empathic.X</a></li>
+<li><a href="../series/S03-diagnostic-x.html">S03 · Diagnostic.X</a></li>
+<li><a href="../series/S04-curable-x.html">S04 · Curable.X</a></li>
+<li><a href="../series/S05-biopharma-go.html">S05 · BioPharma.Go</a></li>
+<li><a href="../series/S06-blockchain.html">S06 · Blockchain</a></li>
+<li><a href="../series/S07-divine-dao.html">S07 · Divine DAO</a></li>
+<li><a href="../series/S08-locator-x.html">S08 · Locator.X</a></li>
+<li><a href="../series/S09-astrological-x.html">S09 · Astrological.X</a></li>
+<li><a href="../series/S10-smartciti-x.html">S10 · SmartCiti.X</a></li>
+<li><a href="../series/S11-molecular.html">S11 · Molecular.</a></li>
+<li><a href="../series/S12-parking-smart-x.html">S12 · ParkingSmart.X</a></li>
+<li><a href="../series/S13-gonstead-x.html">S13 · Gonstead.X</a></li>
+<li><a href="../series/S14-askdoc-x.html">S14 · AskDoc.X</a></li>
+<li><a href="../series/S15-romanbridge-dao.html">S15 · RomanBridge.DAO</a></li>
+<li><a href="../series/S16-echodawn-dao.html">S16 · EchoDawn DAO</a></li>
+<li><a href="../series/S17-curable-blockchain-dao.html">S17 · Curable.Blockchain DAO</a></li>
+<li><a href="../series/S18-biodao-blockchain.html">S18 · BioDAO.blockchain DAO</a></li>
+<li><a href="../series/S19-moscone-x.html">S19 · Moscone.X</a></li>
+<li><a href="../series/S20-cmmc.html">S20 · CMMC</a></li>
+<li><a href="../series/S21-incubator-dao.html">S21 · Incubator DAO</a></li>
+<li><a href="../series/S22-get-delivery-dao.html">S22 · Get.Delivery DAO</a></li>
+<li><a href="../series/S23-avatar-chat-dao.html">S23 · Avatar.Chat DAO</a></li>
+<li><a href="../series/S24-donatello-dao.html">S24 · Donatello DAO</a></li>
+<li><a href="../series/S25-mypet-ai.html">S25 · Mypet.AI</a></li>
+<li><a href="../series/S26-lyka-dao.html">S26 · Lyka DAO</a></li>
+<li><a href="../series/S27-genomic-dao.html">S27 · Genomic DAO</a></li>
+<li><a href="../series/S28-genome-blockchain.html">S28 · Genome.Blockchain</a></li>
+<li><a href="../series/S29-metaverse-dao.html">S29 · Metaverse DAO</a></li>
+<li><a href="../series/S30-robotics-dao.html">S30 · Robotics DAO</a></li>
+<li><a href="../series/S31-aerospace-dao.html">S31 · Aerospace DAO</a></li>
+<li><a href="../series/S32-solar-dao.html">S32 · Solar DAO</a></li>
+<li><a href="../series/S33-infogurus.html">S33 · InfoGurus</a></li>
+</ol></li>
+<li><strong>Step 3 — Support the mission.</strong> The Foundation takes donations and grants only, in its own account, for charitable purposes. No donation is tax-deductible (no IRS 501(c)(3) determination letter is in the files), and no donation buys a seat, a vote, or a share. Nothing here is an offering of securities. <a href="../get-involved/index.html">Get involved →</a></li>
+</ol>
+</div>
+
+<div id="series-panel">
+<h2>Explore the 33 proposed series</h2>
+<p>Tap a chip — or tap its orb in the scene above — to open that series page. All 33 are <strong>proposed</strong>: named in an internal list of 33 W3 sub-series, not formed, funded, or offered.</p>
+<div id="series-chips"></div>
+<p><strong id="series-name">No series selected yet.</strong><br>
+<a id="series-link" href="../series/index.html" hidden>Open the series page →</a></p>
+<p><small>Keyboard: arrow keys look around, keys 1 / 2 / 3 jump between the three steps. Reduced-motion visitors get the same text panels without camera movement prompts.</small></p>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="banner"><strong>Filed status — read before quoting anything else:</strong> AGI Future Foundation is a California Nonprofit Public Benefit Corporation, Entity No. B20260196664, Articles filed 2026-04-24, SOS approval 2026-04-30, EIN assigned 2026-05-07, principal/mailing 995 Market St AGI Lab -10, San Francisco, CA 94103, agent Mike Rice. No IRS 501(c)(3) determination letter is in the files, so no tax-exempt status and no tax-deductible donations are claimed. The 33 W3 series are proposed, not formed, funded, or offered. Nothing on this site is an offering of securities: no SAFE, equity, price, valuation, cap, discount, minimum, return, or deadline is stated as a term.</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>About this VR entry</h2>
+<div class="grid">
+<div class="card"><h3>IWSDK-patterned, not IWSDK-built</h3><p>This scene follows IWSDK patterns — a session entry button, a local-floor reference space, waypoint gates, and tap-to-select — using a vendored Three.js build (<code>assets/js/vendor/three.min.js</code>, r152). It does not import <code>@iwsdk/core</code> and is not presented as built with IWSDK. A full IWSDK app does not fit this static site.</p></div>
+<div class="card"><h3>Three modes, one tour</h3><p><strong>Headset:</strong> WebXR <code>immersive-vr</code> where the browser reports a headset. <strong>Desktop:</strong> drag to orbit, scroll to zoom, arrow keys and 1/2/3 step keys. <strong>Mobile:</strong> drag, tap-to-select, pinch to zoom, pixel ratio capped for mobile GPUs, buttons do everything the scene does.</p></div>
+<div class="card"><h3>Honest limits</h3><p>This entry was verified on a local dev server in a browser without WebGL, so the 3D render itself still needs a real desktop browser and a real phone to confirm, and the headset path still needs a real Quest. The 2D fallback above is the complete tour when 3D cannot run.</p></div>
+</div>
+<p style="margin-top:1.5rem"><a class="btn teal" href="../index.html">← Back to the Foundation home page</a> <a class="btn ghost" style="color:var(--navy);border-color:var(--navy)" href="../get-involved/index.html">Get involved</a></p>
+</div></section>
+</main>
+<footer><div class="wrap"><p>AGI Future Foundation PBC · Architecting Global AGI Prosperity · <a href="https://www.agifuturefoundation.org/">agifuturefoundation.org</a> · VR Tour — local build, not yet deployed. Nothing on this page is legal, tax, or financial advice, and no signing, membership, or payment is offered here.</p></div></footer>
+<script src="../assets/js/vendor/three.min.js"></script>
+<script src="vr-tour.js"></script>
+</body>
+</html>
