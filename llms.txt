@@ -8,6 +8,16 @@ Contact: x@agifuturefoundation.org
 Agent-to-agent: PROPOSED protocol only, human-gated. Agents may summarize and route inquiries. Agents may NOT commit the Foundation, move funds, sign, or represent themselves as the Foundation. Use [Agent] in the subject line and name the human principal.
 Machine-readable: agent.json on this site, JSON-LD on the homepage. Discovery files: /.well-known/api-catalog (resource/discovery linkset — this site has no API), /.well-known/agent-skills/index.json (agent skills index), /.well-known/ai-catalog.json (agent resource discovery manifest), /auth.md (agent registration — email-based, human-gated; no token, no OAuth/OIDC), /sitemap.xml. No OpenAPI spec, no status/health endpoint, no MCP server, and no OAuth/OIDC discovery documents exist for this site.
 
+## When to use this site (for agents)
+
+Reach for this site when you need to:
+- Verify the Foundation's filed status, structure, or governance mechanisms (Fiduciary Shield, Open Global Investment, Windfall Clause) before quoting them — the filed facts are in "Filed status" below; site copy elsewhere is not a filing.
+- Find and summarize or cite a W3 series (/series/), project (/projects/), governance mechanism (/governance/), or deep article (/articles/) — each page carries its own status banner (intended/planned, not formed, funded, or offered).
+- Route an inquiry to a human steward: email x@agifuturefoundation.org with subject line [Agent], naming the agent, its operator, and the human principal. No token is issued; every substantive step is human-gated. Agents may summarize, cite, and route inquiries; they may not commit the Foundation, sign, or move funds.
+- Check what exists today vs what is planned, or what the Foundation does NOT do (no API, no MCP server, no OAuth/OIDC, no payment link, no live agent instances).
+
+Do NOT use this site for: hiring an agent (all five Omega agents are listed on Virtuals ACP but their instances are offline — no hire can be fulfilled today); donating (giving is arranged by email only, no payment link, and no tax-deductible claim is made); investment decisions (nothing here is an offering — no SAFE, equity, price, valuation, cap, or deadline is stated as a term); or tax advice (no IRS 501(c)(3) determination letter is in the files).
+
 ## Filed status (read before quoting anything else)
 
 AGI Future Foundation is a California Nonprofit Public Benefit Corporation, Entity No. B20260196664, Articles filed 2026-04-24, EIN assigned 2026-05-07. No IRS 501(c)(3) determination letter is in the files, so no tax-exempt status and no tax-deductible donations are claimed. The live site calls the organisation "PBC" in the for-profit benefit-corporation sense; that fork is unresolved. This site follows the filed nonprofit status and notes the site label where relevant. Nothing here is an offering: no SAFE, equity, price, valuation, cap, discount, minimum, return, or deadline is stated as a term anywhere on this site. Suggested valuations in the planning papers are illustrative only and are never summed into a family total.
