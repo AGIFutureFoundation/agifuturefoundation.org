@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330" role="img" aria-label="Bar chart: empathy training effect sizes, Hedges g 0.63 unadjusted and 0.51 after trim-and-fill adjustment for publication bias">
+  <rect width="880" height="330" fill="#f7f5ef"/>
+  <text x="40" y="38" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#1d3557">Empathy training works — and publication bias inflates the headline</text>
+  <text x="40" y="62" font-family="Georgia, serif" font-size="13" fill="#555555">Hedges' g from a meta-analysis of 18 randomised controlled trials (1,018 participants). A g of 0.5 is a medium effect.</text>
+  <g font-family="Georgia, serif" font-size="14" fill="#333333">
+    <text x="40" y="132">Overall effect, as published</text>
+    <rect x="300" y="116" width="315" height="26" fill="#1d3557"/><text x="623" y="134" font-size="15" font-weight="bold" fill="#1d3557">g = 0.63</text>
+    <text x="40" y="192">After trim-and-fill adjustment for publication bias</text>
+    <rect x="300" y="176" width="255" height="26" fill="#457b9d"/><text x="563" y="194" font-size="15" font-weight="bold" fill="#1d3557">g = 0.51</text>
+  </g>
+  <line x1="300" y1="230" x2="800" y2="230" stroke="#999999" stroke-width="1"/>
+  <text x="300" y="252" font-family="Georgia, serif" font-size="12" fill="#666666">0</text>
+  <text x="540" y="252" font-family="Georgia, serif" font-size="12" fill="#666666">0.5 (medium effect)</text>
+  <text x="40" y="292" font-family="Georgia, serif" font-size="13" fill="#1d3557">Even the adjusted figure is a real, medium-sized effect — but it is a training effect, not a personality transplant.</text>
+  <text x="40" y="314" font-family="Georgia, serif" font-size="12" fill="#666666">Data source: Teding van Berkhout &amp; Malouff (2016), Journal of Counseling Psychology, 63(1), 32–41. Longest follow-up in the trials: 6 months.</text>
+</svg>

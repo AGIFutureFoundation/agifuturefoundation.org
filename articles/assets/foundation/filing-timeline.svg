@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="300" viewBox="0 0 880 300" role="img" aria-label="Timeline of the AGI Future Foundation's verified filings in spring 2026">
+  <rect width="880" height="300" fill="#f7f5ef"/>
+  <text x="40" y="38" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#1d3557">AGI Future Foundation — verified filing timeline, spring 2026</text>
+  <text x="40" y="62" font-family="Georgia, serif" font-size="13" fill="#555555">California Nonprofit Public Benefit Corporation, Entity No. B20260196664</text>
+  <line x1="60" y1="160" x2="820" y2="160" stroke="#1d3557" stroke-width="3"/>
+  <g font-family="Georgia, serif" text-anchor="middle">
+    <circle cx="130" cy="160" r="9" fill="#1d3557"/>
+    <text x="130" y="128" font-size="15" font-weight="bold" fill="#1d3557">24 Apr 2026</text>
+    <text x="130" y="196" font-size="13" fill="#333333">Articles of Incorporation</text>
+    <text x="130" y="214" font-size="13" fill="#333333">filed with the California</text>
+    <text x="130" y="232" font-size="13" fill="#333333">Secretary of State</text>
+    <circle cx="360" cy="160" r="9" fill="#457b9d"/>
+    <text x="360" y="128" font-size="15" font-weight="bold" fill="#1d3557">30 Apr 2026</text>
+    <text x="360" y="196" font-size="13" fill="#333333">Secretary of State</text>
+    <text x="360" y="214" font-size="13" fill="#333333">approval (6 days later)</text>
+    <circle cx="600" cy="160" r="9" fill="#457b9d"/>
+    <text x="600" y="128" font-size="15" font-weight="bold" fill="#1d3557">6 May 2026</text>
+    <text x="600" y="196" font-size="13" fill="#333333">San Francisco business</text>
+    <text x="600" y="214" font-size="13" fill="#333333">registration</text>
+    <circle cx="790" cy="160" r="9" fill="#e07a5f"/>
+    <text x="790" y="128" font-size="15" font-weight="bold" fill="#1d3557">7 May 2026</text>
+    <text x="790" y="196" font-size="13" fill="#333333">EIN assigned</text>
+    <text x="790" y="214" font-size="13" fill="#333333">(IRS CP575A)</text>
+  </g>
+  <text x="40" y="282" font-family="Georgia, serif" font-size="12" fill="#666666">Data source: Foundation filing documents reviewed 2026-11-03 (Articles, SOS approval, SF registration, IRS CP575A). No IRS 501(c)(3) determination letter is on file.</text>
+</svg>

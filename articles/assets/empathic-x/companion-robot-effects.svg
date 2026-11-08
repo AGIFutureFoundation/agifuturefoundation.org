@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360" role="img" aria-label="Chart: pooled effect sizes for companion robots in older adults — loneliness SMD minus 0.59 and agitation SMD minus 0.32; negative means improvement">
+  <rect width="880" height="360" fill="#f7f5ef"/>
+  <text x="40" y="38" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#1d3557">What pooled studies say companion robots do — and do not do</text>
+  <text x="40" y="62" font-family="Georgia, serif" font-size="13" fill="#555555">Standardised mean differences (SMD). Negative values mean improvement. Bars show the pooled estimate; whiskers show the 95% confidence interval.</text>
+  <line x1="440" y1="90" x2="440" y2="250" stroke="#999999" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="440" y="270" font-family="Georgia, serif" font-size="12" fill="#666666" text-anchor="middle">0 (no effect)</text>
+  <g font-family="Georgia, serif" font-size="14" fill="#333333">
+    <text x="40" y="132">Loneliness (19 studies, 1,083 people)</text>
+    <rect x="263" y="116" width="177" height="24" fill="#1d3557"/>
+    <line x1="164" y1="128" x2="362" y2="128" stroke="#1d3557" stroke-width="2"/>
+    <text x="40" y="160" font-size="13" fill="#555555">SMD −0.59, 95% CI −0.92 to −0.26</text>
+    <text x="40" y="212">Agitation (2 PARO trials)</text>
+    <rect x="344" y="196" width="96" height="24" fill="#457b9d"/>
+    <line x1="257" y1="208" x2="428" y2="208" stroke="#457b9d" stroke-width="2"/>
+    <text x="40" y="240" font-size="13" fill="#555555">SMD −0.32, 95% CI −0.61 to −0.04</text>
+  </g>
+  <text x="40" y="300" font-family="Georgia, serif" font-size="13" fill="#1d3557">Loneliness improves in the pooled data; for depression and quality of life the pooled results were not statistically significant.</text>
+  <text x="40" y="322" font-family="Georgia, serif" font-size="12" fill="#666666">Data sources: Mehrabi &amp; Ghezelbash (2025), The Gerontologist (loneliness); Abbott et al. (2019) systematic review of 19 studies (agitation).</text>
+  <text x="40" y="342" font-family="Georgia, serif" font-size="12" fill="#666666">Note: the loneliness meta-analysis found evidence of publication bias; trials run for weeks, not years.</text>
+</svg>

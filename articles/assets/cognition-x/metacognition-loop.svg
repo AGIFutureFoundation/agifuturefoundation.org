@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460" role="img" aria-labelledby="t d">
+<title id="t">The Nelson and Narens metacognition loop: monitoring flows up, control flows down</title>
+<desc id="d">Two stacked boxes. The upper box is the meta-level: it holds judgments such as ease-of-learning, judgments of learning, and feeling of knowing. The lower box is the object-level: the task itself, for example reading, solving, or recalling. An arrow labelled monitoring runs from the object-level up to the meta-level; an arrow labelled control runs from the meta-level down to the object-level. Control actions listed: planning, choosing strategies, allocating study time, deciding when to stop.</desc>
+<rect width="860" height="460" fill="#f6f7f9"/>
+<text x="30" y="34" font-family="system-ui, sans-serif" font-size="19" font-weight="700" fill="#0b1e3a">The metacognition loop (Nelson &amp; Narens, 1990)</text>
+<text x="30" y="56" font-family="system-ui, sans-serif" font-size="13" fill="#5b6b7d">Simplified diagram based on Nelson &amp; Narens (1990). Monitoring informs the meta-level; control steers the object-level.</text>
+<rect x="180" y="80" width="500" height="120" rx="12" fill="#0b1e3a"/>
+<text x="430" y="112" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" font-weight="700" fill="#ffffff">META-LEVEL — thinking about the thinking</text>
+<text x="430" y="140" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#dbe6f5">Judgments: ease of learning · judgments of learning · feeling of knowing</text>
+<text x="430" y="166" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#dbe6f5">Confidence in what is known — and in what is not</text>
+<text x="180" y="330" width="500" height="120" rx="12" fill="#ffffff" stroke="#0b1e3a" stroke-width="2"/>
+<text x="430" y="362" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" font-weight="700" fill="#0b1e3a">OBJECT-LEVEL — the task itself</text>
+<text x="430" y="390" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#14202e">Reading · solving · recalling · practising</text>
+<text x="430" y="416" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#14202e">The work that gets done — and the errors it produces</text>
+<g font-family="system-ui, sans-serif" font-size="15" font-weight="700">
+<line x1="250" y1="320" x2="250" y2="210" stroke="#0e7c7b" stroke-width="3" marker-end="url(#up)"/>
+<text x="238" y="262" text-anchor="end" fill="#0e7c7b">MONITORING ↑</text>
+<text x="238" y="282" text-anchor="end" font-size="12" font-weight="400" fill="#5b6b7d">“How well is this going?”</text>
+<line x1="610" y1="210" x2="610" y2="320" stroke="#c9a227" stroke-width="3" marker-end="url(#down)"/>
+<text x="622" y="262" fill="#8a6d00">CONTROL ↓</text>
+<text x="622" y="282" font-size="12" font-weight="400" fill="#5b6b7d">“Change strategy, restudy, stop.”</text>
+</g>
+<defs>
+<marker id="up" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,10 L5,0 L10,10 Z" fill="#0e7c7b"/></marker>
+<marker id="down" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L5,10 L10,0 Z" fill="#c9a227"/></marker>
+</defs>
+</svg>

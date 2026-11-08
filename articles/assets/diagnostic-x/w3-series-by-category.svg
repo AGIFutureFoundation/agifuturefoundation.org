@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-label="Bar chart: the 33 named W3 sub-series grouped by the Foundation site's eight article categories. Health and Life Sciences has 10, Community Learning and Culture has 7, and the other six categories have 3, 3, 3, 3, 3 and 1.">
+  <rect width="760" height="420" fill="#f6f7f9"/>
+  <text x="30" y="34" font-family="system-ui, sans-serif" font-size="17" font-weight="700" fill="#0b1e3a">The 33 named W3 sub-series, by Foundation site category</text>
+  <text x="30" y="56" font-family="system-ui, sans-serif" font-size="12" fill="#5b6b7d">Counted from the Foundation site's own eight article-category pages (articles 01–44), mapping each series to its article's category.</text>
+  <g font-family="system-ui, sans-serif" font-size="13" fill="#14202e">
+    <text x="30" y="96">Health &amp; Life Sciences</text>
+    <rect x="260" y="82" width="420" height="20" fill="#0e7c7b"/><text x="688" y="97" font-weight="700">10</text>
+    <text x="30" y="132">Community, Learning &amp; Culture</text>
+    <rect x="260" y="118" width="294" height="20" fill="#123a6b"/><text x="562" y="133" font-weight="700">7</text>
+    <text x="30" y="168">Intelligence &amp; Mind</text>
+    <rect x="260" y="154" width="126" height="20" fill="#c9a227"/><text x="394" y="169" font-weight="700">3</text>
+    <text x="30" y="204">Metaverse &amp; Spatial</text>
+    <rect x="260" y="190" width="126" height="20" fill="#123a6b"/><text x="394" y="205" font-weight="700">3</text>
+    <text x="30" y="240">Robotics &amp; Physical AI</text>
+    <rect x="260" y="226" width="126" height="20" fill="#0e7c7b"/><text x="394" y="241" font-weight="700">3</text>
+    <text x="30" y="276">Governance &amp; Law</text>
+    <rect x="260" y="262" width="126" height="20" fill="#123a6b"/><text x="394" y="277" font-weight="700">3</text>
+    <text x="30" y="312">Cities, Energy &amp; Infrastructure</text>
+    <rect x="260" y="298" width="126" height="20" fill="#0e7c7b"/><text x="394" y="313" font-weight="700">3</text>
+    <text x="30" y="348">Finance &amp; the Studio</text>
+    <rect x="260" y="334" width="42" height="20" fill="#c9a227"/><text x="310" y="349" font-weight="700">1</text>
+  </g>
+  <text x="30" y="392" font-family="system-ui, sans-serif" font-size="12" fill="#5b6b7d">Total: 33 named sub-series (April 2026 internal W3 list). Diagnostic.X (Series 3) sits in Health &amp; Life Sciences — the largest group.</text>
+</svg>

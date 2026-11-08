@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="520" viewBox="0 0 860 520" role="img" aria-labelledby="t d">
+<title id="t">Simplified ACT-R schematic: modules, buffers, and the production system</title>
+<desc id="d">Simplified schematic based on the ACT-R description: a central procedural module holds productions; around it sit the visual, manual, declarative memory, goal, imaginal, and aural modules. Each module is reached through a buffer. One production fires at a time, matching the contents of the buffers and changing the state of the system.</desc>
+<rect width="860" height="520" fill="#f6f7f9"/>
+<text x="30" y="34" font-family="system-ui, sans-serif" font-size="19" font-weight="700" fill="#0b1e3a">ACT-R, simplified: modules, buffers, one production at a time</text>
+<text x="30" y="56" font-family="system-ui, sans-serif" font-size="13" fill="#5b6b7d">Simplified schematic based on the ACT-R description (Anderson &amp; Lebiere, Carnegie Mellon). Not the official diagram.</text>
+<circle cx="430" cy="280" r="105" fill="#0b1e3a"/>
+<text x="430" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">PROCEDURAL</text>
+<text x="430" y="284" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">MEMORY</text>
+<text x="430" y="308" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#dbe6f5">productions: if–then rules</text>
+<text x="430" y="328" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#dbe6f5">one fires at a time</text>
+<g font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#14202e">
+<g><rect x="300" y="80" width="260" height="56" rx="10" fill="#ffffff" stroke="#0e7c7b" stroke-width="2"/><text x="430" y="104" text-anchor="middle">VISUAL MODULE</text><text x="430" y="124" text-anchor="middle" font-size="12" font-weight="400" fill="#5b6b7d">seeing the world · visual buffer</text></g>
+<g><rect x="620" y="180" width="210" height="56" rx="10" fill="#ffffff" stroke="#0e7c7b" stroke-width="2"/><text x="725" y="204" text-anchor="middle">MANUAL MODULE</text><text x="725" y="224" text-anchor="middle" font-size="12" font-weight="400" fill="#5b6b7d">acting · manual buffer</text></g>
+<g><rect x="620" y="330" width="210" height="56" rx="10" fill="#ffffff" stroke="#0e7c7b" stroke-width="2"/><text x="725" y="354" text-anchor="middle">DECLARATIVE MEMORY</text><text x="725" y="374" text-anchor="middle" font-size="12" font-weight="400" fill="#5b6b7d">facts · chunks · retrieval buffer</text></g>
+<g><rect x="300" y="420" width="260" height="56" rx="10" fill="#ffffff" stroke="#0e7c7b" stroke-width="2"/><text x="430" y="444" text-anchor="middle">GOAL MODULE</text><text x="430" y="464" text-anchor="middle" font-size="12" font-weight="400" fill="#5b6b7d">current intention · goal buffer</text></g>
+<g><rect x="30" y="330" width="210" height="56" rx="10" fill="#ffffff" stroke="#0e7c7b" stroke-width="2"/><text x="135" y="354" text-anchor="middle">IMAGINAL MODULE</text><text x="135" y="374" text-anchor="middle" font-size="12" font-weight="400" fill="#5b6b7d">mental imagery · imaginal buffer</text></g>
+<g><rect x="30" y="180" width="210" height="56" rx="10" fill="#ffffff" stroke="#0e7c7b" stroke-width="2"/><text x="135" y="204" text-anchor="middle">AURAL MODULE</text><text x="135" y="224" text-anchor="middle" font-size="12" font-weight="400" fill="#5b6b7d">hearing · aural buffer</text></g>
+</g>
+<g stroke="#c9a227" stroke-width="2">
+<line x1="430" y1="175" x2="430" y2="136"/>
+<line x1="535" y1="280" x2="620" y2="208"/>
+<line x1="535" y1="280" x2="620" y2="358"/>
+<line x1="430" y1="385" x2="430" y2="420"/>
+<line x1="325" y1="280" x2="240" y2="358"/>
+<line x1="325" y1="280" x2="240" y2="208"/>
+</g>
+<text x="430" y="505" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#5b6b7d">Each module is reached only through its buffer. The buffers, taken together, are the state of the mind at that moment.</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" role="img" aria-label="Bar chart: the 33 named W3 sub-series grouped by the Foundation site's eight categories">
+  <rect width="880" height="470" fill="#f7f5ef"/>
+  <text x="40" y="38" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#1d3557">The 33 named W3 sub-series, by the site's eight categories</text>
+  <text x="40" y="62" font-family="Georgia, serif" font-size="13" fill="#555555">Empathic.X sits in Intelligence &amp; Mind, the smallest category alongside two others. All 33 are planned, not formed.</text>
+  <g font-family="Georgia, serif" font-size="14" fill="#333333">
+    <text x="40" y="112">Intelligence &amp; Mind (incl. Empathic.X, S02)</text>
+    <rect x="330" y="96" width="108" height="22" fill="#c9a227"/><text x="446" y="113" font-size="14" font-weight="bold" fill="#1d3557">3</text>
+    <text x="40" y="152">Health &amp; Life Sciences</text>
+    <rect x="330" y="136" width="360" height="22" fill="#457b9d"/><text x="698" y="153" font-size="14" font-weight="bold" fill="#1d3557">10</text>
+    <text x="40" y="192">Metaverse &amp; Spatial</text>
+    <rect x="330" y="176" width="108" height="22" fill="#1d3557"/><text x="446" y="193" font-size="14" font-weight="bold" fill="#1d3557">3</text>
+    <text x="40" y="232">Robotics &amp; Physical AI</text>
+    <rect x="330" y="216" width="108" height="22" fill="#457b9d"/><text x="446" y="233" font-size="14" font-weight="bold" fill="#1d3557">3</text>
+    <text x="40" y="272">Governance &amp; Law</text>
+    <rect x="330" y="256" width="108" height="22" fill="#1d3557"/><text x="446" y="273" font-size="14" font-weight="bold" fill="#1d3557">3</text>
+    <text x="40" y="312">Finance &amp; the Studio</text>
+    <rect x="330" y="296" width="36" height="22" fill="#457b9d"/><text x="374" y="313" font-size="14" font-weight="bold" fill="#1d3557">1</text>
+    <text x="40" y="352">Cities, Energy &amp; Infrastructure</text>
+    <rect x="330" y="336" width="108" height="22" fill="#1d3557"/><text x="446" y="353" font-size="14" font-weight="bold" fill="#1d3557">3</text>
+    <text x="40" y="392">Community, Learning &amp; Culture</text>
+    <rect x="330" y="376" width="252" height="22" fill="#457b9d"/><text x="590" y="393" font-size="14" font-weight="bold" fill="#1d3557">7</text>
+  </g>
+  <text x="40" y="430" font-family="Georgia, serif" font-size="13" font-weight="bold" fill="#1d3557">Total: 33 named sub-series (3 + 10 + 3 + 3 + 3 + 1 + 3 + 7)</text>
+  <text x="40" y="452" font-family="Georgia, serif" font-size="12" fill="#666666">Data source: W3_LLC.pdf, April 2026 internal list, cross-checked against the Foundation site's eight category pages (agifuturefoundation.org).</text>
+</svg>
