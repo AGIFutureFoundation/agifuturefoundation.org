@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>33-Series Explorer — AGI Future Foundation</title>
+<meta name="description" content="Filterable explorer for the 33 named W3 sub-series in the April 2026 internal list. Planned, not formed, funded, or offered.">
+<style>
+:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:2rem 0}
+h1{font-size:clamp(1.6rem,4vw,2rem);line-height:1.25;margin:.25rem 0 .5rem}
+h2{font-size:1.25rem;margin:0 0 .5rem}
+.eyebrow{color:var(--teal);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
+.banner{background:#fff8e1;border:1px solid #e6c200;border-radius:12px;padding:1rem;margin:1rem 0}
+.banner p{margin:.25rem 0}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.filter-btn{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:.6rem 1rem;min-height:44px;font:inherit;font-size:.95rem;cursor:pointer}
+.filter-btn:hover{border-color:var(--teal)}
+.filter-btn[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:700}
+.filter-btn .count{font-weight:700;opacity:.8}
+.search-row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:1rem 0}
+.search-row label{font-weight:700}
+.search-row input[type="search"]{flex:1;min-width:min(100%,16rem);min-height:44px;padding:.6rem .8rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--surface);color:var(--ink)}
+.result-count{font-weight:700;margin:.5rem 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;display:flex;flex-direction:column}
+.card:hover{border-color:var(--teal)}
+.card h3{margin:.25rem 0 .5rem;font-size:1.15rem}
+.card h3 a{color:var(--ink);text-decoration:none}
+.card h3 a:hover,.card h3 a:focus-visible{text-decoration:underline;color:var(--link)}
+.card p{margin:.25rem 0}
+.card .tag{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.card .num{font-weight:800;color:var(--navy)}
+.card .status{font-size:.9rem;color:var(--ink-2)}
+.card .anchor{font-size:.85rem;color:var(--teal);font-weight:700}
+.card .spacer{flex:1}
+.card .card-link{font-weight:700;display:inline-block;padding:.4rem 0;min-height:44px;line-height:1.4}
+.empty{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;text-align:center}
+.empty button{appearance:none;border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:999px;padding:.6rem 1.2rem;min-height:44px;font:inherit;cursor:pointer;margin-top:.75rem}
+.note{font-size:.95rem;color:var(--ink-2)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main id="main"><div class="wrap">
+<section aria-labelledby="explorer-title">
+<p class="eyebrow">W3 LLC &middot; Wyoming Series &middot; Planned, not formed</p>
+<h1 id="explorer-title">Explore the 33 planned series</h1>
+<p>Thirty-three named sub-series in the April 2026 internal W3 list. Every series is <strong>intended / planned &mdash; not formed, funded, or offered</strong>. Categories below are the site&rsquo;s own article categories, taken from the Foundation site&rsquo;s article category pages.</p>
+<div class="banner" role="note"><p><strong>Status &mdash; read first.</strong> The source for every name and number here is the April 2026 internal W3 series list: a three-page internal printout dated 2026-04-03, <strong>not</strong> a Wyoming Secretary of State filing. It proves no SOS filing, no legal designation, no bank account, no EIN, and no Steward Council per series. Quote it as: &ldquo;33 named W3 sub-series in the April 2026 internal list.&rdquo;</p></div>
+
+<div class="controls" role="group" aria-label="Filter series by category" id="filters"></div>
+
+<div class="search-row">
+<label for="series-search">Search series</label>
+<input type="search" id="series-search" placeholder="Try &ldquo;robotics&rdquo;, &ldquo;S10&rdquo;, or &ldquo;genome&rdquo;" autocomplete="off" aria-describedby="result-count">
+<button class="filter-btn" type="button" id="clear-search">Clear</button>
+</div>
+
+<p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+<div class="grid" id="series-grid"></div>
+<div class="empty" id="empty-state" hidden>
+<p><strong>No series match.</strong> Try a different search term or category.</p>
+<button type="button" id="reset-filters">Show all 33 series</button>
+</div>
+
+<p class="note"><strong>Note on S10 SmartCiti.X:</strong> SmartCiti.X sits in <em>Cities, Energy &amp; Infrastructure</em> &mdash; it is <strong>not</strong> a Robotics series. SmartCiti.X is also proposed as a separate new corporation (SmartCiti.X, Inc.) &mdash; proposed, not formed, funded, or offered. That proposal is separate from this W3 series listing.</p>
+<p class="note"><strong>Anchored</strong> means a metaverse fabric for the series is published with verified coordinates, but the assets it references are not hosted, so it does not render fully yet. Anchored is not the same as live. Four series are anchored: S01, S02, S03, and S08.</p>
+<p class="note">Every card links to its real series page on agifuturefoundation.org. Nothing here is an offer to sell securities, an invitation to invest, or a solicitation of funds. Nothing on this page is legal, tax, or financial advice.</p>
+</section>
+</div></main>
+<script>
+(function(){
+"use strict";
+/* Data: names, numbers, one-line focuses and links are from series/index.html
+   and the individual series pages. Categories are the site's own article
+   categories, from articles/category-1..8-*.html. Counts verified:
+   3 / 10 / 3 / 3 / 3 / 1 / 3 / 7 = 33. */
+var BASE="https://www.agifuturefoundation.org/series/";
+var CATEGORIES=[
+ {id:"intelligence-mind",label:"Intelligence & Mind"},
+ {id:"health-life",label:"Health & Life Sciences"},
+ {id:"metaverse-spatial",label:"Metaverse & Spatial"},
+ {id:"robotics-physical",label:"Robotics & Physical AI"},
+ {id:"governance-law",label:"Governance & Law"},
+ {id:"finance-studio",label:"Finance & Studio"},
+ {id:"cities-energy",label:"Cities, Energy & Infrastructure"},
+ {id:"community-culture",label:"Community & Culture"}
+];
+var SERIES=[
+ {n:1, name:"Cognition.X", slug:"S01-cognition-x.html", cat:"intelligence-mind", anchored:true, focus:"Learning and understanding; Flow Zone education, as stated on the Foundation site."},
+ {n:2, name:"Empathic.X", slug:"S02-empathic-x.html", cat:"intelligence-mind", anchored:true, focus:"Empathy and human-centred interaction — planned domain."},
+ {n:3, name:"Diagnostic.X", slug:"S03-diagnostic-x.html", cat:"health-life", anchored:true, focus:"AI diagnostics under a safety mandate, as summarised on the Foundation site."},
+ {n:4, name:"Curable.X", slug:"S04-curable-x.html", cat:"health-life", anchored:false, focus:"Curative, treatment-focused work — planned domain."},
+ {n:5, name:"BioPharma.Go", slug:"S05-biopharma-go.html", cat:"health-life", anchored:false, focus:"Biopharmaceutical work — planned domain."},
+ {n:6, name:"Blockchain", slug:"S06-blockchain.html", cat:"governance-law", anchored:false, focus:"Blockchain ledger and coordination infrastructure — planned domain."},
+ {n:7, name:"Divine DAO", slug:"S07-divine-dao.html", cat:"community-culture", anchored:false, focus:"A DAO concerned with meaning, community, and the sacred — planned domain."},
+ {n:8, name:"Locator.X", slug:"S08-locator-x.html", cat:"metaverse-spatial", anchored:true, focus:"Location, finding, and navigation — planned domain."},
+ {n:9, name:"Astrological.X", slug:"S09-astrological-x.html", cat:"community-culture", anchored:false, focus:"Astrology-related work — planned domain, name-implied only."},
+ {n:10, name:"SmartCiti.X", slug:"S10-smartciti-x.html", cat:"cities-energy", anchored:false, focus:"City-scale learning, training, and robotics — planned domain."},
+ {n:11, name:"Molecular.", slug:"S11-molecular.html", cat:"health-life", anchored:false, focus:"Molecular-scale work — planned domain, name-implied only."},
+ {n:12, name:"ParkingSmart.X", slug:"S12-parking-smart-x.html", cat:"cities-energy", anchored:false, focus:"Finding and using parking and places — planned domain."},
+ {n:13, name:"Gonstead.X", slug:"S13-gonstead-x.html", cat:"health-life", anchored:false, focus:"Gonstead-related work — planned domain, name-implied only."},
+ {n:14, name:"AskDoc.X", slug:"S14-askdoc-x.html", cat:"health-life", anchored:false, focus:"Clinical questions and guidance — planned domain."},
+ {n:15, name:"RomanBridge.DAO", slug:"S15-romanbridge-dao.html", cat:"governance-law", anchored:false, focus:"A DAO named RomanBridge — planned domain, name-implied only."},
+ {n:16, name:"EchoDawn DAO", slug:"S16-echodawn-dao.html", cat:"community-culture", anchored:false, focus:"A DAO named EchoDawn — planned domain, name-implied only."},
+ {n:17, name:"Curable.Blockchain DAO", slug:"S17-curable-blockchain-dao.html", cat:"health-life", anchored:false, focus:"Blockchain in a curative context — planned domain."},
+ {n:18, name:"BioDAO.blockchain DAO", slug:"S18-biodao-blockchain.html", cat:"health-life", anchored:false, focus:"Blockchain in a biomedical context — planned domain."},
+ {n:19, name:"Moscone.X", slug:"S19-moscone-x.html", cat:"community-culture", anchored:false, focus:"Moscone-related work — planned domain, name-implied only."},
+ {n:20, name:"CMMC", slug:"S20-cmmc.html", cat:"governance-law", anchored:false, focus:"CMMC-related work — planned domain, name-implied only."},
+ {n:21, name:"Incubator DAO", slug:"S21-incubator-dao.html", cat:"finance-studio", anchored:false, focus:"An incubator DAO — planned domain, name-implied only."},
+ {n:22, name:"Get.Delivery DAO", slug:"S22-get-delivery-dao.html", cat:"robotics-physical", anchored:false, focus:"Delivery and moving things to people — planned domain."},
+ {n:23, name:"Avatar.Chat DAO", slug:"S23-avatar-chat-dao.html", cat:"metaverse-spatial", anchored:false, focus:"Avatar-based conversation — planned domain."},
+ {n:24, name:"Donatello DAO", slug:"S24-donatello-dao.html", cat:"community-culture", anchored:false, focus:"A DAO named Donatello — planned domain, name-implied only."},
+ {n:25, name:"Mypet.AI", slug:"S25-mypet-ai.html", cat:"community-culture", anchored:false, focus:"Pet-related AI — planned domain, name-implied only."},
+ {n:26, name:"Lyka DAO", slug:"S26-lyka-dao.html", cat:"community-culture", anchored:false, focus:"A DAO named Lyka — planned domain, name-implied only."},
+ {n:27, name:"Genomic DAO", slug:"S27-genomic-dao.html", cat:"health-life", anchored:false, focus:"Genomics — planned domain, name-implied only."},
+ {n:28, name:"Genome.Blockchain", slug:"S28-genome-blockchain.html", cat:"health-life", anchored:false, focus:"Blockchain in a genomic context — planned domain."},
+ {n:29, name:"Metaverse DAO", slug:"S29-metaverse-dao.html", cat:"metaverse-spatial", anchored:false, focus:"Metaverse coordination — planned domain."},
+ {n:30, name:"Robotics DAO", slug:"S30-robotics-dao.html", cat:"robotics-physical", anchored:false, focus:"Robotics and physical AI — planned domain."},
+ {n:31, name:"Aerospace DAO", slug:"S31-aerospace-dao.html", cat:"robotics-physical", anchored:false, focus:"Aerospace — planned domain, name-implied only."},
+ {n:32, name:"Solar DAO", slug:"S32-solar-dao.html", cat:"cities-energy", anchored:false, focus:"Solar energy — planned domain, name-implied only."},
+ {n:33, name:"InfoGurus", slug:"S33-infogurus.html", cat:"intelligence-mind", anchored:false, focus:"Knowledge organisation and retrieval — planned domain."}
+];
+var filtersEl=document.getElementById("filters");
+var gridEl=document.getElementById("series-grid");
+var countEl=document.getElementById("result-count");
+var emptyEl=document.getElementById("empty-state");
+var searchEl=document.getElementById("series-search");
+var activeCat="all";
+var query="";
+
+function catLabel(id){
+  for(var i=0;i<CATEGORIES.length;i++){if(CATEGORIES[i].id===id){return CATEGORIES[i].label;}}
+  return "";
+}
+function catCount(id){
+  var c=0;
+  for(var i=0;i<SERIES.length;i++){if(SERIES[i].cat===id){c++;}}
+  return c;
+}
+function pad(n){return n<10?"0"+n:String(n);}
+
+function buildFilters(){
+  var all=document.createElement("button");
+  all.type="button";
+  all.className="filter-btn";
+  all.setAttribute("aria-pressed","true");
+  all.dataset.cat="all";
+  all.innerHTML='All series <span class="count">(33)</span>';
+  all.addEventListener("click",function(){setCategory("all");});
+  filtersEl.appendChild(all);
+  CATEGORIES.forEach(function(c){
+    var b=document.createElement("button");
+    b.type="button";
+    b.className="filter-btn";
+    b.setAttribute("aria-pressed","false");
+    b.dataset.cat=c.id;
+    b.innerHTML=c.label+' <span class="count">('+catCount(c.id)+')</span>';
+    b.addEventListener("click",function(){setCategory(c.id);});
+    filtersEl.appendChild(b);
+  });
+}
+function setCategory(id){
+  activeCat=id;
+  var btns=filtersEl.querySelectorAll(".filter-btn");
+  btns.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.cat===id?"true":"false");});
+  render();
+}
+function matches(s){
+  if(activeCat!=="all"&&s.cat!==activeCat){return false;}
+  if(!query){return true;}
+  var hay=(s.name+" S"+pad(s.n)+" "+s.n+" "+s.focus+" "+catLabel(s.cat)).toLowerCase();
+  return query.split(/\s+/).every(function(w){return hay.indexOf(w)>-1;});
+}
+function render(){
+  gridEl.innerHTML="";
+  var shown=0;
+  SERIES.forEach(function(s){
+    if(!matches(s)){return;}
+    shown++;
+    var card=document.createElement("article");
+    card.className="card";
+    var h=document.createElement("h3");
+    var a=document.createElement("a");
+    a.href=BASE+s.slug;
+    a.textContent=s.name;
+    h.appendChild(a);
+    var tag=document.createElement("p");
+    tag.className="tag";
+    tag.textContent="S"+pad(s.n)+" · "+catLabel(s.cat);
+    var focus=document.createElement("p");
+    focus.textContent=s.focus;
+    var status=document.createElement("p");
+    status.className="status";
+    status.textContent="Status: Intended / planned — not formed, funded, or offered.";
+    var spacer=document.createElement("div");
+    spacer.className="spacer";
+    var link=document.createElement("a");
+    link.className="card-link";
+    link.href=BASE+s.slug;
+    link.textContent="Series page →";
+    card.appendChild(tag);
+    card.appendChild(h);
+    card.appendChild(focus);
+    if(s.anchored){
+      var anch=document.createElement("p");
+      anch.className="anchor";
+      anch.textContent="Anchored (metaverse fabric published — not live)";
+      card.appendChild(anch);
+    }
+    card.appendChild(status);
+    card.appendChild(spacer);
+    card.appendChild(link);
+    gridEl.appendChild(card);
+  });
+  countEl.textContent=shown===33
+    ?"Showing all 33 planned series."
+    :"Showing "+shown+" of 33 planned series"+(activeCat!=="all"?" in "+catLabel(activeCat):"")+(query?(' matching “'+query+'”'):"")+".";
+  emptyEl.hidden=shown!==0;
+}
+searchEl.addEventListener("input",function(){
+  query=searchEl.value.trim().toLowerCase();
+  render();
+});
+document.getElementById("clear-search").addEventListener("click",function(){
+  searchEl.value="";query="";searchEl.focus();render();
+});
+document.getElementById("reset-filters").addEventListener("click",function(){
+  searchEl.value="";query="";setCategory("all");searchEl.focus();
+});
+buildFilters();
+render();
+})();
+</script>
+</body>
+</html>

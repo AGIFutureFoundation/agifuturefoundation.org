@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Structure Explorer — AGI Future Foundation</title>
+<meta name="description" content="Interactive diagram of the intended structure v2: AGI Corp, the Foundation as mission steward, the W3 series, and the Delaware cohort series — with filed vs intended status on every node.">
+<style>
+:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:2rem 0}
+h1{font-size:clamp(1.6rem,4vw,2rem);line-height:1.25;margin:.25rem 0 .5rem}
+h2{font-size:1.25rem;margin:0 0 .5rem}
+.eyebrow{color:var(--teal);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
+.banner{background:#fff8e1;border:1px solid #e6c200;border-radius:12px;padding:1rem;margin:1rem 0}
+.banner p{margin:.25rem 0}
+.diagram{display:flex;flex-direction:column;align-items:center;gap:0;margin:1.5rem 0}
+.node{width:min(100%,560px);text-align:left;background:var(--surface);border:2px solid var(--line);border-radius:var(--radius);padding:1rem 1.25rem;cursor:pointer;font:inherit;color:var(--ink);min-height:44px}
+.node:hover{border-color:var(--teal)}
+.node[aria-pressed="true"]{border-color:var(--navy);box-shadow:0 0 0 3px var(--gold-bright)}
+.node .node-title{font-weight:800;font-size:1.1rem;display:block}
+.node .node-role{color:var(--ink-2);display:block;margin-top:.2rem}
+.node .node-hint{font-size:.85rem;color:var(--link);display:block;margin-top:.4rem;font-weight:700}
+.connector{width:2px;height:28px;background:var(--navy);flex:none}
+.connector-label{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);padding:.15rem 0}
+.badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid;margin-bottom:.4rem}
+.badge.filed{background:#e6f4ea;border-color:#2e7d32;color:#1b5e20}
+.badge.intended{background:#fff8e1;border-color:#c9a227;color:#6d4c00}
+.badge.partner{background:#eef3f8;border-color:var(--navy-2);color:var(--navy)}
+.partner-row{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:1.5rem}
+.partner-label{font-size:.85rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-bottom:.5rem;text-align:center}
+.detail{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;margin-top:1.5rem;min-height:12rem}
+.detail h2{margin-top:0}
+.detail p{margin:.5rem 0}
+.detail .detail-link{font-weight:700;display:inline-block;padding:.5rem 0;min-height:44px}
+.detail .facts{font-size:.95rem;color:var(--ink-2)}
+.detail .facts strong{color:var(--ink)}
+.note{font-size:.95rem;color:var(--ink-2)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main id="main"><div class="wrap">
+<section aria-labelledby="structure-title">
+<p class="eyebrow">Intended structure v2 &middot; A plan, not a completed fact</p>
+<h1 id="structure-title">How the structure is intended to work</h1>
+<p>Select any box to read what is verified about it and what is only planned. Every box is labelled <strong>filed</strong> or <strong>intended / proposed</strong>. Use Tab to move between boxes, arrow keys to move up and down the chain, and Escape to clear the selection.</p>
+<div class="banner" role="note"><p><strong>Read this first.</strong> Only one node in this diagram is verified as filed: the AGI Future Foundation. Everything below it and above it is intended, proposed, or unverified. The Foundation is a nonprofit; it cannot be owned or controlled by a for-profit head, and it cannot offer equity, a SAFE, or a profit share. Control, if it ever exists, would be through written mission agreements, with the Foundation&rsquo;s board remaining independent. Nothing here is legal, tax, or financial advice.</p></div>
+
+<div class="diagram" role="group" aria-label="Intended structure chain" id="diagram">
+<button type="button" class="node" data-node="agicorp" aria-pressed="false">
+<span class="badge intended">Intended — EIN only</span>
+<span class="node-title">AGI Corp</span>
+<span class="node-role">Intended commercial head &middot; venture studio function &middot; Wyoming corporation (intended)</span>
+<span class="node-hint">Select to read the verified facts &darr;</span>
+</button>
+<div class="connector" aria-hidden="true"></div>
+<div class="connector-label" aria-hidden="true">Intended head — not verified as filed</div>
+<div class="connector" aria-hidden="true"></div>
+<button type="button" class="node" data-node="foundation" aria-pressed="true">
+<span class="badge filed">Filed — verified</span>
+<span class="node-title">AGI Future Foundation</span>
+<span class="node-role">Mission steward &middot; California Nonprofit Public Benefit Corporation</span>
+<span class="node-hint">Select to read the verified facts &darr;</span>
+</button>
+<div class="connector" aria-hidden="true"></div>
+<div class="connector-label" aria-hidden="true">Mission stewardship — written agreements only</div>
+<div class="connector" aria-hidden="true"></div>
+<button type="button" class="node" data-node="w3" aria-pressed="false">
+<span class="badge intended">Intended — not verified</span>
+<span class="node-title">W3 LLC</span>
+<span class="node-role">Wyoming series LLC (intended) &middot; 33 named sub-series</span>
+<span class="node-hint">Select to read the verified facts &darr;</span>
+</button>
+<div class="connector" aria-hidden="true"></div>
+<div class="connector-label" aria-hidden="true">New projects go here — or to the Delaware cohorts</div>
+<div class="connector" aria-hidden="true"></div>
+<button type="button" class="node" data-node="delaware" aria-pressed="false">
+<span class="badge intended">Intended — not verified</span>
+<span class="node-title">Delaware cohort series — C1S1, C1S2, C1S3</span>
+<span class="node-role">Cohort 1, Series 1–3 (to confirm) &middot; new cohorts, new projects</span>
+<span class="node-hint">Select to read the verified facts &darr;</span>
+</button>
+</div>
+
+<div class="partner-row">
+<p class="partner-label" id="partner-label">Outside the chain — separate partner, not a subsidiary</p>
+<button type="button" class="node" data-node="fellowship" aria-pressed="false" aria-describedby="partner-label">
+<span class="badge partner">Filed — separate partner</span>
+<span class="node-title">AGI Fellowship</span>
+<span class="node-role">Separate California nonprofit religious corporation &middot; partner church, not in the chain</span>
+<span class="node-hint">Select to read the verified facts &darr;</span>
+</button>
+</div>
+
+<div class="detail" id="detail" aria-live="polite" tabindex="-1"></div>
+
+<p class="note"><strong>What &ldquo;DAO-managed&rdquo; means in the plan:</strong> agents operate the day-to-day work of a series within limits set by humans, and a human Steward Council decides, signs, and moves funds. Agents never sign, move funds, hire or fire, offer securities, or enact doctrine. No Steward Council for any series is verified as seated.</p>
+<p class="note">No IRS 501(c)(3) determination letter is in the files for the Foundation or the Fellowship, so no tax-exempt status and no tax-deductible donations are claimed anywhere here.</p>
+</section>
+</div></main>
+<script>
+(function(){
+"use strict";
+var BASE="https://www.agifuturefoundation.org/";
+var NODES={
+ agicorp:{
+  title:"AGI Corp — intended head",
+  status:"Intended — EIN only, incorporation unverified",
+  badge:"intended",
+  body:"Named in the Foundation\u2019s materials as the intended management company and venture studio at the head of the network. The studio is a function of AGI Corp, not a separate company unless counsel advises otherwise.",
+  facts:"Verified: IRS CP575A dated 2026-05-16, name shown as \u201cAGI\u201d, 111 Maiden Ln Ste 540, San Francisco, CA 94108; Form 1120 listed. Not verified: no articles of incorporation and no entity number were in the files reviewed. An EIN alone does not prove incorporation. Nothing has been formed, funded, or issued under the studio model yet.",
+  link:BASE+"projects/agi-corp.html",
+  linkLabel:"Read the AGI Corp page"
+ },
+ foundation:{
+  title:"AGI Future Foundation — mission steward",
+  status:"Filed — verified",
+  badge:"filed",
+  body:"The filed California Nonprofit Public Benefit Corporation at the centre of the plan. Its role is governance and mission: holding the public-benefit purpose, the Fiduciary Shield, the Open Global Investment model, and the Windfall Clause. The Foundation manages companies to mission through written agreements; its board must remain independent.",
+  facts:"Verified: Entity No. B20260196664; Articles filed 2026-04-24; SOS approval 2026-04-30; EIN assigned 2026-05-07; principal/mailing 995 Market St, San Francisco, CA 94103. Not on file: no IRS 501(c)(3) determination letter, so no tax-exempt status and no tax-deductible donations are claimed. The Foundation cannot offer equity, a SAFE, or a profit share.",
+  link:BASE+"governance/index.html",
+  linkLabel:"Read the governance pages"
+ },
+ w3:{
+  title:"W3 LLC — the intended series network",
+  status:"Intended — not verified as filed",
+  badge:"intended",
+  body:"In the intended plan, a Wyoming series LLC that would house the 33 series as separate sub-series with isolated assets and liability. Each series would be DAO-managed day-to-day, with humans deciding, signing, and moving funds through a Steward Council.",
+  facts:"Verified: 33 named W3 sub-series in the April 2026 internal list (a three-page internal printout dated 2026-04-03, not a Wyoming Secretary of State filing). Not verified: W3 LLC formation and per-series designation are not verified in filings. No series is formed, funded, or offered. No suggested valuation is assigned to any series here.",
+  link:BASE+"series/index.html",
+  linkLabel:"Browse all 33 planned series"
+ },
+ delaware:{
+  title:"Delaware cohort series — C1S1, C1S2, C1S3",
+  status:"Intended — not verified as filed",
+  badge:"intended",
+  body:"Under the intended design, new projects go into a Delaware cohort series — Cohort 1, Series 1 through 3, labelled C1S1, C1S2, and C1S3 (to confirm). A series label is a reference, not a legal name. No cohort has been verified as launched.",
+  facts:"Verified: the C1S1–C1S3 labels and the cohort plan are stated in the Foundation\u2019s governance and studio pages. Not verified: no Delaware filing, no series designation, and no launched cohort were in the files reviewed. There is no dedicated Delaware cohort page yet; the link below goes to the governance page that states the plan.",
+  link:BASE+"governance/index.html#architecture",
+  linkLabel:"Read the governance page (structure section)"
+ },
+ fellowship:{
+  title:"AGI Fellowship — separate partner church",
+  status:"Filed — separate, NOT in the chain",
+  badge:"partner",
+  body:"A separate filed California nonprofit religious corporation and partner church. It is not a subsidiary, not a W3 series, and not part of this series list. It sits outside the portfolio entirely: it may partner with and be supported by the other entities under written agreements, with its funds and governance separate.",
+  facts:"Verified: Entity No. B20260229217; Articles filed 2026-05-13; SOS approval 2026-05-18; EIN assigned 2026-05-18; 111 Maiden Ln #540, San Francisco, CA 94108. Not on file: no IRS 501(c)(3) determination letter, so no tax-exempt status and no tax-deductible donations are claimed. Fellowship funds never go to a SAFE or for-profit except on counsel\u2019s written advice (default: no).",
+  link:BASE+"projects/agi-fellowship.html",
+  linkLabel:"Read the AGI Fellowship page"
+ }
+};
+var detailEl=document.getElementById("detail");
+var nodes=Array.prototype.slice.call(document.querySelectorAll(".node"));
+var selected="foundation";
+
+function renderDetail(){
+  var d=NODES[selected];
+  detailEl.innerHTML="";
+  var h=document.createElement("h2");
+  h.textContent=d.title;
+  var badge=document.createElement("span");
+  badge.className="badge "+d.badge;
+  badge.textContent=d.status;
+  var body=document.createElement("p");
+  body.textContent=d.body;
+  var facts=document.createElement("p");
+  facts.className="facts";
+  facts.textContent=d.facts;
+  var link=document.createElement("a");
+  link.className="detail-link";
+  link.href=d.link;
+  link.textContent=d.linkLabel+" \u2192";
+  detailEl.appendChild(badge);
+  detailEl.appendChild(h);
+  detailEl.appendChild(body);
+  detailEl.appendChild(facts);
+  detailEl.appendChild(link);
+}
+function select(key,focusDetail){
+  selected=key;
+  nodes.forEach(function(n){
+    n.setAttribute("aria-pressed",n.dataset.node===key?"true":"false");
+  });
+  renderDetail();
+  if(focusDetail){detailEl.focus();}
+}
+nodes.forEach(function(n,i){
+  n.addEventListener("click",function(){select(n.dataset.node,false);});
+  n.addEventListener("keydown",function(e){
+    if(e.key==="ArrowDown"||e.key==="ArrowRight"){
+      e.preventDefault();
+      var next=nodes[(i+1)%nodes.length];
+      next.focus();
+    }else if(e.key==="ArrowUp"||e.key==="ArrowLeft"){
+      e.preventDefault();
+      var prev=nodes[(i-1+nodes.length)%nodes.length];
+      prev.focus();
+    }else if(e.key==="Enter"||e.key===" "){
+      e.preventDefault();
+      select(n.dataset.node,false);
+    }else if(e.key==="Escape"){
+      e.preventDefault();
+      select("foundation",false);
+      n.blur();
+    }
+  });
+});
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape"&&document.activeElement&&document.activeElement===detailEl){
+    select("foundation",false);
+  }
+});
+select("foundation",false);
+})();
+</script>
+</body>
+</html>

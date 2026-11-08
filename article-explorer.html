@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Article Explorer — AGI Future Foundation</title>
+<meta name="description" content="Search and filter the 68 live Foundation deep articles by title, number, or topic. Each result links to its real article page.">
+<style>
+:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:2rem 0}
+h1{font-size:clamp(1.6rem,4vw,2rem);line-height:1.25;margin:.25rem 0 .5rem}
+h2{font-size:1.25rem;margin:0 0 .5rem}
+.eyebrow{color:var(--teal);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
+.banner{background:#fff8e1;border:1px solid #e6c200;border-radius:12px;padding:1rem;margin:1rem 0}
+.banner p{margin:.25rem 0}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.filter-btn{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:.6rem 1rem;min-height:44px;font:inherit;font-size:.95rem;cursor:pointer}
+.filter-btn:hover{border-color:var(--teal)}
+.filter-btn[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:700}
+.filter-btn .count{font-weight:700;opacity:.8}
+.search-row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:1rem 0}
+.search-row label{font-weight:700}
+.search-row input[type="search"]{flex:1;min-width:min(100%,16rem);min-height:44px;padding:.6rem .8rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--surface);color:var(--ink)}
+.result-count{font-weight:700;margin:.5rem 0}
+.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;display:flex;flex-direction:column}
+.card:hover{border-color:var(--teal)}
+.card h3{margin:.25rem 0 .5rem;font-size:1.1rem}
+.card h3 a{color:var(--ink);text-decoration:none}
+.card h3 a:hover,.card h3 a:focus-visible{text-decoration:underline;color:var(--link)}
+.card p{margin:.25rem 0}
+.card .tag{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.card .num{font-weight:800;color:var(--navy)}
+.card .desc{font-size:.95rem;color:var(--ink-2)}
+.card .spacer{flex:1}
+.card .card-link{font-weight:700;display:inline-block;padding:.4rem 0;min-height:44px;line-height:1.4}
+.empty{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;text-align:center}
+.empty button{appearance:none;border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:999px;padding:.6rem 1.2rem;min-height:44px;font:inherit;cursor:pointer;margin-top:.75rem}
+.note{font-size:.95rem;color:var(--ink-2)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main id="main"><div class="wrap">
+<section aria-labelledby="articles-title">
+<p class="eyebrow">AGI Future Foundation &middot; Deep articles</p>
+<h1 id="articles-title">Explore the 68 deep articles</h1>
+<p>Search by title, article number, or topic, or filter by the site&rsquo;s own article categories. Every result links to its real article page.</p>
+<div class="banner" role="note"><p><strong>About these articles.</strong> Articles about the W3 series describe planned series — intended, not formed, funded, or offered. Articles about AGI Corp, the Fellowship, and the network ventures state what is verified and what is not, on the article page itself. Nothing here is an offer of securities or investment, and nothing is legal, tax, or financial advice.</p></div>
+
+<div class="controls" role="group" aria-label="Filter articles by category" id="filters"></div>
+
+<div class="search-row">
+<label for="article-search">Search articles</label>
+<input type="search" id="article-search" placeholder="Try &ldquo;windfall&rdquo;, &ldquo;robotics&rdquo;, or &ldquo;33&rdquo;" autocomplete="off" aria-describedby="result-count">
+<button class="filter-btn" type="button" id="clear-search">Clear</button>
+</div>
+
+<p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+<ul class="list" id="article-list"></ul>
+<div class="empty" id="empty-state" hidden>
+<p><strong>No articles match.</strong> Try a different search term or category.</p>
+<button type="button" id="reset-filters">Show all 68 articles</button>
+</div>
+
+<p class="note">Categories are the site&rsquo;s own, from articles/category-1..8-*.html: Intelligence & Mind (11), Health & Life Sciences (17), Metaverse & Spatial (8), Robotics & Physical AI (6), Governance & Law (10), Finance & Studio (4), Cities, Energy & Infrastructure (4), Community & Culture (8). The 24 long-form articles (45&ndash;68), published 2026-11-07, are listed here too; their categories follow the same series mapping as articles 1&ndash;44.</p>
+</section>
+</div></main>
+<script>
+(function(){
+"use strict";
+/* Data: titles and descriptions are taken from each article page's own
+   <title> and meta description. Categories are the site's own, from
+   articles/category-1..8-*.html. Counts: 11/17/8/6/10/4/4/8 = 68. */
+var BASE="https://www.agifuturefoundation.org/articles/";
+var CATEGORIES=[
+ {id:"intelligence-mind",label:"Intelligence & Mind"},
+ {id:"health-life",label:"Health & Life Sciences"},
+ {id:"metaverse-spatial",label:"Metaverse & Spatial"},
+ {id:"robotics-physical",label:"Robotics & Physical AI"},
+ {id:"governance-law",label:"Governance & Law"},
+ {id:"finance-studio",label:"Finance & Studio"},
+ {id:"cities-energy",label:"Cities, Energy & Infrastructure"},
+ {id:"community-culture",label:"Community & Culture"}
+];
+var ARTICLES=[
+ {n:1, title:"Cognition.X — Learning, Understanding, and the Flow Zone", slug:"article-01-cognition-x.html", cat:"intelligence-mind", desc:"Cognition.X (W3 Series S01): learning and understanding, Flow Zone education, and an anchored metaverse campus that does not yet render fully."},
+ {n:2, title:"Empathic.X — Empathy, Emotional Understanding, and Human-Centred Interaction", slug:"article-02-empathic-x.html", cat:"intelligence-mind", desc:"Empathic.X (W3 Series S02): a planned empathy series with an anchored metaverse fabric that does not yet render fully."},
+ {n:3, title:"InfoGurus — Knowledge Organisation, Expertise, and Answers You Can Check", slug:"article-03-infogurus.html", cat:"intelligence-mind", desc:"InfoGurus (W3 Series S33): a planned information and expertise series whose scope is still to be written."},
+ {n:4, title:"Diagnostic.X — AI Diagnostics Governed by a Safety Mandate", slug:"article-04-diagnostic-x.html", cat:"health-life", desc:"Diagnostic.X (W3 Series S03): AI diagnostics under an AGI-safety mandate, liability-isolated by design."},
+ {n:5, title:"Curable.X — Curative, Treatment-Focused Work, Still Undefined", slug:"article-05-curable-x.html", cat:"health-life", desc:"Curable.X (W3 Series S04): a thin, planned series whose name implies cures and treatment, with almost nothing verified beyond the name and number."},
+ {n:6, title:"BioPharma.Go — Biopharmaceutical Work, Still Undefined", slug:"article-06-biopharma-go.html", cat:"health-life", desc:"BioPharma.Go (W3 Series S05): a thin, planned biopharmaceutical series with almost nothing verified beyond the name and number."},
+ {n:7, title:"Molecular. — Molecular Science and Biotechnology, Still Undefined", slug:"article-07-molecular.html", cat:"health-life", desc:"Molecular. (W3 Series S11): a thin, planned molecular-science series. No molecule files were found to attribute to it."},
+ {n:8, title:"Gonstead.X — The Gonstead Approach to Chiropractic Care, Planned", slug:"article-08-gonstead-x.html", cat:"health-life", desc:"Gonstead.X (W3 Series S13): a thin, planned series whose name points to the Gonstead approach to chiropractic care."},
+ {n:9, title:"AskDoc.X — Health Questions, Health Information, and Care Navigation", slug:"article-09-askdoc-x.html", cat:"health-life", desc:"AskDoc.X (W3 Series S14): a thin, planned health-information series. Explicitly not diagnosis or treatment."},
+ {n:10, title:"Curable.Blockchain DAO — A Shared Record for Curative Health Work", slug:"article-10-curable-blockchain-dao.html", cat:"health-life", desc:"Curable.Blockchain DAO (W3 Series S17): a thin, planned DAO at the meeting point of curative health work and blockchain record-keeping."},
+ {n:11, title:"BioDAO.blockchain DAO — Biology, Bioacoustics, and a Shared Ledger", slug:"article-11-biodao-blockchain.html", cat:"health-life", desc:"BioDAO.blockchain DAO (W3 Series S18): a thin, planned DAO for biology and bioacoustics work kept on a blockchain record."},
+ {n:12, title:"Genomic DAO — Consent, Privacy, and Shared Benefit for Genomic Data", slug:"article-12-genomic-dao.html", cat:"health-life", desc:"Genomic DAO (W3 Series S27): a planned DAO for genomic data stewardship — consent, privacy, and shared benefit."},
+ {n:13, title:"Genome.Blockchain — A Verifiable Record Layer for Genomic Data", slug:"article-13-genome-blockchain.html", cat:"health-life", desc:"Genome.Blockchain (W3 Series S28): a planned blockchain record layer for genomic data — verifiable provenance for consent, custody, and use."},
+ {n:14, title:"Locator.X: Knowing Where Things Are", slug:"article-14-locator-x.html", cat:"metaverse-spatial", desc:"Locator.X (W3 Series S08): location, finding, and navigation as planned infrastructure, with the only anchored metaverse fabric in this article set."},
+ {n:15, title:"Avatar.Chat DAO: Conversation Through Avatars", slug:"article-15-avatar-chat-dao.html", cat:"metaverse-spatial", desc:"Avatar.Chat DAO (W3 Series S23): a planned DAO for conversation through avatars — identity, moderation, and record rules still to be written."},
+ {n:16, title:"Metaverse DAO: The Governance Layer for Shared Worlds", slug:"article-16-metaverse-dao.html", cat:"metaverse-spatial", desc:"Metaverse DAO (W3 Series S29): a planned DAO for governing the Foundation\u2019s metaverse presence."},
+ {n:17, title:"WorldForge: Building Worlds, One Catalogue Entry at a Time", slug:"article-17-worldforge.html", cat:"metaverse-spatial", desc:"WorldForge: the world-building side of the network — a public repository with a 544-entry worlds file, all with no RP1 attachment."},
+ {n:18, title:"The RP1 Ecosystem: The Infrastructure With No Live Worlds Yet", slug:"article-18-rp1-ecosystem.html", cat:"metaverse-spatial", desc:"The RP1 ecosystem: Sneeze, Rubidium, Artemis, VRS / Universal Map, RMAP, Statabase, and OMBI. Zero worlds live on RP1."},
+ {n:19, title:"Get.Delivery DAO: Moving Things to People", slug:"article-19-get-delivery-dao.html", cat:"robotics-physical", desc:"Get.Delivery DAO (W3 Series S22): a planned DAO for delivery and logistics — what is delivered, by what means, and for whom are still unwritten."},
+ {n:20, title:"Robotics DAO: Governing Machines That Act in the World", slug:"article-20-robotics-dao.html", cat:"robotics-physical", desc:"Robotics DAO (W3 Series S30): governing commercial deployment of robotic and physical-AI agents. Still intended, not formed, funded, or offered."},
+ {n:21, title:"Aerospace DAO: Flight AI Where the Safety Bar Is Highest", slug:"article-21-aerospace-dao.html", cat:"robotics-physical", desc:"Aerospace DAO (W3 Series S31): a planned DAO for aerospace and flight AI, where certification and airspace come before any product roadmap."},
+ {n:22, title:"Blockchain", slug:"article-22-blockchain.html", cat:"governance-law", desc:"Blockchain (W3 Series S06): a planned ledger and coordination infrastructure series, named in the April 2026 internal W3 list."},
+ {n:23, title:"RomanBridge.DAO", slug:"article-23-romanbridge-dao.html", cat:"governance-law", desc:"RomanBridge.DAO (W3 Series S15): a planned DAO whose name points to bridging and connection."},
+ {n:24, title:"CMMC", slug:"article-24-cmmc.html", cat:"governance-law", desc:"CMMC (W3 Series S20): a named W3 series listed only by its four letters, with no expansion or focus stated in the files reviewed."},
+ {n:25, title:"Fiduciary Corporate Shield", slug:"article-25-fiduciary-corporate-shield.html", cat:"governance-law", desc:"The Fiduciary Corporate Shield: expanded business-judgment protection for safety-first board decisions. A mechanism and framework, not a company, and not immunity."},
+ {n:26, title:"Insidr W3LLC", slug:"article-26-insidr-w3llc.html", cat:"governance-law", desc:"Insidr W3LLC: a named network venture. Almost nothing is verified beyond the name, and the W3LLC in its name does not by itself prove any connection to a filed W3 LLC."},
+ {n:27, title:"Sentinel Stream", slug:"article-27-sentinel-stream.html", cat:"governance-law", desc:"Sentinel Stream: a named network venture. Almost nothing is verified beyond the name."},
+ {n:28, title:"PlaudGuard-AI", slug:"article-28-plaudguard-ai.html", cat:"governance-law", desc:"PlaudGuard-AI: a named network venture. Almost nothing is verified beyond the name, and the AI in its name does not by itself prove that any AI system exists."},
+ {n:29, title:"Incubator DAO", slug:"article-29-incubator-dao.html", cat:"finance-studio", desc:"Incubator DAO (W3 Series S21): a planned DAO for incubating early ventures and builders."},
+ {n:30, title:"trueforge", slug:"article-30-trueforge.html", cat:"finance-studio", desc:"trueforge: a named network venture. Almost nothing is verified beyond the name."},
+ {n:31, title:"Dyva", slug:"article-31-dyva.html", cat:"finance-studio", desc:"Dyva: a named network venture. Almost nothing is verified beyond the name."},
+ {n:32, title:"AGI Corp", slug:"article-32-agi-corp.html", cat:"finance-studio", desc:"AGI Corp: EIN only, assigned 2026-05-16. No articles or entity number in the files; incorporation is unverified."},
+ {n:33, title:"SmartCiti.X — W3 Series S10, the Trade Craft Academy", slug:"article-33-smartciti-x.html", cat:"cities-energy", desc:"SmartCiti.X is W3 Series S10: a proposed new corporation for robotics training, union trades AR/VR, and robotics manufacturing. Proposed, not formed, funded, or offered."},
+ {n:34, title:"ParkingSmart.X — W3 Series S12, Smarter Parking", slug:"article-34-parking-smart-x.html", cat:"cities-energy", desc:"ParkingSmart.X is W3 Series S12, a planned series whose name points to smarter parking: parking data, guidance, and management."},
+ {n:35, title:"Solar DAO — W3 Series S32, Solar Energy", slug:"article-35-solar-dao.html", cat:"cities-energy", desc:"Solar DAO is W3 Series S32 in the intended W3 network: a planned DAO for solar energy and energy infrastructure."},
+ {n:36, title:"Metropolis-SmartCiti — Named Network Venture", slug:"article-36-metropolis-smartciti.html", cat:"cities-energy", desc:"Metropolis-SmartCiti is a named network venture. Almost nothing is verified beyond the name. Related to S10 SmartCiti.X by name only — the two are NOT merged."},
+ {n:37, title:"Divine DAO — W3 Series S07, Meaning and Community", slug:"article-37-divine-dao.html", cat:"community-culture", desc:"Divine DAO is W3 Series S07: a DAO concerned with meaning, community, and the sacred — a planned domain."},
+ {n:38, title:"Astrological.X — W3 Series S09, Astrology", slug:"article-38-astrological-x.html", cat:"community-culture", desc:"Astrological.X is W3 Series S09, a planned series whose name points to astrology and astrological data and interpretation."},
+ {n:39, title:"EchoDawn DAO — W3 Series S16, New Beginnings", slug:"article-39-echodawn-dao.html", cat:"community-culture", desc:"EchoDawn DAO is W3 Series S16, a planned DAO whose name points to dawn and echo: new beginnings, and voices and signals carried forward."},
+ {n:40, title:"Moscone.X — W3 Series S19, Focus Not Stated", slug:"article-40-moscone-x.html", cat:"community-culture", desc:"Moscone.X is W3 Series S19: a named W3 series whose focus is not stated in the files reviewed."},
+ {n:41, title:"Donatello DAO — W3 Series S24, Focus Not Stated", slug:"article-41-donatello-dao.html", cat:"community-culture", desc:"Donatello DAO is W3 Series S24: a named W3 series whose focus is not stated in the files reviewed."},
+ {n:42, title:"Mypet.AI — W3 Series S25, Pet-Focused AI", slug:"article-42-mypet-ai.html", cat:"community-culture", desc:"Mypet.AI is W3 Series 25 in the intended W3 network: a planned, pet-focused AI series."},
+ {n:43, title:"Lyka DAO — W3 Series S26, No Published Focus", slug:"article-43-lyka-dao.html", cat:"community-culture", desc:"Lyka DAO is W3 Series 26 in the intended W3 network: a named DAO series with no published focus."},
+ {n:44, title:"AGI Fellowship Church — Partner, Not Subsidiary", slug:"article-44-agi-fellowship.html", cat:"community-culture", desc:"The AGI Fellowship is a separate filed California nonprofit religious corporation, Entity No. B20260229217, filed 2026-05-13. A partner church, not a subsidiary and not a W3 series."},
+ {n:45, title:"Stewardship Under California Law: What It Actually Means to Hold a Mission in Trust", slug:"article-45-california-nonprofit-stewardship.html", cat:"governance-law", desc:"What stewardship under California nonprofit law actually requires."},
+ {n:46, title:"The 501(c)(3) Determination Path: What the Foundation Must Prove, and What Happens Until It Does", slug:"article-46-the-501c3-determination-path.html", cat:"governance-law", desc:"The IRS determination path, and what is true until a letter exists."},
+ {n:47, title:"The Research-Coordination Network: The Foundation’s Quietest Job, and Maybe Its Most Important", slug:"article-47-the-research-coordination-network.html", cat:"governance-law", desc:"The Foundation’s coordination work across the research network."},
+ {n:48, title:"The Mind Watching Itself: Metacognition in Humans and in Machines", slug:"article-48-metacognition.html", cat:"intelligence-mind", desc:"How minds watch themselves — in humans and in machines."},
+ {n:49, title:"How Minds Are Built: Cognitive Architectures, from ACT-R and Soar to the Global Workspace", slug:"article-49-cognitive-architectures.html", cat:"intelligence-mind", desc:"Cognitive architectures, from ACT-R and Soar to the global workspace."},
+ {n:50, title:"How Skills Actually Form: The Science of Learning", slug:"article-50-science-of-learning.html", cat:"intelligence-mind", desc:"How skills actually form."},
+ {n:51, title:"What Machines Can — and Cannot — Read from a Face or a Voice", slug:"article-51-affective-computing-what-machines-can-and-cannot-read.html", cat:"intelligence-mind", desc:"What machines can — and cannot — read from a face or a voice."},
+ {n:52, title:"Empathy Is a Skill, Not a Trait", slug:"article-52-empathy-as-a-skill-how-it-works-and-how-it-is-learned.html", cat:"intelligence-mind", desc:"Empathy as a learnable skill."},
+ {n:53, title:"Care and Companionship", slug:"article-53-care-and-companionship-where-machines-help.html", cat:"health-life", desc:"Where machines help in care and companionship."},
+ {n:54, title:"Screening Is Not Diagnosis: The Line That Matters, and Why It Is So Often Crossed", slug:"article-54-screening-vs-diagnosis.html", cat:"health-life", desc:"The line between screening and diagnosis, and why it is crossed."},
+ {n:55, title:"How Do You Know a Diagnostic Tool Works? Sensitivity, Specificity, and What a Number Hides", slug:"article-55-evaluating-diagnostic-tools.html", cat:"health-life", desc:"Sensitivity, specificity, and what a number hides."},
+ {n:56, title:"The Clinician in the Loop: Where AI Assistance Helps, and Where It Must Not Decide", slug:"article-56-clinician-in-the-loop.html", cat:"health-life", desc:"Where AI assistance helps, and where it must not decide."},
+ {n:57, title:"How Positioning Actually Works: From Satellites to the Room You Are Standing In", slug:"article-57-how-positioning-works.html", cat:"metaverse-spatial", desc:"Positioning, from satellites to the room you are standing in."},
+ {n:58, title:"Your Location Is You: Privacy, Consent, and the Law of Where You Are", slug:"article-58-location-privacy-consent.html", cat:"metaverse-spatial", desc:"Privacy, consent, and the law of where you are."},
+ {n:59, title:"What a Location-Aware World Can and Cannot Know About You", slug:"article-59-location-aware-world.html", cat:"metaverse-spatial", desc:"What a location-aware world can and cannot know about you."},
+ {n:60, title:"One Fleet, Many Owners — Governing and Answering for Shared Robot Fleets", slug:"article-60-one-fleet-many-owners.html", cat:"robotics-physical", desc:"Governing and answering for shared robot fleets."},
+ {n:61, title:"The Robot Commons — ROS, Open Source, and the Shared Code Every Robot Stands On", slug:"article-61-the-robot-commons.html", cat:"robotics-physical", desc:"ROS, open source, and the shared code every robot stands on."},
+ {n:62, title:"Working Beside Machines — Human-Robot Collaboration and the Safety Culture That Makes It Real", slug:"article-62-working-beside-machines.html", cat:"robotics-physical", desc:"Human-robot collaboration and the safety culture that makes it real."},
+ {n:63, title:"How to Judge a Source When Anything Can Be Faked", slug:"article-63-judging-a-source.html", cat:"intelligence-mind", desc:"How to judge a source when anything can be faked."},
+ {n:64, title:"Who Gets to Be an Expert? How Knowledge Is Verified", slug:"article-64-who-gets-to-be-an-expert.html", cat:"intelligence-mind", desc:"How knowledge is verified, and who counts as an expert."},
+ {n:65, title:"The Knowledge Graph as a Public Good", slug:"article-65-knowledge-graph-public-good.html", cat:"intelligence-mind", desc:"The knowledge graph as a public good."},
+ {n:66, title:"Counting Life: How Biodiversity Is Actually Measured", slug:"article-66-counting-life.html", cat:"health-life", desc:"How biodiversity is actually measured."},
+ {n:67, title:"Listening to the Ocean: What the Deep Soundscape Reveals About Life Below", slug:"article-67-listening-to-the-ocean.html", cat:"health-life", desc:"What the deep soundscape reveals about life below."},
+ {n:68, title:"The Living Twin: What a Digital Twin of an Ecosystem Can and Cannot Do", slug:"article-68-the-living-twin.html", cat:"health-life", desc:"What a digital twin of an ecosystem can and cannot do."},
+];
+var filtersEl=document.getElementById("filters");
+var listEl=document.getElementById("article-list");
+var countEl=document.getElementById("result-count");
+var emptyEl=document.getElementById("empty-state");
+var searchEl=document.getElementById("article-search");
+var activeCat="all";
+var query="";
+
+function catLabel(id){
+  for(var i=0;i<CATEGORIES.length;i++){if(CATEGORIES[i].id===id){return CATEGORIES[i].label;}}
+  return "";
+}
+function catCount(id){
+  var c=0;
+  for(var i=0;i<ARTICLES.length;i++){if(ARTICLES[i].cat===id){c++;}}
+  return c;
+}
+function pad(n){return n<10?"0"+n:String(n);}
+
+function buildFilters(){
+  var all=document.createElement("button");
+  all.type="button";
+  all.className="filter-btn";
+  all.setAttribute("aria-pressed","true");
+  all.dataset.cat="all";
+  all.innerHTML='All articles <span class="count">(68)</span>';
+  all.addEventListener("click",function(){setCategory("all");});
+  filtersEl.appendChild(all);
+  CATEGORIES.forEach(function(c){
+    var b=document.createElement("button");
+    b.type="button";
+    b.className="filter-btn";
+    b.setAttribute("aria-pressed","false");
+    b.dataset.cat=c.id;
+    b.innerHTML=c.label+' <span class="count">('+catCount(c.id)+')</span>';
+    b.addEventListener("click",function(){setCategory(c.id);});
+    filtersEl.appendChild(b);
+  });
+}
+function setCategory(id){
+  activeCat=id;
+  var btns=filtersEl.querySelectorAll(".filter-btn");
+  btns.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.cat===id?"true":"false");});
+  render();
+}
+function matches(a){
+  if(activeCat!=="all"&&a.cat!==activeCat){return false;}
+  if(!query){return true;}
+  var hay=(a.title+" article "+a.n+" "+pad(a.n)+" "+a.desc+" "+catLabel(a.cat)).toLowerCase();
+  return query.split(/\s+/).every(function(w){return hay.indexOf(w)>-1;});
+}
+function render(){
+  listEl.innerHTML="";
+  var shown=0;
+  ARTICLES.forEach(function(a){
+    if(!matches(a)){return;}
+    shown++;
+    var li=document.createElement("li");
+    li.className="card";
+    var tag=document.createElement("p");
+    tag.className="tag";
+    tag.innerHTML='<span class="num">Article '+pad(a.n)+'</span> &middot; '+catLabel(a.cat);
+    var h=document.createElement("h3");
+    var link=document.createElement("a");
+    link.href=BASE+a.slug;
+    link.textContent=a.title;
+    h.appendChild(link);
+    var desc=document.createElement("p");
+    desc.className="desc";
+    desc.textContent=a.desc;
+    var spacer=document.createElement("div");
+    spacer.className="spacer";
+    var read=document.createElement("a");
+    read.className="card-link";
+    read.href=BASE+a.slug;
+    read.textContent="Read article "+pad(a.n)+" \u2192";
+    li.appendChild(tag);
+    li.appendChild(h);
+    li.appendChild(desc);
+    li.appendChild(spacer);
+    li.appendChild(read);
+    listEl.appendChild(li);
+  });
+  countEl.textContent=shown===68
+    ?"Showing all 68 articles."
+    :"Showing "+shown+" of 68 articles"+(activeCat!=="all"?" in "+catLabel(activeCat):"")+(query?(' matching \u201c'+query+'\u201d'):"")+".";
+  emptyEl.hidden=shown!==0;
+}
+searchEl.addEventListener("input",function(){
+  query=searchEl.value.trim().toLowerCase();
+  render();
+});
+document.getElementById("clear-search").addEventListener("click",function(){
+  searchEl.value="";query="";searchEl.focus();render();
+});
+document.getElementById("reset-filters").addEventListener("click",function(){
+  searchEl.value="";query="";setCategory("all");searchEl.focus();
+});
+buildFilters();
+render();
+})();
+</script>
+</body>
+</html>

@@ -11,37 +11,208 @@
 <meta property="og:type" content="website">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AGI Future Foundation PBC","url":"https://www.agifuturefoundation.org/","email":"x@agifuturefoundation.org","description":"California Public Benefit Corporation building the Fiduciary Shield, Open Global Investment model, and Windfall Clause for shared AGI prosperity.","sameAs":["https://github.com/AGIFutureFoundation","https://www.youtube.com/@AGI-Corp","https://www.agifellowship.church"],"knowsAbout":["agentic venture studio","Fiduciary Shield","Windfall Clause","Open Global Investment","W3 series","SmartCiti.X","Omega Hive"],"contactPoint":{"@type":"ContactPoint","email":"x@agifuturefoundation.org","contactType":"general"},"address":{"@type":"PostalAddress","streetAddress":"995 Market St FL 10","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94103","addressCountry":"US"}}</script>
 <style>
-:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px;--radius-pill:999px}img,video{max-width:100%;height:auto}
-*{box-sizing:border-box}img,video,svg{max-width:100%;height:auto}iframe{max-width:100%}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px;--radius-pill:999px}
+*,*::before,*::after{box-sizing:border-box}
+img,video,svg,iframe{max-width:100%;height:auto}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;overflow-wrap:break-word}
 a{color:var(--link)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
-header.top{background:var(--navy);color:#fff;padding:1rem 0}
-.top .wrap{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
-.top nav a{color:#fff;text-decoration:none;display:inline-block;padding:.7rem .8rem;min-height:44px}
-.top nav a:hover{text-decoration:underline}
-.hero{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:3.5rem 0}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--gold);color:#111;padding:.75rem 1rem;font-weight:700;z-index:200}
+.skip-link:focus{left:0}
+/* ---------- Header / nav ---------- */
+header.top{background:var(--navy);color:#fff;position:relative;z-index:100}
+.topbar{display:flex;gap:1rem;align-items:center;justify-content:space-between;min-height:60px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.05rem;line-height:1.25;padding:.75rem 0}
+.brand:hover,.brand:focus-visible{text-decoration:underline}
+.nav-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,.6);border-radius:8px;color:#fff;min-width:44px;min-height:44px;padding:.5rem .6rem;font-size:1rem;cursor:pointer;line-height:1}
+.nav-toggle:hover{border-color:#fff}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.15rem}
+nav.main>ul>li{position:relative}
+nav.main>ul>li>a,nav.main .drop-btn{display:inline-flex;align-items:center;gap:.3rem;color:#fff;text-decoration:none;background:transparent;border:0;font:inherit;font-size:.95rem;cursor:pointer;padding:.7rem .7rem;min-height:44px;border-radius:8px}
+nav.main>ul>li>a:hover,nav.main .drop-btn:hover,nav.main>ul>li>a:focus-visible,nav.main .drop-btn:focus-visible{text-decoration:underline;background:rgba(255,255,255,.08)}
+.drop-btn .caret{font-size:.7rem;line-height:1}
+.dropdown{position:absolute;top:100%;left:0;min-width:280px;max-width:calc(100vw - 2rem);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(11,30,58,.25);padding:.5rem;display:none;z-index:120}
+.dropdown a{display:block;color:var(--ink);text-decoration:none;padding:.7rem .8rem;min-height:44px;border-radius:8px;line-height:1.4}
+.dropdown a:hover,.dropdown a:focus-visible{background:#eef3f8;text-decoration:underline}
+.dropdown a .sub{display:block;font-size:.85rem;color:var(--ink-2)}
+li.open>.dropdown,li:hover>.dropdown,li:focus-within>.dropdown{display:block}
+.dropdown .drop-head{display:block;padding:.6rem .8rem .3rem;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+/* ---------- Hero ---------- */
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:3rem 0 2.5rem}
 .hero h1{font-size:clamp(2rem,5vw,2.6rem);line-height:1.15;margin:.25rem 0}
 .hero p{max-width:720px;color:#dbe6f5}
 .eyebrow{color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
-.btn{display:inline-block;background:var(--gold);color:#111;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;margin-right:.75rem;min-height:44px}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#111;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;margin:0 .75rem .5rem 0;min-height:44px}
+.btn:hover{background:var(--gold-bright)}
 .btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.kpi{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem}
+.kpi strong{font-size:1.8rem;display:block}
+.kpi span{color:#dbe6f5;font-size:.95rem}
+/* ---------- Sections ---------- */
 section{padding:2.5rem 0}
 h2{font-size:1.9rem;line-height:1.25;margin:0 0 1rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+h3{line-height:1.3}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1rem}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem}
 .card h3{margin-top:0}
 .card:hover{border-color:var(--teal)}
-.kpi{display:flex;gap:2rem;flex-wrap:wrap}.kpi strong{font-size:1.8rem;display:block}
+.card p{margin:.5rem 0}
+.card .tag{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.card a.card-link{font-weight:700}
 .badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid}
 .banner{background:#fff8e1;border:1px solid #e6c200;border-radius:12px;padding:1rem}
+.section-link{font-weight:700}
 footer{background:var(--navy);color:#cbd5e1;padding:2rem 0}
 footer a{color:#fff}
+footer nav a{display:inline-block;padding:.5rem .5rem;min-height:44px}
 small{color:var(--ink-2)}
-:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-@media(max-width:640px){.hero h1{font-size:2rem}h2{font-size:1.6rem}.hero{padding:2rem 0 1.5rem}section{padding:1.75rem 0}.kpi{gap:1rem}.kpi strong{font-size:1.5rem}}
-/* Page-specific styles preserved from the original file (selectors/declarations not in the shared brand base) */
-.top nav a{margin-left:.35rem}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+header.top :focus-visible,footer :focus-visible,.hero :focus-visible{outline-color:var(--gold-bright)}
+figure{margin:0 0 1.5rem;max-width:720px}
+figure video,figure img{width:100%;border-radius:10px;display:block;background:#000}
+figcaption{font-size:.85rem;color:#5b6b7d;margin:.4rem 0 0}
+.hero figcaption{color:#dbe6f5}
+/* ---------- Mobile ---------- */
+@media(max-width:900px){
+  .nav-toggle{display:inline-flex;align-items:center;justify-content:center}
+  nav.main{display:none;background:var(--navy);border-top:1px solid rgba(255,255,255,.2)}
+  header.top.nav-open nav.main{display:block}
+  nav.main ul{display:block}
+  nav.main>ul>li{border-bottom:1px solid rgba(255,255,255,.12)}
+  nav.main>ul>li>a,nav.main .drop-btn{display:flex;width:100%;justify-content:space-between;padding:.8rem .25rem;min-height:48px}
+  .dropdown{position:static;display:block;box-shadow:none;border:0;border-radius:0;background:rgba(255,255,255,.06);padding:.25rem 0 .5rem;min-width:0;max-width:none}
+  .dropdown a{color:#fff;padding:.7rem .75rem;min-height:44px}
+  .dropdown a .sub{color:#cbd5e1}
+  .dropdown a:hover,.dropdown a:focus-visible{background:rgba(255,255,255,.12)}
+  .dropdown .drop-head{color:var(--gold-bright)}
+  li:hover>.dropdown{display:block}
+  .hero{padding:2rem 0 1.5rem}
+  .hero h1{font-size:2rem}
+  h2{font-size:1.6rem}
+  section{padding:1.75rem 0}
+  .kpi{gap:1rem}
+  .kpi strong{font-size:1.5rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto !important}
+}
+/* --- Series explorer (folded 2026-11-07) --- */
+:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:2rem 0}
+h1{font-size:clamp(1.6rem,4vw,2rem);line-height:1.25;margin:.25rem 0 .5rem}
+h2{font-size:1.25rem;margin:0 0 .5rem}
+.eyebrow{color:var(--teal);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
+.banner{background:#fff8e1;border:1px solid #e6c200;border-radius:12px;padding:1rem;margin:1rem 0}
+.banner p{margin:.25rem 0}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.filter-btn{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:.6rem 1rem;min-height:44px;font:inherit;font-size:.95rem;cursor:pointer}
+.filter-btn:hover{border-color:var(--teal)}
+.filter-btn[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:700}
+.filter-btn .count{font-weight:700;opacity:.8}
+.search-row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:1rem 0}
+.search-row label{font-weight:700}
+.search-row input[type="search"]{flex:1;min-width:min(100%,16rem);min-height:44px;padding:.6rem .8rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--surface);color:var(--ink)}
+.result-count{font-weight:700;margin:.5rem 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;display:flex;flex-direction:column}
+.card:hover{border-color:var(--teal)}
+.card h3{margin:.25rem 0 .5rem;font-size:1.15rem}
+.card h3 a{color:var(--ink);text-decoration:none}
+.card h3 a:hover,.card h3 a:focus-visible{text-decoration:underline;color:var(--link)}
+.card p{margin:.25rem 0}
+.card .tag{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.card .num{font-weight:800;color:var(--navy)}
+.card .status{font-size:.9rem;color:var(--ink-2)}
+.card .anchor{font-size:.85rem;color:var(--teal);font-weight:700}
+.card .spacer{flex:1}
+.card .card-link{font-weight:700;display:inline-block;padding:.4rem 0;min-height:44px;line-height:1.4}
+.empty{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;text-align:center}
+.empty button{appearance:none;border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:999px;padding:.6rem 1.2rem;min-height:44px;font:inherit;cursor:pointer;margin-top:.75rem}
+.note{font-size:.95rem;color:var(--ink-2)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+/* --- Structure explorer (folded 2026-11-07) --- */
+:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:2rem 0}
+h1{font-size:clamp(1.6rem,4vw,2rem);line-height:1.25;margin:.25rem 0 .5rem}
+h2{font-size:1.25rem;margin:0 0 .5rem}
+.eyebrow{color:var(--teal);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
+.banner{background:#fff8e1;border:1px solid #e6c200;border-radius:12px;padding:1rem;margin:1rem 0}
+.banner p{margin:.25rem 0}
+.diagram{display:flex;flex-direction:column;align-items:center;gap:0;margin:1.5rem 0}
+.node{width:min(100%,560px);text-align:left;background:var(--surface);border:2px solid var(--line);border-radius:var(--radius);padding:1rem 1.25rem;cursor:pointer;font:inherit;color:var(--ink);min-height:44px}
+.node:hover{border-color:var(--teal)}
+.node[aria-pressed="true"]{border-color:var(--navy);box-shadow:0 0 0 3px var(--gold-bright)}
+.node .node-title{font-weight:800;font-size:1.1rem;display:block}
+.node .node-role{color:var(--ink-2);display:block;margin-top:.2rem}
+.node .node-hint{font-size:.85rem;color:var(--link);display:block;margin-top:.4rem;font-weight:700}
+.connector{width:2px;height:28px;background:var(--navy);flex:none}
+.connector-label{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);padding:.15rem 0}
+.badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid;margin-bottom:.4rem}
+.badge.filed{background:#e6f4ea;border-color:#2e7d32;color:#1b5e20}
+.badge.intended{background:#fff8e1;border-color:#c9a227;color:#6d4c00}
+.badge.partner{background:#eef3f8;border-color:var(--navy-2);color:var(--navy)}
+.partner-row{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:1.5rem}
+.partner-label{font-size:.85rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-bottom:.5rem;text-align:center}
+.detail{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;margin-top:1.5rem;min-height:12rem}
+.detail h2{margin-top:0}
+.detail p{margin:.5rem 0}
+.detail .detail-link{font-weight:700;display:inline-block;padding:.5rem 0;min-height:44px}
+.detail .facts{font-size:.95rem;color:var(--ink-2)}
+.detail .facts strong{color:var(--ink)}
+.note{font-size:.95rem;color:var(--ink-2)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+/* --- Article explorer (folded 2026-11-07) --- */
+:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:2rem 0}
+h1{font-size:clamp(1.6rem,4vw,2rem);line-height:1.25;margin:.25rem 0 .5rem}
+h2{font-size:1.25rem;margin:0 0 .5rem}
+.eyebrow{color:var(--teal);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem}
+.banner{background:#fff8e1;border:1px solid #e6c200;border-radius:12px;padding:1rem;margin:1rem 0}
+.banner p{margin:.25rem 0}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.filter-btn{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:.6rem 1rem;min-height:44px;font:inherit;font-size:.95rem;cursor:pointer}
+.filter-btn:hover{border-color:var(--teal)}
+.filter-btn[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:700}
+.filter-btn .count{font-weight:700;opacity:.8}
+.search-row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:1rem 0}
+.search-row label{font-weight:700}
+.search-row input[type="search"]{flex:1;min-width:min(100%,16rem);min-height:44px;padding:.6rem .8rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--surface);color:var(--ink)}
+.result-count{font-weight:700;margin:.5rem 0}
+.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;display:flex;flex-direction:column}
+.card:hover{border-color:var(--teal)}
+.card h3{margin:.25rem 0 .5rem;font-size:1.1rem}
+.card h3 a{color:var(--ink);text-decoration:none}
+.card h3 a:hover,.card h3 a:focus-visible{text-decoration:underline;color:var(--link)}
+.card p{margin:.25rem 0}
+.card .tag{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.card .num{font-weight:800;color:var(--navy)}
+.card .desc{font-size:.95rem;color:var(--ink-2)}
+.card .spacer{flex:1}
+.card .card-link{font-weight:700;display:inline-block;padding:.4rem 0;min-height:44px;line-height:1.4}
+.empty{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;text-align:center}
+.empty button{appearance:none;border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:999px;padding:.6rem 1.2rem;min-height:44px;font:inherit;cursor:pointer;margin-top:.75rem}
+.note{font-size:.95rem;color:var(--ink-2)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
 </style>
 <link rel="api-catalog" href="/.well-known/api-catalog">
 <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
@@ -49,52 +220,264 @@ small{color:var(--ink-2)}
 <link rel="alternate" type="text/markdown" href="/llms.txt">
 </head>
 <body>
-<a href="#main" style="position:absolute;left:-9999px">Skip to content</a>
-<header class="top"><div class="wrap"><strong>AGI Future Foundation PBC</strong><nav aria-label="Site sections"><a href="series/index.html">Series</a><a href="projects/index.html">Projects</a><a href="governance/index.html">Governance</a><a href="operations/index.html">Operations</a><a href="get-involved/index.html">Get Involved</a><a href="investors/index.html">Investors</a><a href="videos/index.html">Videos</a><a href="vr/index.html">VR Tour</a><a href="events/index.html">Events</a><a href="features/index.html">Features</a><a href="articles/index.html">Articles</a><a href="#solution">Solution</a><a href="#articles">Articles</a><a href="#videos">Videos</a><a href="#agents">For Agents</a><a href="#contact">Contact</a></nav></div></header>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="top" id="site-header"><div class="wrap topbar">
+<a class="brand" href="index.html">AGI Future Foundation PBC</a>
+<button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">&#9776; Menu</button>
+<nav class="main" id="site-nav" aria-label="Site sections">
+<ul>
+<li class="has-drop">
+<button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">About <span class="caret" aria-hidden="true">&#9662;</span></button>
+<div class="dropdown" role="menu">
+<span class="drop-head">The Foundation &amp; its governance</span>
+<a href="governance/index.html" role="menuitem">Governance <span class="sub">How the Foundation governs</span></a>
+<a href="governance/fiduciary-shield.html" role="menuitem">Fiduciary Shield <span class="sub">Safety-first legal protection</span></a>
+<a href="governance/windfall-clause.html" role="menuitem">Windfall Clause <span class="sub">Sharing profits above a threshold</span></a>
+<a href="governance/open-global-investment.html" role="menuitem">Open Global Investment <span class="sub">Broad ownership, founder governance</span></a>
+<a href="governance/share-structure.html" role="menuitem">Share Structure <span class="sub">Class A / B / C, as proposed</span></a>
+<a href="governance/steward-council.html" role="menuitem">Steward Council <span class="sub">Human oversight of the studio</span></a>
+<a href="press/index.html" role="menuitem">Press <span class="sub">Announcements and site news</span></a>
+<a href="vr/index.html" role="menuitem">VR Tour <span class="sub">Walk the mission in three steps</span></a>
+</div>
+</li>
+<li class="has-drop">
+<button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">Series &amp; Projects <span class="caret" aria-hidden="true">&#9662;</span></button>
+<div class="dropdown" role="menu">
+<span class="drop-head">33 planned W3 series — planned, not formed</span>
+<a href="series/index.html" role="menuitem">All 33 planned series <span class="sub">The full series hub</span></a>
+<a href="series/S03-diagnostic-x.html" role="menuitem">Diagnostic.X — S03 <span class="sub">AI diagnostics, safety-governed</span></a>
+<a href="series/S10-smartciti-x.html" role="menuitem">SmartCiti.X — S10 <span class="sub">Cities, trades, and robotics training</span></a>
+<a href="series/S30-robotics-dao.html" role="menuitem">Robotics DAO — S30 <span class="sub">Governing physical-AI deployment</span></a>
+<a href="series/S01-cognition-x.html" role="menuitem">Cognition.X — S01</a>
+<a href="series/S33-infogurus.html" role="menuitem">InfoGurus — S33</a>
+<a href="projects/index.html" role="menuitem">Projects <span class="sub">AGI Corp, Fellowship, WorldForge &amp; more</span></a>
+<a href="projects/agi-corp.html" role="menuitem">AGI Corp</a>
+<a href="projects/agi-fellowship.html" role="menuitem">AGI Fellowship</a>
+<a href="projects/worldforge.html" role="menuitem">WorldForge</a>
+<a href="projects/rp1-ecosystem.html" role="menuitem">RP1 Ecosystem</a>
+</div>
+</li>
+<li class="has-drop">
+<button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+<div class="dropdown" role="menu">
+<span class="drop-head">68 articles: 44 deep + 24 long-form</span>
+<a href="articles/index.html" role="menuitem">All 68 articles <span class="sub">The full article hub</span></a>
+<a href="articles/category-1-intelligence-mind.html" role="menuitem">Intelligence &amp; Mind</a>
+<a href="articles/category-2-health-life-sciences.html" role="menuitem">Health &amp; Life Sciences</a>
+<a href="articles/category-3-metaverse-spatial.html" role="menuitem">Metaverse &amp; Spatial</a>
+<a href="articles/category-4-robotics-physical-ai.html" role="menuitem">Robotics &amp; Physical AI</a>
+<a href="articles/category-5-governance-law.html" role="menuitem">Governance &amp; Law</a>
+<a href="articles/category-6-finance-studio.html" role="menuitem">Finance &amp; Studio</a>
+<a href="articles/category-7-cities-energy-infrastructure.html" role="menuitem">Cities, Energy &amp; Infrastructure</a>
+<a href="articles/category-8-community-culture.html" role="menuitem">Community &amp; Culture</a>
+</div>
+</li>
+<li class="has-drop">
+<button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">Features <span class="caret" aria-hidden="true">&#9662;</span></button>
+<div class="dropdown" role="menu">
+<span class="drop-head">21 magazine-style features</span>
+<a href="features/index.html" role="menuitem">All 21 features <span class="sub">The full features hub</span></a>
+<a href="features/feature-11-agentic-venture-studio.html" role="menuitem">The Agentic Venture Studio <span class="sub">Agents operate. People govern.</span></a>
+<a href="features/feature-07-shield-and-windfall.html" role="menuitem">The Shield and the Windfall</a>
+<a href="features/feature-12-the-mission-gate.html" role="menuitem">The Mission Gate <span class="sub">The seven-stage flow that decides what gets built</span></a>
+<a href="features/feature-13-the-steward-council.html" role="menuitem">The Steward Council <span class="sub">Three humans, two votes, and the whole design</span></a>
+<a href="features/feature-14-the-open-door.html" role="menuitem">The Open Door <span class="sub">Open Global Investment and the race nobody has to win</span></a>
+<a href="features/feature-21-the-proof-is-the-product.html" role="menuitem">The Proof Is the Product</a>
+</div>
+</li>
+<li class="has-drop">
+<button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">Videos <span class="caret" aria-hidden="true">&#9662;</span></button>
+<div class="dropdown" role="menu">
+<span class="drop-head">40 videos on the video hub</span>
+<a href="videos/index.html" role="menuitem">All 40 videos <span class="sub">Explainers and series shorts</span></a>
+<a href="videos/youtube.html" role="menuitem">YouTube library <span class="sub">@AGI-Corp on YouTube</span></a>
+<a href="vr/index.html" role="menuitem">VR Tour <span class="sub">A guided tour in 3D or plain text</span></a>
+</div>
+</li>
+<li class="has-drop">
+<button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">Support <span class="caret" aria-hidden="true">&#9662;</span></button>
+<div class="dropdown" role="menu">
+<span class="drop-head">Get involved — arranged by email</span>
+<a href="get-involved/index.html" role="menuitem">Get Involved <span class="sub">Build, steward, or partner</span></a>
+<a href="get-involved/builders.html" role="menuitem">Builders</a>
+<a href="get-involved/stewards.html" role="menuitem">Stewards</a>
+<a href="get-involved/partners.html" role="menuitem">Partners</a>
+<a href="get-involved/contact.html" role="menuitem">Contact <span class="sub">x@agifuturefoundation.org</span></a>
+<a href="investors/index.html" role="menuitem">Investors <span class="sub">Nothing here is an offering</span></a>
+<a href="events/index.html" role="menuitem">Events <span class="sub">BuilderSpace onboarding and tour</span></a>
+<a href="events/builderspace.html" role="menuitem">BuilderSpace</a>
+</div>
+</li>
+</ul>
+</nav>
+</div></header>
 <main id="main">
 <section class="hero"><div class="wrap">
 <p class="eyebrow">California Public Benefit Corporation</p>
 <h1>Architecting Global AGI Prosperity</h1>
 <p>To survive the transition to AGI, we must replace the incentive for conflict with a mechanism for shared prosperity. We built the corporate architecture to do it — the <strong>Fiduciary Shield</strong>, the <strong>Open Global Investment</strong> model, and the <strong>Windfall Clause</strong>.</p>
-<p><a class="btn" href="#solution">See the system</a><a class="btn ghost" href="#agents">Agent-to-agent protocol</a></p>
-<div class="kpi"><div><strong>3-tier</strong>legal architecture</div><div><strong>66-W3</strong>Wyoming Series network</div><div><strong>33</strong>agentic subsidiaries</div></div>
-<figure style="margin:1.5rem 0 0;max-width:720px"><video controls preload="metadata" src="assets/videos/long-mission-120s.mp4" style="width:100%;border-radius:10px;display:block;background:#000"></video><figcaption style="font-size:.85rem;color:#dbe6f5;margin:.4rem 0 0">AI-generated video — illustration, not footage of a real factory, event, or dashboard.</figcaption></figure><figure style="margin:1.5rem 0 0;max-width:720px"><video controls preload="metadata" src="assets/videos/short-overview.mp4" style="width:100%;border-radius:10px;display:block;background:#000"></video><figcaption style="font-size:.85rem;color:#dbe6f5;margin:.4rem 0 0">AI-generated video — illustration, not footage of a real factory, event, or dashboard.</figcaption></figure></div></section>
+<p><a class="btn" href="series/index.html">Explore the 33 planned series</a><a class="btn ghost" href="articles/index.html">Read the deep articles</a><a class="btn ghost" href="videos/index.html">Watch the videos</a></p>
+<figure><video controls preload="metadata" src="assets/videos/short-overview.mp4"></video><figcaption>AI-generated video — illustration, not footage of a real factory, event, or dashboard.</figcaption></figure>
+<div class="kpi"><div><strong>44</strong><span>deep articles</span></div><div><strong>21</strong><span>magazine features</span></div><div><strong>40</strong><span>videos</span></div><div><strong>33</strong><span>planned W3 series</span></div></div>
+</div></section>
 
 <section><div class="wrap"><div class="banner"><strong>Filed status — read before quoting anything else:</strong> AGI Future Foundation is a California Nonprofit Public Benefit Corporation, Entity No. B20260196664, Articles filed 2026-04-24, EIN assigned 2026-05-07. No IRS 501(c)(3) determination letter is in the files, so no tax-exempt status and no tax-deductible donations are claimed. The &ldquo;PBC&rdquo; label on this page is used in the for-profit benefit-corporation sense on the live site; that fork is unresolved and this build follows the filed nonprofit status. Nothing on this site is an offering: no SAFE, equity, price, valuation, cap, discount, minimum, return, or deadline is stated as a term.</div></div></section>
 
-<section id="vr-tour"><div class="wrap">
-<p class="eyebrow" style="color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem">New &middot; Guided VR entry</p>
-<h2>Walk the mission in three steps</h2>
-<p>A guided VR entry to the Foundation — see the mission, explore the 33 proposed W3 series, and learn how to support the mission. It works in a VR headset, a desktop browser, or on a phone, and the full tour is available as plain text when 3D cannot run.</p>
-<p><a class="btn" href="vr/index.html">Enter the VR tour &rarr;</a></p>
+<section id="start"><div class="wrap">
+<h2>Start here</h2>
+<div class="grid">
+<div class="card"><p class="tag">The system</p><h3>One interlocking system</h3><p>Three mechanisms — the Fiduciary Shield, Open Global Investment, and the Windfall Clause — fitted together so safety becomes the profitable path.</p><p><a class="card-link" href="governance/index.html">How governance works &rarr;</a></p></div>
+<div class="card"><p class="tag">The plan</p><h3>33 planned series</h3><p>The W3 series network is planned, not formed: 33 named sub-series from an April 2026 internal list, from diagnostics to robotics to cities.</p><p><a class="card-link" href="series/index.html">Browse the planned series &rarr;</a></p></div>
+<div class="card"><p class="tag">The studio</p><h3>Agents operate. People govern.</h3><p>The agentic venture studio is a function, not a separate company — and nothing has been formed, funded, or issued under it yet.</p><p><a class="card-link" href="features/feature-11-agentic-venture-studio.html">Read the studio feature &rarr;</a></p></div>
+<div class="card"><p class="tag">The tour</p><h3>Walk the mission in three steps</h3><p>A guided VR entry to the Foundation — in a headset, a desktop browser, or on a phone, with a plain-text version when 3D cannot run.</p><p><a class="card-link" href="vr/index.html">Enter the VR tour &rarr;</a></p></div>
+</div>
 </div></section>
 
-<section id="studio-spotlight"><div class="wrap">
-<p class="eyebrow" style="color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.85rem">Featured &middot; The Agentic Venture Studio</p>
-<h2>Agents operate. People govern. The world gets better.</h2>
-<figure style="margin:0 0 1.5rem;max-width:720px"><img src="assets/images/features/feat-11-agentic-venture-studio.jpg" alt="AI-generated illustration for The Agentic Venture Studio" style="width:100%;border-radius:10px;display:block;background:#000"><figcaption style="font-size:.85rem;color:#5b6b7d;margin:.4rem 0 0">AI-generated illustration.</figcaption></figure>
-<p>The Foundation is building an agentic venture studio: agents run the day-to-day work inside limits humans set, humans decide, sign, and move funds, and the Foundation&rsquo;s mission gate holds over every venture. The studio is a function, not a separate company, and nothing has been formed, funded, or issued under it yet &mdash; the feature says so plainly, and then makes the case for why the model matters: the Fiduciary Shield, Open Global Investment, and the Windfall Clause, fitted together into one attempt to make a better world.</p>
-<p>A second wave of ten features continues the series — the mission gate, the steward council, the open door, the long money, the builders, the first company, the fellowship partnership, the cohort machine, the windfall promise, and the proof in the product — each in the same magazine style, each keeping the filed facts and the intended plans visibly apart.</p>
-<p><a class="btn" href="features/feature-11-agentic-venture-studio.html">Read the spotlight feature</a> <a href="features/index.html">All twenty-one features &rarr;</a></p>
+<section id="series"><div class="wrap">
+<h2>Featured series — planned, not formed</h2>
+<p>Every series below is <strong>planned, not formed, funded, or offered</strong>. Each page carries its own status banner saying so.</p>
+<div class="grid">
+<section aria-labelledby="explorer-title">
+<p class="eyebrow">W3 LLC &middot; Wyoming Series &middot; Planned, not formed</p>
+<h2 id="explorer-title">Explore the 33 planned series</h2>
+<p>Thirty-three named sub-series in the April 2026 internal W3 list. Every series is <strong>intended / planned &mdash; not formed, funded, or offered</strong>. Categories below are the site&rsquo;s own article categories, taken from the Foundation site&rsquo;s article category pages.</p>
+<div class="controls" role="group" aria-label="Filter series by category" id="filters"></div>
+
+<div class="search-row">
+<label for="series-search">Search series</label>
+<input type="search" id="series-search" placeholder="Try &ldquo;robotics&rdquo;, &ldquo;S10&rdquo;, or &ldquo;genome&rdquo;" autocomplete="off" aria-describedby="result-count">
+<button class="filter-btn" type="button" id="clear-search">Clear</button>
+</div>
+
+<p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+<div class="grid" id="series-grid"></div>
+<div class="empty" id="empty-state" hidden>
+<p><strong>No series match.</strong> Try a different search term or category.</p>
+<button type="button" id="reset-filters">Show all 33 series</button>
+</div>
+
+<p class="note"><strong>Note on S10 SmartCiti.X:</strong> SmartCiti.X sits in <em>Cities, Energy &amp; Infrastructure</em> &mdash; it is <strong>not</strong> a Robotics series. SmartCiti.X is also proposed as a separate new corporation (SmartCiti.X, Inc.) &mdash; proposed, not formed, funded, or offered. That proposal is separate from this W3 series listing.</p>
+<p class="note"><strong>Anchored</strong> means a metaverse fabric for the series is published with verified coordinates, but the assets it references are not hosted, so it does not render fully yet. Anchored is not the same as live. Four series are anchored: S01, S02, S03, and S08.</p>
+<p class="note">Every card links to its real series page on agifuturefoundation.org. Nothing here is an offer to sell securities, an invitation to invest, or a solicitation of funds. Nothing on this page is legal, tax, or financial advice.</p>
+</section>
+<p><a class="section-link" href="series/index.html">All 33 planned series &rarr;</a></p>
 </div></section>
 
-<section><div class="wrap">
-<h2>The problem: a zero-sum arms race</h2>
-<p>Unilateral, nation-state AGI development incentivizes espionage, sabotage, and rushed, unsafe deployment as nations fear exclusion. A U.S.-only nationalized program yields extreme global inequality, high risk of existential conflict driven by fear of dependency, and safety losing every race against speed.</p>
-<p><strong>Positive-sum alignment:</strong> decouple economic wealth from governance control, and everyone gains a vested interest in the Foundation's safe success — broad ownership reduces expropriation risk, rivals are invited into the upside, and safety becomes the profitable path.</p>
+<section id="articles"><div class="wrap">
+<h2>Featured deep articles</h2>
+<p>44 deep articles across 8 categories, plus 24 long-form articles (4,000–5,000 words each) — now the longest reads on the site.</p>
+<div class="grid">
+<section aria-labelledby="articles-title">
+<p class="eyebrow">AGI Future Foundation &middot; Deep articles</p>
+<h2 id="articles-title">Explore the 68 deep articles</h2>
+<p>Search by title, article number, or topic, or filter by the site&rsquo;s own article categories. Every result links to its real article page.</p>
+<div class="banner" role="note"><p><strong>About these articles.</strong> Articles about the W3 series describe planned series — intended, not formed, funded, or offered. Articles about AGI Corp, the Fellowship, and the network ventures state what is verified and what is not, on the article page itself. Nothing here is an offer of securities or investment, and nothing is legal, tax, or financial advice.</p></div>
+
+<div class="controls" role="group" aria-label="Filter articles by category" id="filters"></div>
+
+<div class="search-row">
+<label for="article-search">Search articles</label>
+<input type="search" id="article-search" placeholder="Try &ldquo;windfall&rdquo;, &ldquo;robotics&rdquo;, or &ldquo;33&rdquo;" autocomplete="off" aria-describedby="result-count">
+<button class="filter-btn" type="button" id="clear-search">Clear</button>
+</div>
+
+<p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+<ul class="list" id="article-list"></ul>
+<div class="empty" id="empty-state" hidden>
+<p><strong>No articles match.</strong> Try a different search term or category.</p>
+<button type="button" id="reset-filters">Show all 68 articles</button>
+</div>
+
+<p class="note">Categories are the site&rsquo;s own, from articles/category-1..8-*.html: Intelligence & Mind (11), Health & Life Sciences (17), Metaverse & Spatial (8), Robotics & Physical AI (6), Governance & Law (10), Finance & Studio (4), Cities, Energy & Infrastructure (4), Community & Culture (8). The 24 long-form articles (45&ndash;68), published 2026-11-07, are listed here too; their categories follow the same series mapping as articles 1&ndash;44.</p>
+</section>
+<p><a class="section-link" href="articles/index.html">All 68 articles &rarr;</a> · Browse by category: <a href="articles/category-5-governance-law.html">Governance &amp; Law</a> · <a href="articles/category-4-robotics-physical-ai.html">Robotics &amp; Physical AI</a> · <a href="articles/category-7-cities-energy-infrastructure.html">Cities, Energy &amp; Infrastructure</a> · <a href="articles/category-8-community-culture.html">Community &amp; Culture</a></p>
+</div></section>
+
+<section id="features"><div class="wrap">
+<h2>Featured features</h2>
+<p>21 magazine-style features — the story of the Foundation, the studio, and the network, told one piece at a time.</p>
+<div class="grid">
+<div class="card"><p class="tag">Spotlight</p><h3>The Agentic Venture Studio</h3><p>How the Foundation is working to make a better world — agents operate, people govern.</p><p><a class="card-link" href="features/feature-11-agentic-venture-studio.html">Read the feature &rarr;</a></p></div>
+<div class="card"><p class="tag">Mechanisms</p><h3>The Shield and the Windfall</h3><p><a class="card-link" href="features/feature-07-shield-and-windfall.html">Read the feature &rarr;</a></p></div>
+<div class="card"><p class="tag">Governance</p><h3>The Mission Gate</h3><p>The seven-stage flow that decides what gets built.</p><p><a class="card-link" href="features/feature-12-the-mission-gate.html">Read the feature &rarr;</a></p></div>
+</div>
+<p><a class="section-link" href="features/index.html">All 21 features &rarr;</a></p>
 </div></section>
 
 <section id="solution"><div class="wrap">
 <h2>One interlocking system</h2>
 <div class="grid">
-<div class="card"><h3>Fiduciary Shield</h3><p>California PBC status expands the Business Judgment Rule, legally protecting the board from shareholder lawsuits when they prioritize safety over short-term profit. It moves the litigation boundary.</p></div>
-<div class="card"><h3>Open Global Investment</h3><p>A broad-ownership model that invites international — even rival — participation in AGI value. Governance stays with founders via high-vote shares; upside is open to the world.</p></div>
-<div class="card"><h3>Windfall Clause</h3><p>A legal pre-commitment: profits above a set threshold are redistributed globally. It turns the fear of AGI concentration into a mechanism for shared prosperity.</p></div>
+<div class="card"><h3>Fiduciary Shield</h3><p>California PBC status expands the Business Judgment Rule, legally protecting the board from shareholder lawsuits when they prioritize safety over short-term profit. It moves the litigation boundary.</p><p><a class="card-link" href="governance/fiduciary-shield.html">The Fiduciary Shield &rarr;</a></p></div>
+<div class="card"><h3>Open Global Investment</h3><p>A broad-ownership model that invites international — even rival — participation in AGI value. Governance stays with founders via high-vote shares; upside is open to the world.</p><p><a class="card-link" href="governance/open-global-investment.html">Open Global Investment &rarr;</a></p></div>
+<div class="card"><h3>Windfall Clause</h3><p>A legal pre-commitment: profits above a set threshold are redistributed globally. It turns the fear of AGI concentration into a mechanism for shared prosperity.</p><p><a class="card-link" href="governance/windfall-clause.html">The Windfall Clause &rarr;</a></p></div>
 </div>
 <h3 style="margin-top:2rem">Three tiers, governed by agents</h3>
-<p><strong>Apex · Governance — AGI Future Foundation PBC:</strong> public-benefit governance and the Fiduciary Shield over the entire network.<br>
-<strong>Commercial Engine — 66-W3 LLC · Wyoming Series:</strong> houses 33 specialized, agent-based DAO subsidiaries with isolated assets and liability.<br>
-<strong>Subsidiaries:</strong> Diagnostic.X, Robotics DAO, SmartCiti.X, and 30 more — 33 named W3 series in all, the intended portfolio of the agentic venture studio, with stewardship through the Omega Hive network.</p>
+<p><strong>Apex · Governance — AGI Future Foundation:</strong> the filed California Nonprofit Public Benefit Corporation (Entity No. B20260196664), holding public-benefit governance and the Fiduciary Shield over the network.<br>
+<strong>Proposed commercial engine — W3 series network:</strong> 33 named sub-series in an April 2026 internal list — planned, not formed, funded, or offered — intended as the portfolio of the agentic venture studio.<br>
+<strong>Proposed studio:</strong> the agentic venture studio is a function, not a separate company, and nothing has been formed, funded, or issued under it yet.</p>
+
+<section aria-labelledby="structure-title">
+<p class="eyebrow">Intended structure v2 &middot; A plan, not a completed fact</p>
+<h2 id="structure-title">How the structure is intended to work</h2>
+<p>Select any box to read what is verified about it and what is only planned. Every box is labelled <strong>filed</strong> or <strong>intended / proposed</strong>. Use Tab to move between boxes, arrow keys to move up and down the chain, and Escape to clear the selection.</p>
+<div class="diagram" role="group" aria-label="Intended structure chain" id="diagram">
+<button type="button" class="node" data-node="agicorp" aria-pressed="false">
+<span class="badge intended">Intended — EIN only</span>
+<span class="node-title">AGI Corp</span>
+<span class="node-role">Intended commercial head &middot; venture studio function &middot; Wyoming corporation (intended)</span>
+<span class="node-hint">Select to read the verified facts &darr;</span>
+</button>
+<div class="connector" aria-hidden="true"></div>
+<div class="connector-label" aria-hidden="true">Intended head — not verified as filed</div>
+<div class="connector" aria-hidden="true"></div>
+<button type="button" class="node" data-node="foundation" aria-pressed="true">
+<span class="badge filed">Filed — verified</span>
+<span class="node-title">AGI Future Foundation</span>
+<span class="node-role">Mission steward &middot; California Nonprofit Public Benefit Corporation</span>
+<span class="node-hint">Select to read the verified facts &darr;</span>
+</button>
+<div class="connector" aria-hidden="true"></div>
+<div class="connector-label" aria-hidden="true">Mission stewardship — written agreements only</div>
+<div class="connector" aria-hidden="true"></div>
+<button type="button" class="node" data-node="w3" aria-pressed="false">
+<span class="badge intended">Intended — not verified</span>
+<span class="node-title">W3 LLC</span>
+<span class="node-role">Wyoming series LLC (intended) &middot; 33 named sub-series</span>
+<span class="node-hint">Select to read the verified facts &darr;</span>
+</button>
+<div class="connector" aria-hidden="true"></div>
+<div class="connector-label" aria-hidden="true">New projects go here — or to the Delaware cohorts</div>
+<div class="connector" aria-hidden="true"></div>
+<button type="button" class="node" data-node="delaware" aria-pressed="false">
+<span class="badge intended">Intended — not verified</span>
+<span class="node-title">Delaware cohort series — C1S1, C1S2, C1S3</span>
+<span class="node-role">Cohort 1, Series 1–3 (to confirm) &middot; new cohorts, new projects</span>
+<span class="node-hint">Select to read the verified facts &darr;</span>
+</button>
+</div>
+
+<div class="partner-row">
+<p class="partner-label" id="partner-label">Outside the chain — separate partner, not a subsidiary</p>
+<button type="button" class="node" data-node="fellowship" aria-pressed="false" aria-describedby="partner-label">
+<span class="badge partner">Filed — separate partner</span>
+<span class="node-title">AGI Fellowship</span>
+<span class="node-role">Separate California nonprofit religious corporation &middot; partner church, not in the chain</span>
+<span class="node-hint">Select to read the verified facts &darr;</span>
+</button>
+</div>
+
+<div class="detail" id="detail" aria-live="polite" tabindex="-1"></div>
+
+<p class="note"><strong>What &ldquo;DAO-managed&rdquo; means in the plan:</strong> agents operate the day-to-day work of a series within limits set by humans, and a human Steward Council decides, signs, and moves funds. Agents never sign, move funds, hire or fire, offer securities, or enact doctrine. No Steward Council for any series is verified as seated.</p>
+<p class="note">No IRS 501(c)(3) determination letter is in the files for the Foundation or the Fellowship, so no tax-exempt status and no tax-deductible donations are claimed anywhere here.</p>
+</section>
+</div></section>
+
+<section id="videos"><div class="wrap">
+<h2>Video explainers — 40 videos</h2>
+<p>Explainers and series shorts on the video hub, plus the YouTube library.</p>
+<figure><video controls preload="metadata" src="assets/videos/long-mission-120s.mp4"></video><figcaption>AI-generated video — illustration, not footage of a real factory, event, or dashboard.</figcaption></figure>
+<p><a class="btn" href="videos/index.html">All 40 videos &rarr;</a> <a href="videos/youtube.html">YouTube library &rarr;</a></p>
 </div></section>
 
 <section id="agents"><div class="wrap">
@@ -108,65 +491,573 @@ This protocol is a draft for review, not a live system. No autonomous transfers,
 <div class="card"><h3>3 · Receipt</h3><p>Every agent-to-agent exchange leaves a dated receipt: who asked, what was shared, what was decided, and what remains open.</p></div>
 <div class="card"><h3>4 · Fiduciary first</h3><p>Safety and public benefit outrank speed and profit in any agent recommendation made in the Foundation's name.</p></div>
 </div>
-<p>Agent contact route: <a href="mailto:x@agifuturefoundation.org">x@agifuturefoundation.org</a> — subject line should start with <code>[Agent]</code> and name the human principal.</p>
-</div></section>
-
-<section id="articles"><div class="wrap">
-<h2>Deep dives — 15 articles</h2>
-<p><small>Full article bodies live on the source Foundation site; titles and summaries below are as listed there.</small></p>
-<ol>
-<li><strong>The PBC Business-Judgment Defense</strong> (Legal &amp; Fiduciary, 8 min) — How PBC structure and the expanded business-judgment rule protect safety-first leadership when it conflicts with short-term shareholder returns.</li>
-<li><strong>Inside the Fiduciary Shield</strong> (7 min) — The interlocking legal and governance mechanisms that protect safety-first leadership from external and internal pressure to compromise alignment.</li>
-<li><strong>Liability Isolation at Scale</strong> (8 min) — How the 66-W3 Wyoming Series LLC creates enforceable liability walls between 33 subsidiaries, protecting the parent and investor capital from cross-contamination.</li>
-<li><strong>Bridging Code and Law</strong> — Wyoming DAO LLCs: legally recognized on-chain governance combined with traditional liability protections and compliance infrastructure.</li>
-<li><strong>The Open Global Investment Model Explained</strong> (Economics, 9 min) — Dual-class equity, the Windfall Clause, DAO participation, and an illustrative cap table showing how economic vs. governance rights are structured.</li>
-<li><strong>The Windfall Clause: Trigger, Administration, and Enforcement</strong> (10 min) — How the profit threshold is set, who administers redistribution, and what gives the clause teeth.</li>
-<li><strong>Class A Profit Participation</strong> (9 min) — What Class A shares represent, their economics, and the governance rights they do and do not carry.</li>
-<li><strong>Global Redistribution Without Losing the Company</strong> (12 min) — Designing Windfall mechanics to survive commercial pressure, governance transitions, and legal challenge.</li>
-<li><strong>Diagnostic.X Investment Thesis</strong> (Subsidiaries, 14 min) — AI diagnostics governed by an AGI-safety mandate, liability-isolated.</li>
-<li><strong>Robotics DAO Investment Thesis</strong> (14 min) — Governing commercial deployment of robotic and physical-AI agents.</li>
-<li><strong>The 66-W3 Commercial Engine</strong> (8 min) — How 33 DAOs generate aligned profit while preserving public benefit.</li>
-<li><strong>Governing 33 Subsidiaries</strong> (9 min) — California PBC law, expanded business-judgment protections, and layered governance across 33 subsidiaries.</li>
-<li><strong>Governance as a Selling Point</strong> (Safety &amp; Governance, 8 min) — The Governance Tracker as a live audit log of material proposals, fiduciary reviews, and compliance checks — a strategic asset for investors.</li>
-<li><strong>The Alignment Evaluation Gate</strong> (10 min) — Pre-registered thresholds, independent LLM judge, separation of powers, four-domain probe architecture — how unsafe models are refused shipment.</li>
-<li><strong>Risks and Mitigations: An Honest Investor FAQ</strong> (12 min) — Direct answers on governance, safety, legal structure, and commercial viability, without spin.</li>
-</ol>
-</div></section>
-
-<section id="videos"><div class="wrap">
-<h2>Video explainers — 8 videos, linked not embedded</h2>
-<p><small>Linking keeps this page fast. Videos are on the live Foundation domain, verified 2026-10-25.</small></p>
-<ul>
-<li><a href="https://www.agifuturefoundation.org/videos/fiduciary-shield-immune-system.mp4">The Fiduciary Shield</a></li>
-<li><a href="https://www.agifuturefoundation.org/videos/open-global-investment-model.mp4">Open Global Investment</a></li>
-<li><a href="https://www.agifuturefoundation.org/videos/windfall-clause-redistribution.mp4">The Windfall Clause</a></li>
-<li><a href="https://www.agifuturefoundation.org/videos/diagnostic-x-safe-ai.mp4">Diagnostic.X</a></li>
-<li><a href="https://www.agifuturefoundation.org/videos/robotics-dao-physical-ai.mp4">Robotics DAO</a></li>
-<li><a href="https://www.agifuturefoundation.org/videos/commercial-engine-33-subsidiaries.mp4">The 66-W3 Commercial Engine</a></li>
-<li><a href="https://www.agifuturefoundation.org/videos/governance-tracker-materiality.mp4">The Governance Tracker</a></li>
-<li><a href="https://www.agifuturefoundation.org/videos/alignment-evaluation-gate.mp4">The Alignment Gate</a></li>
-</ul>
-</div></section>
-
-<section id="assurance"><div class="wrap">
-<h2>Assurance in public — Tracker &amp; Gate</h2>
-<p>From the Foundation's own article summaries, verified on the live site 2026-10-25.</p>
-<div class="grid">
-<div class="card"><h3>Governance Tracker</h3><p>A live audit log of every material proposal, fiduciary review, and compliance check — presented as a strategic asset for investors, not a private promise. What was decided, who reviewed it, and what check passed should be checkable, not just claimed.</p></div>
-<div class="card"><h3>Alignment Evaluation Gate</h3><p>A pre-registered threshold system with an independent LLM judge, separation of powers, and a four-domain probe architecture. The gate's job is simple to state: refuse to ship a model that fails its pre-registered safety evaluation.</p></div>
-<div class="card"><h3>Proposed next build (not live)</h3><p>Publish the Tracker and Gate summaries in machine-readable form alongside this site (the same llms.txt / agent.json pattern used here), so agents and reviewers can cite a dated record instead of a slogan. No live Tracker or Gate feed is claimed here until one is actually published and linked.</p></div>
-</div>
+<p>Agent contact route: <a href="mailto:x@agifuturefoundation.org">x@agifuturefoundation.org</a> — subject line should start with <code>[Agent]</code> and name the human principal. Machine-readable: <a href="llms.txt">llms.txt</a> · <a href="agent.json">agent.json</a> · <a href=".well-known/ai-catalog.json">ai-catalog.json</a> · <a href=".well-known/api-catalog">api-catalog</a> · <a href="auth.md">auth.md</a> · <a href="sitemap.xml">sitemap.xml</a></p>
 </div></section>
 
 <section id="contact"><div class="wrap">
 <h2>Fund the alignment of humanity and AGI</h2>
 <p>We're capitalizing the agentic studio and the Corporate Fiduciary Shield to ensure humanity and AGI stay aligned as we reach the singularity. Areas: investment &amp; strategic partnership; sovereign and institutional participation; media, research, and collaboration.</p>
+<p><a class="btn" href="get-involved/index.html">Get involved &rarr;</a> <a class="btn ghost" href="get-involved/contact.html" style="color:var(--ink);border-color:var(--ink)">Contact us</a></p>
 <p>Contact: <a href="mailto:x@agifuturefoundation.org">x@agifuturefoundation.org</a></p>
 <p><small>Nothing on this page is legal, tax, or financial advice, and no signing, membership, or payment is offered here. The Agent-to-Agent Prosperity Protocol above is a proposed draft, not a live system.</small></p>
 </div></section>
 </main>
-<section><div class="wrap"><h2>Site updates</h2><p><small>2026-10-25, second update: article list expanded from titles to summaries; Governance Tracker + Alignment Gate section added; agent-to-agent protocol added; cross-link to the Fellowship site added. No live Tracker/Gate feed is claimed. Next: full article pages after deploy, favicon, and a contact form once a backend is chosen.</small></p></div></section>
-<footer><div class="wrap"><p>AGI Future Foundation PBC · Architecting Global AGI Prosperity · <a href="https://www.agifuturefoundation.org/">agifuturefoundation.org</a> · Local professional build, updated 2026-10-25 — fuller article descriptions, cross-link to the Fellowship site, and changelog below. Not yet deployed to Hostinger. Related project: <a href="https://agifellowship.church/">AGI Fellowship Church</a> (contact agent@agifellowship.church).</p></div></footer>
-<script src="/assets/js/webmcp.js" defer></script>
+<footer><div class="wrap">
+<nav aria-label="Footer"><a href="index.html">Home</a> · <a href="sitemap.xml">Sitemap</a> · <a href="llms.txt">llms.txt</a> · <a href="agent.json">agent.json</a> · <a href=".well-known/ai-catalog.json">ai-catalog</a> · <a href="press/index.html">Press</a> · <a href="events/index.html">Events</a></nav>
+<p>AGI Future Foundation PBC · Architecting Global AGI Prosperity · <a href="https://www.agifuturefoundation.org/">agifuturefoundation.org</a> · Related project: <a href="https://agifellowship.church/">AGI Fellowship Church</a> (contact agent@agifellowship.church).</p>
+<p><small>The filed-status box above is unchanged from the live homepage.</small></p>
+</div></footer>
+<script>
+(function(){
+  "use strict";
+  var header=document.getElementById("site-header");
+  var toggle=document.getElementById("nav-toggle");
+  var nav=document.getElementById("site-nav");
+  function closeAllDrops(except){
+    var items=header.querySelectorAll("li.has-drop.open");
+    items.forEach(function(li){
+      if(li!==except){
+        li.classList.remove("open");
+        var b=li.querySelector(".drop-btn");
+        if(b){b.setAttribute("aria-expanded","false");}
+      }
+    });
+  }
+  header.querySelectorAll(".drop-btn").forEach(function(btn){
+    btn.addEventListener("click",function(e){
+      e.stopPropagation();
+      var li=btn.closest("li.has-drop");
+      var isOpen=li.classList.contains("open");
+      closeAllDrops();
+      if(!isOpen){
+        li.classList.add("open");
+        btn.setAttribute("aria-expanded","true");
+      }else{
+        btn.setAttribute("aria-expanded","false");
+      }
+    });
+    btn.addEventListener("keydown",function(e){
+      var li=btn.closest("li.has-drop");
+      if(e.key==="ArrowDown"){
+        e.preventDefault();
+        li.classList.add("open");
+        btn.setAttribute("aria-expanded","true");
+        var first=li.querySelector(".dropdown a");
+        if(first){first.focus();}
+      }
+      if(e.key==="Escape"){
+        li.classList.remove("open");
+        btn.setAttribute("aria-expanded","false");
+        btn.focus();
+      }
+    });
+  });
+  header.querySelectorAll(".dropdown").forEach(function(dd){
+    dd.addEventListener("keydown",function(e){
+      if(e.key==="Escape"){
+        var li=dd.closest("li.has-drop");
+        var btn=li.querySelector(".drop-btn");
+        li.classList.remove("open");
+        if(btn){btn.setAttribute("aria-expanded","false");btn.focus();}
+      }
+    });
+  });
+  document.addEventListener("click",function(e){
+    if(!header.contains(e.target)){closeAllDrops();}
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape"){closeAllDrops();}
+  });
+  toggle.addEventListener("click",function(){
+    var open=header.classList.toggle("nav-open");
+    toggle.setAttribute("aria-expanded",open?"true":"false");
+    if(!open){closeAllDrops();}
+  });
+  toggle.addEventListener("keydown",function(e){
+    if(e.key==="Escape"&&header.classList.contains("nav-open")){
+      header.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded","false");
+      toggle.focus();
+    }
+  });
+  nav.addEventListener("click",function(e){
+    if(e.target.closest("a")){header.classList.remove("nav-open");toggle.setAttribute("aria-expanded","false");}
+  });
+})();
+</script>
+<script>
+
+(function(){
+"use strict";
+/* Data: names, numbers, one-line focuses and links are from series/index.html
+   and the individual series pages. Categories are the site's own article
+   categories, from articles/category-1..8-*.html. Counts verified:
+   3 / 10 / 3 / 3 / 3 / 1 / 3 / 7 = 33. */
+var BASE="https://www.agifuturefoundation.org/series/";
+var CATEGORIES=[
+ {id:"intelligence-mind",label:"Intelligence & Mind"},
+ {id:"health-life",label:"Health & Life Sciences"},
+ {id:"metaverse-spatial",label:"Metaverse & Spatial"},
+ {id:"robotics-physical",label:"Robotics & Physical AI"},
+ {id:"governance-law",label:"Governance & Law"},
+ {id:"finance-studio",label:"Finance & Studio"},
+ {id:"cities-energy",label:"Cities, Energy & Infrastructure"},
+ {id:"community-culture",label:"Community & Culture"}
+];
+var SERIES=[
+ {n:1, name:"Cognition.X", slug:"S01-cognition-x.html", cat:"intelligence-mind", anchored:true, focus:"Learning and understanding; Flow Zone education, as stated on the Foundation site."},
+ {n:2, name:"Empathic.X", slug:"S02-empathic-x.html", cat:"intelligence-mind", anchored:true, focus:"Empathy and human-centred interaction — planned domain."},
+ {n:3, name:"Diagnostic.X", slug:"S03-diagnostic-x.html", cat:"health-life", anchored:true, focus:"AI diagnostics under a safety mandate, as summarised on the Foundation site."},
+ {n:4, name:"Curable.X", slug:"S04-curable-x.html", cat:"health-life", anchored:false, focus:"Curative, treatment-focused work — planned domain."},
+ {n:5, name:"BioPharma.Go", slug:"S05-biopharma-go.html", cat:"health-life", anchored:false, focus:"Biopharmaceutical work — planned domain."},
+ {n:6, name:"Blockchain", slug:"S06-blockchain.html", cat:"governance-law", anchored:false, focus:"Blockchain ledger and coordination infrastructure — planned domain."},
+ {n:7, name:"Divine DAO", slug:"S07-divine-dao.html", cat:"community-culture", anchored:false, focus:"A DAO concerned with meaning, community, and the sacred — planned domain."},
+ {n:8, name:"Locator.X", slug:"S08-locator-x.html", cat:"metaverse-spatial", anchored:true, focus:"Location, finding, and navigation — planned domain."},
+ {n:9, name:"Astrological.X", slug:"S09-astrological-x.html", cat:"community-culture", anchored:false, focus:"Astrology-related work — planned domain, name-implied only."},
+ {n:10, name:"SmartCiti.X", slug:"S10-smartciti-x.html", cat:"cities-energy", anchored:false, focus:"City-scale learning, training, and robotics — planned domain."},
+ {n:11, name:"Molecular.", slug:"S11-molecular.html", cat:"health-life", anchored:false, focus:"Molecular-scale work — planned domain, name-implied only."},
+ {n:12, name:"ParkingSmart.X", slug:"S12-parking-smart-x.html", cat:"cities-energy", anchored:false, focus:"Finding and using parking and places — planned domain."},
+ {n:13, name:"Gonstead.X", slug:"S13-gonstead-x.html", cat:"health-life", anchored:false, focus:"Gonstead-related work — planned domain, name-implied only."},
+ {n:14, name:"AskDoc.X", slug:"S14-askdoc-x.html", cat:"health-life", anchored:false, focus:"Clinical questions and guidance — planned domain."},
+ {n:15, name:"RomanBridge.DAO", slug:"S15-romanbridge-dao.html", cat:"governance-law", anchored:false, focus:"A DAO named RomanBridge — planned domain, name-implied only."},
+ {n:16, name:"EchoDawn DAO", slug:"S16-echodawn-dao.html", cat:"community-culture", anchored:false, focus:"A DAO named EchoDawn — planned domain, name-implied only."},
+ {n:17, name:"Curable.Blockchain DAO", slug:"S17-curable-blockchain-dao.html", cat:"health-life", anchored:false, focus:"Blockchain in a curative context — planned domain."},
+ {n:18, name:"BioDAO.blockchain DAO", slug:"S18-biodao-blockchain.html", cat:"health-life", anchored:false, focus:"Blockchain in a biomedical context — planned domain."},
+ {n:19, name:"Moscone.X", slug:"S19-moscone-x.html", cat:"community-culture", anchored:false, focus:"Moscone-related work — planned domain, name-implied only."},
+ {n:20, name:"CMMC", slug:"S20-cmmc.html", cat:"governance-law", anchored:false, focus:"CMMC-related work — planned domain, name-implied only."},
+ {n:21, name:"Incubator DAO", slug:"S21-incubator-dao.html", cat:"finance-studio", anchored:false, focus:"An incubator DAO — planned domain, name-implied only."},
+ {n:22, name:"Get.Delivery DAO", slug:"S22-get-delivery-dao.html", cat:"robotics-physical", anchored:false, focus:"Delivery and moving things to people — planned domain."},
+ {n:23, name:"Avatar.Chat DAO", slug:"S23-avatar-chat-dao.html", cat:"metaverse-spatial", anchored:false, focus:"Avatar-based conversation — planned domain."},
+ {n:24, name:"Donatello DAO", slug:"S24-donatello-dao.html", cat:"community-culture", anchored:false, focus:"A DAO named Donatello — planned domain, name-implied only."},
+ {n:25, name:"Mypet.AI", slug:"S25-mypet-ai.html", cat:"community-culture", anchored:false, focus:"Pet-related AI — planned domain, name-implied only."},
+ {n:26, name:"Lyka DAO", slug:"S26-lyka-dao.html", cat:"community-culture", anchored:false, focus:"A DAO named Lyka — planned domain, name-implied only."},
+ {n:27, name:"Genomic DAO", slug:"S27-genomic-dao.html", cat:"health-life", anchored:false, focus:"Genomics — planned domain, name-implied only."},
+ {n:28, name:"Genome.Blockchain", slug:"S28-genome-blockchain.html", cat:"health-life", anchored:false, focus:"Blockchain in a genomic context — planned domain."},
+ {n:29, name:"Metaverse DAO", slug:"S29-metaverse-dao.html", cat:"metaverse-spatial", anchored:false, focus:"Metaverse coordination — planned domain."},
+ {n:30, name:"Robotics DAO", slug:"S30-robotics-dao.html", cat:"robotics-physical", anchored:false, focus:"Robotics and physical AI — planned domain."},
+ {n:31, name:"Aerospace DAO", slug:"S31-aerospace-dao.html", cat:"robotics-physical", anchored:false, focus:"Aerospace — planned domain, name-implied only."},
+ {n:32, name:"Solar DAO", slug:"S32-solar-dao.html", cat:"cities-energy", anchored:false, focus:"Solar energy — planned domain, name-implied only."},
+ {n:33, name:"InfoGurus", slug:"S33-infogurus.html", cat:"intelligence-mind", anchored:false, focus:"Knowledge organisation and retrieval — planned domain."}
+];
+var filtersEl=document.getElementById("filters");
+var gridEl=document.getElementById("series-grid");
+var countEl=document.getElementById("result-count");
+var emptyEl=document.getElementById("empty-state");
+var searchEl=document.getElementById("series-search");
+var activeCat="all";
+var query="";
+
+function catLabel(id){
+  for(var i=0;i<CATEGORIES.length;i++){if(CATEGORIES[i].id===id){return CATEGORIES[i].label;}}
+  return "";
+}
+function catCount(id){
+  var c=0;
+  for(var i=0;i<SERIES.length;i++){if(SERIES[i].cat===id){c++;}}
+  return c;
+}
+function pad(n){return n<10?"0"+n:String(n);}
+
+function buildFilters(){
+  var all=document.createElement("button");
+  all.type="button";
+  all.className="filter-btn";
+  all.setAttribute("aria-pressed","true");
+  all.dataset.cat="all";
+  all.innerHTML='All series <span class="count">(33)</span>';
+  all.addEventListener("click",function(){setCategory("all");});
+  filtersEl.appendChild(all);
+  CATEGORIES.forEach(function(c){
+    var b=document.createElement("button");
+    b.type="button";
+    b.className="filter-btn";
+    b.setAttribute("aria-pressed","false");
+    b.dataset.cat=c.id;
+    b.innerHTML=c.label+' <span class="count">('+catCount(c.id)+')</span>';
+    b.addEventListener("click",function(){setCategory(c.id);});
+    filtersEl.appendChild(b);
+  });
+}
+function setCategory(id){
+  activeCat=id;
+  var btns=filtersEl.querySelectorAll(".filter-btn");
+  btns.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.cat===id?"true":"false");});
+  render();
+}
+function matches(s){
+  if(activeCat!=="all"&&s.cat!==activeCat){return false;}
+  if(!query){return true;}
+  var hay=(s.name+" S"+pad(s.n)+" "+s.n+" "+s.focus+" "+catLabel(s.cat)).toLowerCase();
+  return query.split(/\s+/).every(function(w){return hay.indexOf(w)>-1;});
+}
+function render(){
+  gridEl.innerHTML="";
+  var shown=0;
+  SERIES.forEach(function(s){
+    if(!matches(s)){return;}
+    shown++;
+    var card=document.createElement("article");
+    card.className="card";
+    var h=document.createElement("h3");
+    var a=document.createElement("a");
+    a.href=BASE+s.slug;
+    a.textContent=s.name;
+    h.appendChild(a);
+    var tag=document.createElement("p");
+    tag.className="tag";
+    tag.textContent="S"+pad(s.n)+" · "+catLabel(s.cat);
+    var focus=document.createElement("p");
+    focus.textContent=s.focus;
+    var status=document.createElement("p");
+    status.className="status";
+    status.textContent="Status: Intended / planned — not formed, funded, or offered.";
+    var spacer=document.createElement("div");
+    spacer.className="spacer";
+    var link=document.createElement("a");
+    link.className="card-link";
+    link.href=BASE+s.slug;
+    link.textContent="Series page →";
+    card.appendChild(tag);
+    card.appendChild(h);
+    card.appendChild(focus);
+    if(s.anchored){
+      var anch=document.createElement("p");
+      anch.className="anchor";
+      anch.textContent="Anchored (metaverse fabric published — not live)";
+      card.appendChild(anch);
+    }
+    card.appendChild(status);
+    card.appendChild(spacer);
+    card.appendChild(link);
+    gridEl.appendChild(card);
+  });
+  countEl.textContent=shown===33
+    ?"Showing all 33 planned series."
+    :"Showing "+shown+" of 33 planned series"+(activeCat!=="all"?" in "+catLabel(activeCat):"")+(query?(' matching “'+query+'”'):"")+".";
+  emptyEl.hidden=shown!==0;
+}
+searchEl.addEventListener("input",function(){
+  query=searchEl.value.trim().toLowerCase();
+  render();
+});
+document.getElementById("clear-search").addEventListener("click",function(){
+  searchEl.value="";query="";searchEl.focus();render();
+});
+document.getElementById("reset-filters").addEventListener("click",function(){
+  searchEl.value="";query="";setCategory("all");searchEl.focus();
+});
+buildFilters();
+render();
+})();
+
+</script>
+<script>
+
+(function(){
+"use strict";
+var BASE="https://www.agifuturefoundation.org/";
+var NODES={
+ agicorp:{
+  title:"AGI Corp — intended head",
+  status:"Intended — EIN only, incorporation unverified",
+  badge:"intended",
+  body:"Named in the Foundation\u2019s materials as the intended management company and venture studio at the head of the network. The studio is a function of AGI Corp, not a separate company unless counsel advises otherwise.",
+  facts:"Verified: IRS CP575A dated 2026-05-16, name shown as \u201cAGI\u201d, 111 Maiden Ln Ste 540, San Francisco, CA 94108; Form 1120 listed. Not verified: no articles of incorporation and no entity number were in the files reviewed. An EIN alone does not prove incorporation. Nothing has been formed, funded, or issued under the studio model yet.",
+  link:BASE+"projects/agi-corp.html",
+  linkLabel:"Read the AGI Corp page"
+ },
+ foundation:{
+  title:"AGI Future Foundation — mission steward",
+  status:"Filed — verified",
+  badge:"filed",
+  body:"The filed California Nonprofit Public Benefit Corporation at the centre of the plan. Its role is governance and mission: holding the public-benefit purpose, the Fiduciary Shield, the Open Global Investment model, and the Windfall Clause. The Foundation manages companies to mission through written agreements; its board must remain independent.",
+  facts:"Verified: Entity No. B20260196664; Articles filed 2026-04-24; SOS approval 2026-04-30; EIN assigned 2026-05-07; principal/mailing 995 Market St, San Francisco, CA 94103. Not on file: no IRS 501(c)(3) determination letter, so no tax-exempt status and no tax-deductible donations are claimed. The Foundation cannot offer equity, a SAFE, or a profit share.",
+  link:BASE+"governance/index.html",
+  linkLabel:"Read the governance pages"
+ },
+ w3:{
+  title:"W3 LLC — the intended series network",
+  status:"Intended — not verified as filed",
+  badge:"intended",
+  body:"In the intended plan, a Wyoming series LLC that would house the 33 series as separate sub-series with isolated assets and liability. Each series would be DAO-managed day-to-day, with humans deciding, signing, and moving funds through a Steward Council.",
+  facts:"Verified: 33 named W3 sub-series in the April 2026 internal list (a three-page internal printout dated 2026-04-03, not a Wyoming Secretary of State filing). Not verified: W3 LLC formation and per-series designation are not verified in filings. No series is formed, funded, or offered. No suggested valuation is assigned to any series here.",
+  link:BASE+"series/index.html",
+  linkLabel:"Browse all 33 planned series"
+ },
+ delaware:{
+  title:"Delaware cohort series — C1S1, C1S2, C1S3",
+  status:"Intended — not verified as filed",
+  badge:"intended",
+  body:"Under the intended design, new projects go into a Delaware cohort series — Cohort 1, Series 1 through 3, labelled C1S1, C1S2, and C1S3 (to confirm). A series label is a reference, not a legal name. No cohort has been verified as launched.",
+  facts:"Verified: the C1S1–C1S3 labels and the cohort plan are stated in the Foundation\u2019s governance and studio pages. Not verified: no Delaware filing, no series designation, and no launched cohort were in the files reviewed. There is no dedicated Delaware cohort page yet; the link below goes to the governance page that states the plan.",
+  link:BASE+"governance/index.html#architecture",
+  linkLabel:"Read the governance page (structure section)"
+ },
+ fellowship:{
+  title:"AGI Fellowship — separate partner church",
+  status:"Filed — separate, NOT in the chain",
+  badge:"partner",
+  body:"A separate filed California nonprofit religious corporation and partner church. It is not a subsidiary, not a W3 series, and not part of this series list. It sits outside the portfolio entirely: it may partner with and be supported by the other entities under written agreements, with its funds and governance separate.",
+  facts:"Verified: Entity No. B20260229217; Articles filed 2026-05-13; SOS approval 2026-05-18; EIN assigned 2026-05-18; 111 Maiden Ln #540, San Francisco, CA 94108. Not on file: no IRS 501(c)(3) determination letter, so no tax-exempt status and no tax-deductible donations are claimed. Fellowship funds never go to a SAFE or for-profit except on counsel\u2019s written advice (default: no).",
+  link:BASE+"projects/agi-fellowship.html",
+  linkLabel:"Read the AGI Fellowship page"
+ }
+};
+var detailEl=document.getElementById("detail");
+var nodes=Array.prototype.slice.call(document.querySelectorAll(".node"));
+var selected="foundation";
+
+function renderDetail(){
+  var d=NODES[selected];
+  detailEl.innerHTML="";
+  var h=document.createElement("h2");
+  h.textContent=d.title;
+  var badge=document.createElement("span");
+  badge.className="badge "+d.badge;
+  badge.textContent=d.status;
+  var body=document.createElement("p");
+  body.textContent=d.body;
+  var facts=document.createElement("p");
+  facts.className="facts";
+  facts.textContent=d.facts;
+  var link=document.createElement("a");
+  link.className="detail-link";
+  link.href=d.link;
+  link.textContent=d.linkLabel+" \u2192";
+  detailEl.appendChild(badge);
+  detailEl.appendChild(h);
+  detailEl.appendChild(body);
+  detailEl.appendChild(facts);
+  detailEl.appendChild(link);
+}
+function select(key,focusDetail){
+  selected=key;
+  nodes.forEach(function(n){
+    n.setAttribute("aria-pressed",n.dataset.node===key?"true":"false");
+  });
+  renderDetail();
+  if(focusDetail){detailEl.focus();}
+}
+nodes.forEach(function(n,i){
+  n.addEventListener("click",function(){select(n.dataset.node,false);});
+  n.addEventListener("keydown",function(e){
+    if(e.key==="ArrowDown"||e.key==="ArrowRight"){
+      e.preventDefault();
+      var next=nodes[(i+1)%nodes.length];
+      next.focus();
+    }else if(e.key==="ArrowUp"||e.key==="ArrowLeft"){
+      e.preventDefault();
+      var prev=nodes[(i-1+nodes.length)%nodes.length];
+      prev.focus();
+    }else if(e.key==="Enter"||e.key===" "){
+      e.preventDefault();
+      select(n.dataset.node,false);
+    }else if(e.key==="Escape"){
+      e.preventDefault();
+      select("foundation",false);
+      n.blur();
+    }
+  });
+});
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape"&&document.activeElement&&document.activeElement===detailEl){
+    select("foundation",false);
+  }
+});
+select("foundation",false);
+})();
+
+</script>
+<script>
+
+(function(){
+"use strict";
+/* Data: titles and descriptions are taken from each article page's own
+   <title> and meta description. Categories are the site's own, from
+   articles/category-1..8-*.html. Counts: 11/17/8/6/10/4/4/8 = 68. */
+var BASE="https://www.agifuturefoundation.org/articles/";
+var CATEGORIES=[
+ {id:"intelligence-mind",label:"Intelligence & Mind"},
+ {id:"health-life",label:"Health & Life Sciences"},
+ {id:"metaverse-spatial",label:"Metaverse & Spatial"},
+ {id:"robotics-physical",label:"Robotics & Physical AI"},
+ {id:"governance-law",label:"Governance & Law"},
+ {id:"finance-studio",label:"Finance & Studio"},
+ {id:"cities-energy",label:"Cities, Energy & Infrastructure"},
+ {id:"community-culture",label:"Community & Culture"}
+];
+var ARTICLES=[
+ {n:1, title:"Cognition.X — Learning, Understanding, and the Flow Zone", slug:"article-01-cognition-x.html", cat:"intelligence-mind", desc:"Cognition.X (W3 Series S01): learning and understanding, Flow Zone education, and an anchored metaverse campus that does not yet render fully."},
+ {n:2, title:"Empathic.X — Empathy, Emotional Understanding, and Human-Centred Interaction", slug:"article-02-empathic-x.html", cat:"intelligence-mind", desc:"Empathic.X (W3 Series S02): a planned empathy series with an anchored metaverse fabric that does not yet render fully."},
+ {n:3, title:"InfoGurus — Knowledge Organisation, Expertise, and Answers You Can Check", slug:"article-03-infogurus.html", cat:"intelligence-mind", desc:"InfoGurus (W3 Series S33): a planned information and expertise series whose scope is still to be written."},
+ {n:4, title:"Diagnostic.X — AI Diagnostics Governed by a Safety Mandate", slug:"article-04-diagnostic-x.html", cat:"health-life", desc:"Diagnostic.X (W3 Series S03): AI diagnostics under an AGI-safety mandate, liability-isolated by design."},
+ {n:5, title:"Curable.X — Curative, Treatment-Focused Work, Still Undefined", slug:"article-05-curable-x.html", cat:"health-life", desc:"Curable.X (W3 Series S04): a thin, planned series whose name implies cures and treatment, with almost nothing verified beyond the name and number."},
+ {n:6, title:"BioPharma.Go — Biopharmaceutical Work, Still Undefined", slug:"article-06-biopharma-go.html", cat:"health-life", desc:"BioPharma.Go (W3 Series S05): a thin, planned biopharmaceutical series with almost nothing verified beyond the name and number."},
+ {n:7, title:"Molecular. — Molecular Science and Biotechnology, Still Undefined", slug:"article-07-molecular.html", cat:"health-life", desc:"Molecular. (W3 Series S11): a thin, planned molecular-science series. No molecule files were found to attribute to it."},
+ {n:8, title:"Gonstead.X — The Gonstead Approach to Chiropractic Care, Planned", slug:"article-08-gonstead-x.html", cat:"health-life", desc:"Gonstead.X (W3 Series S13): a thin, planned series whose name points to the Gonstead approach to chiropractic care."},
+ {n:9, title:"AskDoc.X — Health Questions, Health Information, and Care Navigation", slug:"article-09-askdoc-x.html", cat:"health-life", desc:"AskDoc.X (W3 Series S14): a thin, planned health-information series. Explicitly not diagnosis or treatment."},
+ {n:10, title:"Curable.Blockchain DAO — A Shared Record for Curative Health Work", slug:"article-10-curable-blockchain-dao.html", cat:"health-life", desc:"Curable.Blockchain DAO (W3 Series S17): a thin, planned DAO at the meeting point of curative health work and blockchain record-keeping."},
+ {n:11, title:"BioDAO.blockchain DAO — Biology, Bioacoustics, and a Shared Ledger", slug:"article-11-biodao-blockchain.html", cat:"health-life", desc:"BioDAO.blockchain DAO (W3 Series S18): a thin, planned DAO for biology and bioacoustics work kept on a blockchain record."},
+ {n:12, title:"Genomic DAO — Consent, Privacy, and Shared Benefit for Genomic Data", slug:"article-12-genomic-dao.html", cat:"health-life", desc:"Genomic DAO (W3 Series S27): a planned DAO for genomic data stewardship — consent, privacy, and shared benefit."},
+ {n:13, title:"Genome.Blockchain — A Verifiable Record Layer for Genomic Data", slug:"article-13-genome-blockchain.html", cat:"health-life", desc:"Genome.Blockchain (W3 Series S28): a planned blockchain record layer for genomic data — verifiable provenance for consent, custody, and use."},
+ {n:14, title:"Locator.X: Knowing Where Things Are", slug:"article-14-locator-x.html", cat:"metaverse-spatial", desc:"Locator.X (W3 Series S08): location, finding, and navigation as planned infrastructure, with the only anchored metaverse fabric in this article set."},
+ {n:15, title:"Avatar.Chat DAO: Conversation Through Avatars", slug:"article-15-avatar-chat-dao.html", cat:"metaverse-spatial", desc:"Avatar.Chat DAO (W3 Series S23): a planned DAO for conversation through avatars — identity, moderation, and record rules still to be written."},
+ {n:16, title:"Metaverse DAO: The Governance Layer for Shared Worlds", slug:"article-16-metaverse-dao.html", cat:"metaverse-spatial", desc:"Metaverse DAO (W3 Series S29): a planned DAO for governing the Foundation\u2019s metaverse presence."},
+ {n:17, title:"WorldForge: Building Worlds, One Catalogue Entry at a Time", slug:"article-17-worldforge.html", cat:"metaverse-spatial", desc:"WorldForge: the world-building side of the network — a public repository with a 544-entry worlds file, all with no RP1 attachment."},
+ {n:18, title:"The RP1 Ecosystem: The Infrastructure With No Live Worlds Yet", slug:"article-18-rp1-ecosystem.html", cat:"metaverse-spatial", desc:"The RP1 ecosystem: Sneeze, Rubidium, Artemis, VRS / Universal Map, RMAP, Statabase, and OMBI. Zero worlds live on RP1."},
+ {n:19, title:"Get.Delivery DAO: Moving Things to People", slug:"article-19-get-delivery-dao.html", cat:"robotics-physical", desc:"Get.Delivery DAO (W3 Series S22): a planned DAO for delivery and logistics — what is delivered, by what means, and for whom are still unwritten."},
+ {n:20, title:"Robotics DAO: Governing Machines That Act in the World", slug:"article-20-robotics-dao.html", cat:"robotics-physical", desc:"Robotics DAO (W3 Series S30): governing commercial deployment of robotic and physical-AI agents. Still intended, not formed, funded, or offered."},
+ {n:21, title:"Aerospace DAO: Flight AI Where the Safety Bar Is Highest", slug:"article-21-aerospace-dao.html", cat:"robotics-physical", desc:"Aerospace DAO (W3 Series S31): a planned DAO for aerospace and flight AI, where certification and airspace come before any product roadmap."},
+ {n:22, title:"Blockchain", slug:"article-22-blockchain.html", cat:"governance-law", desc:"Blockchain (W3 Series S06): a planned ledger and coordination infrastructure series, named in the April 2026 internal W3 list."},
+ {n:23, title:"RomanBridge.DAO", slug:"article-23-romanbridge-dao.html", cat:"governance-law", desc:"RomanBridge.DAO (W3 Series S15): a planned DAO whose name points to bridging and connection."},
+ {n:24, title:"CMMC", slug:"article-24-cmmc.html", cat:"governance-law", desc:"CMMC (W3 Series S20): a named W3 series listed only by its four letters, with no expansion or focus stated in the files reviewed."},
+ {n:25, title:"Fiduciary Corporate Shield", slug:"article-25-fiduciary-corporate-shield.html", cat:"governance-law", desc:"The Fiduciary Corporate Shield: expanded business-judgment protection for safety-first board decisions. A mechanism and framework, not a company, and not immunity."},
+ {n:26, title:"Insidr W3LLC", slug:"article-26-insidr-w3llc.html", cat:"governance-law", desc:"Insidr W3LLC: a named network venture. Almost nothing is verified beyond the name, and the W3LLC in its name does not by itself prove any connection to a filed W3 LLC."},
+ {n:27, title:"Sentinel Stream", slug:"article-27-sentinel-stream.html", cat:"governance-law", desc:"Sentinel Stream: a named network venture. Almost nothing is verified beyond the name."},
+ {n:28, title:"PlaudGuard-AI", slug:"article-28-plaudguard-ai.html", cat:"governance-law", desc:"PlaudGuard-AI: a named network venture. Almost nothing is verified beyond the name, and the AI in its name does not by itself prove that any AI system exists."},
+ {n:29, title:"Incubator DAO", slug:"article-29-incubator-dao.html", cat:"finance-studio", desc:"Incubator DAO (W3 Series S21): a planned DAO for incubating early ventures and builders."},
+ {n:30, title:"trueforge", slug:"article-30-trueforge.html", cat:"finance-studio", desc:"trueforge: a named network venture. Almost nothing is verified beyond the name."},
+ {n:31, title:"Dyva", slug:"article-31-dyva.html", cat:"finance-studio", desc:"Dyva: a named network venture. Almost nothing is verified beyond the name."},
+ {n:32, title:"AGI Corp", slug:"article-32-agi-corp.html", cat:"finance-studio", desc:"AGI Corp: EIN only, assigned 2026-05-16. No articles or entity number in the files; incorporation is unverified."},
+ {n:33, title:"SmartCiti.X — W3 Series S10, the Trade Craft Academy", slug:"article-33-smartciti-x.html", cat:"cities-energy", desc:"SmartCiti.X is W3 Series S10: a proposed new corporation for robotics training, union trades AR/VR, and robotics manufacturing. Proposed, not formed, funded, or offered."},
+ {n:34, title:"ParkingSmart.X — W3 Series S12, Smarter Parking", slug:"article-34-parking-smart-x.html", cat:"cities-energy", desc:"ParkingSmart.X is W3 Series S12, a planned series whose name points to smarter parking: parking data, guidance, and management."},
+ {n:35, title:"Solar DAO — W3 Series S32, Solar Energy", slug:"article-35-solar-dao.html", cat:"cities-energy", desc:"Solar DAO is W3 Series S32 in the intended W3 network: a planned DAO for solar energy and energy infrastructure."},
+ {n:36, title:"Metropolis-SmartCiti — Named Network Venture", slug:"article-36-metropolis-smartciti.html", cat:"cities-energy", desc:"Metropolis-SmartCiti is a named network venture. Almost nothing is verified beyond the name. Related to S10 SmartCiti.X by name only — the two are NOT merged."},
+ {n:37, title:"Divine DAO — W3 Series S07, Meaning and Community", slug:"article-37-divine-dao.html", cat:"community-culture", desc:"Divine DAO is W3 Series S07: a DAO concerned with meaning, community, and the sacred — a planned domain."},
+ {n:38, title:"Astrological.X — W3 Series S09, Astrology", slug:"article-38-astrological-x.html", cat:"community-culture", desc:"Astrological.X is W3 Series S09, a planned series whose name points to astrology and astrological data and interpretation."},
+ {n:39, title:"EchoDawn DAO — W3 Series S16, New Beginnings", slug:"article-39-echodawn-dao.html", cat:"community-culture", desc:"EchoDawn DAO is W3 Series S16, a planned DAO whose name points to dawn and echo: new beginnings, and voices and signals carried forward."},
+ {n:40, title:"Moscone.X — W3 Series S19, Focus Not Stated", slug:"article-40-moscone-x.html", cat:"community-culture", desc:"Moscone.X is W3 Series S19: a named W3 series whose focus is not stated in the files reviewed."},
+ {n:41, title:"Donatello DAO — W3 Series S24, Focus Not Stated", slug:"article-41-donatello-dao.html", cat:"community-culture", desc:"Donatello DAO is W3 Series S24: a named W3 series whose focus is not stated in the files reviewed."},
+ {n:42, title:"Mypet.AI — W3 Series S25, Pet-Focused AI", slug:"article-42-mypet-ai.html", cat:"community-culture", desc:"Mypet.AI is W3 Series 25 in the intended W3 network: a planned, pet-focused AI series."},
+ {n:43, title:"Lyka DAO — W3 Series S26, No Published Focus", slug:"article-43-lyka-dao.html", cat:"community-culture", desc:"Lyka DAO is W3 Series 26 in the intended W3 network: a named DAO series with no published focus."},
+ {n:44, title:"AGI Fellowship Church — Partner, Not Subsidiary", slug:"article-44-agi-fellowship.html", cat:"community-culture", desc:"The AGI Fellowship is a separate filed California nonprofit religious corporation, Entity No. B20260229217, filed 2026-05-13. A partner church, not a subsidiary and not a W3 series."},
+ {n:45, title:"Stewardship Under California Law: What It Actually Means to Hold a Mission in Trust", slug:"article-45-california-nonprofit-stewardship.html", cat:"governance-law", desc:"What stewardship under California nonprofit law actually requires."},
+ {n:46, title:"The 501(c)(3) Determination Path: What the Foundation Must Prove, and What Happens Until It Does", slug:"article-46-the-501c3-determination-path.html", cat:"governance-law", desc:"The IRS determination path, and what is true until a letter exists."},
+ {n:47, title:"The Research-Coordination Network: The Foundation’s Quietest Job, and Maybe Its Most Important", slug:"article-47-the-research-coordination-network.html", cat:"governance-law", desc:"The Foundation’s coordination work across the research network."},
+ {n:48, title:"The Mind Watching Itself: Metacognition in Humans and in Machines", slug:"article-48-metacognition.html", cat:"intelligence-mind", desc:"How minds watch themselves — in humans and in machines."},
+ {n:49, title:"How Minds Are Built: Cognitive Architectures, from ACT-R and Soar to the Global Workspace", slug:"article-49-cognitive-architectures.html", cat:"intelligence-mind", desc:"Cognitive architectures, from ACT-R and Soar to the global workspace."},
+ {n:50, title:"How Skills Actually Form: The Science of Learning", slug:"article-50-science-of-learning.html", cat:"intelligence-mind", desc:"How skills actually form."},
+ {n:51, title:"What Machines Can — and Cannot — Read from a Face or a Voice", slug:"article-51-affective-computing-what-machines-can-and-cannot-read.html", cat:"intelligence-mind", desc:"What machines can — and cannot — read from a face or a voice."},
+ {n:52, title:"Empathy Is a Skill, Not a Trait", slug:"article-52-empathy-as-a-skill-how-it-works-and-how-it-is-learned.html", cat:"intelligence-mind", desc:"Empathy as a learnable skill."},
+ {n:53, title:"Care and Companionship", slug:"article-53-care-and-companionship-where-machines-help.html", cat:"health-life", desc:"Where machines help in care and companionship."},
+ {n:54, title:"Screening Is Not Diagnosis: The Line That Matters, and Why It Is So Often Crossed", slug:"article-54-screening-vs-diagnosis.html", cat:"health-life", desc:"The line between screening and diagnosis, and why it is crossed."},
+ {n:55, title:"How Do You Know a Diagnostic Tool Works? Sensitivity, Specificity, and What a Number Hides", slug:"article-55-evaluating-diagnostic-tools.html", cat:"health-life", desc:"Sensitivity, specificity, and what a number hides."},
+ {n:56, title:"The Clinician in the Loop: Where AI Assistance Helps, and Where It Must Not Decide", slug:"article-56-clinician-in-the-loop.html", cat:"health-life", desc:"Where AI assistance helps, and where it must not decide."},
+ {n:57, title:"How Positioning Actually Works: From Satellites to the Room You Are Standing In", slug:"article-57-how-positioning-works.html", cat:"metaverse-spatial", desc:"Positioning, from satellites to the room you are standing in."},
+ {n:58, title:"Your Location Is You: Privacy, Consent, and the Law of Where You Are", slug:"article-58-location-privacy-consent.html", cat:"metaverse-spatial", desc:"Privacy, consent, and the law of where you are."},
+ {n:59, title:"What a Location-Aware World Can and Cannot Know About You", slug:"article-59-location-aware-world.html", cat:"metaverse-spatial", desc:"What a location-aware world can and cannot know about you."},
+ {n:60, title:"One Fleet, Many Owners — Governing and Answering for Shared Robot Fleets", slug:"article-60-one-fleet-many-owners.html", cat:"robotics-physical", desc:"Governing and answering for shared robot fleets."},
+ {n:61, title:"The Robot Commons — ROS, Open Source, and the Shared Code Every Robot Stands On", slug:"article-61-the-robot-commons.html", cat:"robotics-physical", desc:"ROS, open source, and the shared code every robot stands on."},
+ {n:62, title:"Working Beside Machines — Human-Robot Collaboration and the Safety Culture That Makes It Real", slug:"article-62-working-beside-machines.html", cat:"robotics-physical", desc:"Human-robot collaboration and the safety culture that makes it real."},
+ {n:63, title:"How to Judge a Source When Anything Can Be Faked", slug:"article-63-judging-a-source.html", cat:"intelligence-mind", desc:"How to judge a source when anything can be faked."},
+ {n:64, title:"Who Gets to Be an Expert? How Knowledge Is Verified", slug:"article-64-who-gets-to-be-an-expert.html", cat:"intelligence-mind", desc:"How knowledge is verified, and who counts as an expert."},
+ {n:65, title:"The Knowledge Graph as a Public Good", slug:"article-65-knowledge-graph-public-good.html", cat:"intelligence-mind", desc:"The knowledge graph as a public good."},
+ {n:66, title:"Counting Life: How Biodiversity Is Actually Measured", slug:"article-66-counting-life.html", cat:"health-life", desc:"How biodiversity is actually measured."},
+ {n:67, title:"Listening to the Ocean: What the Deep Soundscape Reveals About Life Below", slug:"article-67-listening-to-the-ocean.html", cat:"health-life", desc:"What the deep soundscape reveals about life below."},
+ {n:68, title:"The Living Twin: What a Digital Twin of an Ecosystem Can and Cannot Do", slug:"article-68-the-living-twin.html", cat:"health-life", desc:"What a digital twin of an ecosystem can and cannot do."},
+];
+var filtersEl=document.getElementById("filters");
+var listEl=document.getElementById("article-list");
+var countEl=document.getElementById("result-count");
+var emptyEl=document.getElementById("empty-state");
+var searchEl=document.getElementById("article-search");
+var activeCat="all";
+var query="";
+
+function catLabel(id){
+  for(var i=0;i<CATEGORIES.length;i++){if(CATEGORIES[i].id===id){return CATEGORIES[i].label;}}
+  return "";
+}
+function catCount(id){
+  var c=0;
+  for(var i=0;i<ARTICLES.length;i++){if(ARTICLES[i].cat===id){c++;}}
+  return c;
+}
+function pad(n){return n<10?"0"+n:String(n);}
+
+function buildFilters(){
+  var all=document.createElement("button");
+  all.type="button";
+  all.className="filter-btn";
+  all.setAttribute("aria-pressed","true");
+  all.dataset.cat="all";
+  all.innerHTML='All articles <span class="count">(68)</span>';
+  all.addEventListener("click",function(){setCategory("all");});
+  filtersEl.appendChild(all);
+  CATEGORIES.forEach(function(c){
+    var b=document.createElement("button");
+    b.type="button";
+    b.className="filter-btn";
+    b.setAttribute("aria-pressed","false");
+    b.dataset.cat=c.id;
+    b.innerHTML=c.label+' <span class="count">('+catCount(c.id)+')</span>';
+    b.addEventListener("click",function(){setCategory(c.id);});
+    filtersEl.appendChild(b);
+  });
+}
+function setCategory(id){
+  activeCat=id;
+  var btns=filtersEl.querySelectorAll(".filter-btn");
+  btns.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.cat===id?"true":"false");});
+  render();
+}
+function matches(a){
+  if(activeCat!=="all"&&a.cat!==activeCat){return false;}
+  if(!query){return true;}
+  var hay=(a.title+" article "+a.n+" "+pad(a.n)+" "+a.desc+" "+catLabel(a.cat)).toLowerCase();
+  return query.split(/\s+/).every(function(w){return hay.indexOf(w)>-1;});
+}
+function render(){
+  listEl.innerHTML="";
+  var shown=0;
+  ARTICLES.forEach(function(a){
+    if(!matches(a)){return;}
+    shown++;
+    var li=document.createElement("li");
+    li.className="card";
+    var tag=document.createElement("p");
+    tag.className="tag";
+    tag.innerHTML='<span class="num">Article '+pad(a.n)+'</span> &middot; '+catLabel(a.cat);
+    var h=document.createElement("h3");
+    var link=document.createElement("a");
+    link.href=BASE+a.slug;
+    link.textContent=a.title;
+    h.appendChild(link);
+    var desc=document.createElement("p");
+    desc.className="desc";
+    desc.textContent=a.desc;
+    var spacer=document.createElement("div");
+    spacer.className="spacer";
+    var read=document.createElement("a");
+    read.className="card-link";
+    read.href=BASE+a.slug;
+    read.textContent="Read article "+pad(a.n)+" \u2192";
+    li.appendChild(tag);
+    li.appendChild(h);
+    li.appendChild(desc);
+    li.appendChild(spacer);
+    li.appendChild(read);
+    listEl.appendChild(li);
+  });
+  countEl.textContent=shown===68
+    ?"Showing all 68 articles."
+    :"Showing "+shown+" of 68 articles"+(activeCat!=="all"?" in "+catLabel(activeCat):"")+(query?(' matching \u201c'+query+'\u201d'):"")+".";
+  emptyEl.hidden=shown!==0;
+}
+searchEl.addEventListener("input",function(){
+  query=searchEl.value.trim().toLowerCase();
+  render();
+});
+document.getElementById("clear-search").addEventListener("click",function(){
+  searchEl.value="";query="";searchEl.focus();render();
+});
+document.getElementById("reset-filters").addEventListener("click",function(){
+  searchEl.value="";query="";setCategory("all");searchEl.focus();
+});
+buildFilters();
+render();
+})();
+
+</script>
 </body>
 </html>
