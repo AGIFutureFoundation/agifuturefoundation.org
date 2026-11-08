@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300" role="img" aria-label="Timeline: Foundation filed 24 April 2026 and approved 30 April 2026; Fellowship filed 13 May 2026 and approved 18 May 2026">
+  <rect width="760" height="300" fill="#ffffff"/>
+  <text x="30" y="34" font-family="system-ui, sans-serif" font-size="17" font-weight="700" fill="#14202e">Two filings, six days apart in each case</text>
+  <text x="30" y="56" font-family="system-ui, sans-serif" font-size="12.5" fill="#5b6b7d">California Secretary of State filing and approval dates for the two verified filed entities.</text>
+  <line x1="60" y1="150" x2="700" y2="150" stroke="#0b1e3a" stroke-width="3"/>
+  <g font-family="system-ui, sans-serif" font-size="13" fill="#14202e">
+    <circle cx="120" cy="150" r="8" fill="#0b1e3a"/>
+    <text x="120" y="120" text-anchor="middle" font-weight="700">24 Apr 2026</text>
+    <text x="120" y="180" text-anchor="middle">Foundation filed</text>
+    <text x="120" y="198" text-anchor="middle" fill="#5b6b7d" font-size="11">Entity B20260196664</text>
+    <circle cx="300" cy="150" r="8" fill="#0e7c7b"/>
+    <text x="300" y="120" text-anchor="middle" font-weight="700">30 Apr 2026</text>
+    <text x="300" y="180" text-anchor="middle">Foundation approved</text>
+    <text x="300" y="198" text-anchor="middle" fill="#5b6b7d" font-size="11">6 days after filing</text>
+    <circle cx="480" cy="150" r="8" fill="#0b1e3a"/>
+    <text x="480" y="120" text-anchor="middle" font-weight="700">13 May 2026</text>
+    <text x="480" y="180" text-anchor="middle">Fellowship filed</text>
+    <text x="480" y="198" text-anchor="middle" fill="#5b6b7d" font-size="11">Entity B20260229217</text>
+    <circle cx="640" cy="150" r="8" fill="#0e7c7b"/>
+    <text x="640" y="120" text-anchor="middle" font-weight="700">18 May 2026</text>
+    <text x="640" y="180" text-anchor="middle">Fellowship approved</text>
+    <text x="640" y="198" text-anchor="middle" fill="#5b6b7d" font-size="11">5 days after filing</text>
+  </g>
+  <text x="30" y="250" font-family="system-ui, sans-serif" font-size="11" fill="#5b6b7d">Source: California Secretary of State filings as recorded in the Foundation's corporate files. Neither entity has</text>
+  <text x="30" y="266" font-family="system-ui, sans-serif" font-size="11" fill="#5b6b7d">an IRS 501(c)(3) determination letter in the files, so neither is presented as IRS tax-exempt and no donation</text>
+  <text x="30" y="282" font-family="system-ui, sans-serif" font-size="11" fill="#5b6b7d">is presented as tax-deductible.</text>
+</svg>

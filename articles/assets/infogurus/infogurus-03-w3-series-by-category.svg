@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" role="img" aria-label="Bar chart of the 33 named W3 sub-series by category">
+  <rect width="880" height="420" fill="#f6f7f9"/>
+  <text x="30" y="34" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#0b1e3a">The 33 named W3 sub-series, by category</text>
+  <text x="30" y="58" font-family="system-ui, sans-serif" font-size="13" fill="#5b6b7d">April 2026 internal W3 list, as organized on the Foundation's site. Total 33. Never 35.</text>
+  <!-- scale: 1 series = 22px, baseline y=340, label x=30, bars start x=300 -->
+  <text x="30" y="86" font-family="system-ui, sans-serif" font-size="13" fill="#14202e">Intelligence &amp; Mind</text>
+  <rect x="300" y="70" width="66" height="22" fill="#0e7c7b"/>
+  <text x="376" y="86" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0b1e3a">3</text>
+  <text x="30" y="122" font-family="system-ui, sans-serif" font-size="13" fill="#14202e">Health &amp; Life Sciences</text>
+  <rect x="300" y="106" width="220" height="22" fill="#0e7c7b"/>
+  <text x="530" y="122" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0b1e3a">10</text>
+  <text x="30" y="158" font-family="system-ui, sans-serif" font-size="13" fill="#14202e">Metaverse &amp; Spatial</text>
+  <rect x="300" y="142" width="66" height="22" fill="#0e7c7b"/>
+  <text x="376" y="158" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0b1e3a">3</text>
+  <text x="30" y="194" font-family="system-ui, sans-serif" font-size="13" fill="#14202e">Robotics &amp; Physical AI</text>
+  <rect x="300" y="178" width="66" height="22" fill="#0e7c7b"/>
+  <text x="376" y="194" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0b1e3a">3</text>
+  <text x="30" y="230" font-family="system-ui, sans-serif" font-size="13" fill="#14202e">Governance &amp; Law</text>
+  <rect x="300" y="214" width="66" height="22" fill="#0e7c7b"/>
+  <text x="376" y="230" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0b1e3a">3</text>
+  <text x="30" y="266" font-family="system-ui, sans-serif" font-size="13" fill="#14202e">Finance &amp; the Studio</text>
+  <rect x="300" y="250" width="22" height="22" fill="#c9a227"/>
+  <text x="332" y="266" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0b1e3a">1</text>
+  <text x="30" y="302" font-family="system-ui, sans-serif" font-size="13" fill="#14202e">Cities / Energy / Infrastructure</text>
+  <rect x="300" y="286" width="66" height="22" fill="#0e7c7b"/>
+  <text x="376" y="302" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0b1e3a">3</text>
+  <text x="30" y="338" font-family="system-ui, sans-serif" font-size="13" fill="#14202e">Community / Learning / Culture</text>
+  <rect x="300" y="322" width="154" height="22" fill="#0e7c7b"/>
+  <text x="464" y="338" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0b1e3a">7</text>
+  <text x="30" y="382" font-family="system-ui, sans-serif" font-size="13" fill="#5b6b7d">Counts verified against the site's eight category pages. InfoGurus (Series 33) sits in Intelligence &amp; Mind.</text>
+  <text x="30" y="404" font-family="system-ui, sans-serif" font-size="13" fill="#5b6b7d">Source: W3_LLC.pdf, April 2026 internal list; Foundation site category pages.</text>
+</svg>

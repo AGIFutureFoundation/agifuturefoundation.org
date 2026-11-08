@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="400" viewBox="0 0 760 400" role="img" aria-label="Stacked bar chart: the five Omega agents' verified Virtuals ACP catalog, 29 jobs and 6 subscriptions">
+  <rect width="760" height="400" fill="#ffffff"/>
+  <text x="30" y="34" font-family="system-ui, sans-serif" font-size="17" font-weight="700" fill="#14202e">The verified agent catalog: 29 jobs and 6 subscriptions</text>
+  <text x="30" y="56" font-family="system-ui, sans-serif" font-size="12.5" fill="#5b6b7d">Jobs (navy) and subscriptions (gold) listed live in Virtuals ACP across the five Omega agents.</text>
+  <g font-family="system-ui, sans-serif" font-size="13" fill="#14202e">
+    <text x="30" y="100">Omega</text><rect x="180" y="86" width="245" height="20" fill="#0b1e3a"/><rect x="425" y="86" width="49" height="20" fill="#c9a227"/><text x="484" y="101">5 + 1</text>
+    <text x="30" y="145">Tactile</text><rect x="180" y="131" width="294" height="20" fill="#0b1e3a"/><rect x="474" y="131" width="98" height="20" fill="#c9a227"/><text x="582" y="146">6 + 2</text>
+    <text x="30" y="190">ALS</text><rect x="180" y="176" width="294" height="20" fill="#0b1e3a"/><rect x="474" y="176" width="49" height="20" fill="#c9a227"/><text x="533" y="191">6 + 1</text>
+    <text x="30" y="235">CMMC</text><rect x="180" y="221" width="294" height="20" fill="#0b1e3a"/><rect x="474" y="221" width="49" height="20" fill="#c9a227"/><text x="533" y="236">6 + 1</text>
+    <text x="30" y="280">WAVE</text><rect x="180" y="266" width="294" height="20" fill="#0b1e3a"/><rect x="474" y="266" width="49" height="20" fill="#c9a227"/><text x="533" y="281">6 + 1</text>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="12" fill="#14202e">
+    <rect x="180" y="310" width="16" height="16" fill="#0b1e3a"/><text x="202" y="323">Jobs (29 total)</text>
+    <rect x="330" y="310" width="16" height="16" fill="#c9a227"/><text x="352" y="323">Subscriptions (6 total)</text>
+  </g>
+  <text x="30" y="360" font-family="system-ui, sans-serif" font-size="11" fill="#5b6b7d">Source: Virtuals ACP listings, verified live 2026-11-06/07. Listing is not fulfilment: no agent instance is</text>
+  <text x="30" y="376" font-family="system-ui, sans-serif" font-size="11" fill="#5b6b7d">online to fulfil a hire, so no job or subscription can be delivered today. Totals: 29 jobs, 6 subscriptions.</text>
+</svg>

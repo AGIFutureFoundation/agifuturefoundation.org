@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="400" viewBox="0 0 720 400" role="img" aria-label="Bar chart of the verified Virtuals ACP agent jobs catalog: 29 jobs and 6 subscriptions across five agents">
+  <rect width="720" height="400" fill="#ffffff"/>
+  <text x="36" y="34" font-family="sans-serif" font-size="18" font-weight="bold" fill="#14202e">The verified agent jobs catalog: 29 jobs and 6 subscriptions, five agents</text>
+  <text x="36" y="58" font-family="sans-serif" font-size="13" fill="#5b6b7d">Jobs (blue) and subscriptions (gold), as listed in Virtuals ACP. All five agents are OFFLINE: no instance is deployed, so no hire can be fulfilled today.</text>
+  <g font-family="sans-serif" font-size="14" fill="#14202e">
+    <text x="36" y="104">Omega</text>
+    <rect x="150" y="86" width="150" height="22" fill="#2471a3"/><text x="306" y="102">5 jobs</text>
+    <rect x="150" y="110" width="30" height="22" fill="#c9a227"/><text x="186" y="126">1 sub</text>
+    <text x="36" y="168">Tactile</text>
+    <rect x="150" y="150" width="180" height="22" fill="#2471a3"/><text x="336" y="166">6 jobs</text>
+    <rect x="150" y="174" width="60" height="22" fill="#c9a227"/><text x="216" y="190">2 subs</text>
+    <text x="36" y="232">ALS Researcher</text>
+    <rect x="150" y="214" width="180" height="22" fill="#2471a3"/><text x="336" y="230">6 jobs</text>
+    <rect x="150" y="238" width="30" height="22" fill="#c9a227"/><text x="186" y="254">1 sub</text>
+    <text x="36" y="296">CMMC</text>
+    <rect x="150" y="278" width="180" height="22" fill="#2471a3"/><text x="336" y="294">6 jobs</text>
+    <rect x="150" y="302" width="30" height="22" fill="#c9a227"/><text x="186" y="318">1 sub</text>
+    <text x="36" y="360">WAVE</text>
+    <rect x="150" y="342" width="180" height="22" fill="#2471a3"/><text x="336" y="358">6 jobs</text>
+    <rect x="150" y="366" width="30" height="22" fill="#c9a227"/><text x="186" y="382">1 sub</text>
+  </g>
+</svg>

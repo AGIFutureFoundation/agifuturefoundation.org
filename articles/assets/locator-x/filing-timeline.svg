@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="330" viewBox="0 0 860 330" role="img" aria-labelledby="t d">
+<title id="t">Filing timeline: the Foundation and the Fellowship, April to May 2026</title>
+<desc id="d">Timeline from 24 April to 18 May 2026. Foundation: articles filed 24 April 2026; SOS approval 30 April 2026; San Francisco business registration 6 May 2026; EIN assigned 7 May 2026. Fellowship: articles filed 13 May 2026; SOS approval and EIN assigned 18 May 2026. Neither entity has an IRS 501(c)(3) determination letter on file.</desc>
+<rect width="860" height="330" fill="#f6f7f9"/>
+<text x="30" y="34" font-family="system-ui, sans-serif" font-size="19" font-weight="700" fill="#0b1e3a">Filing timeline: the two verified filed entities, April–May 2026</text>
+<text x="30" y="56" font-family="system-ui, sans-serif" font-size="13" fill="#5b6b7d">From the filing documents reviewed 2026-11-03. An EIN is a tax identifier, not a finding of tax-exempt status.</text>
+<line x1="80" y1="140" x2="780" y2="140" stroke="#0b1e3a" stroke-width="3"/>
+<line x1="80" y1="230" x2="780" y2="230" stroke="#0b1e3a" stroke-width="3"/>
+<text x="30" y="110" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#0b1e3a">Foundation (B20260196664)</text>
+<circle cx="80" cy="140" r="7" fill="#0e7c7b"/>
+<text x="80" y="168" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">Articles filed</text>
+<text x="80" y="184" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">24 Apr 2026</text>
+<circle cx="255" cy="140" r="7" fill="#0e7c7b"/>
+<text x="255" y="168" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">SOS approval</text>
+<text x="255" y="184" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">30 Apr 2026</text>
+<circle cx="430" cy="140" r="7" fill="#c9a227"/>
+<text x="430" y="168" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">SF registration</text>
+<text x="430" y="184" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">6 May 2026</text>
+<circle cx="459" cy="140" r="7" fill="#123a6b"/>
+<text x="459" y="118" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">EIN assigned</text>
+<text x="459" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">7 May 2026</text>
+<text x="30" y="200" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#0b1e3a">Fellowship (B20260229217)</text>
+<circle cx="634" cy="230" r="7" fill="#0e7c7b"/>
+<text x="634" y="258" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">Articles filed</text>
+<text x="634" y="274" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">13 May 2026</text>
+<circle cx="780" cy="230" r="7" fill="#123a6b"/>
+<text x="780" y="258" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">SOS approval + EIN</text>
+<text x="780" y="274" font-family="system-ui, sans-serif" font-size="12" fill="#14202e" text-anchor="middle">18 May 2026</text>
+<text x="30" y="312" font-family="system-ui, sans-serif" font-size="12" fill="#5b6b7d">Source: California Secretary of State filings and IRS CP575A notices reviewed 2026-11-03. No IRS 501(c)(3) determination letter is on file for either entity.</text>
+</svg>

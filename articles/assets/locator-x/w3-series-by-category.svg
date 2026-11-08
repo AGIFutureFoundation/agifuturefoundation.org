@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420" role="img" aria-labelledby="t d">
+<title id="t">The 33 named W3 sub-series grouped by the Foundation site's eight article categories</title>
+<desc id="d">Horizontal bar chart. Counts: Intelligence &amp; Mind 3; Health &amp; Life Sciences 10; Metaverse &amp; Spatial 3; Robotics &amp; Physical AI 3; Governance &amp; Law 3; Finance &amp; the Studio 1; Cities, Energy &amp; Infrastructure 3; Community, Learning &amp; Culture 7. Total 33.</desc>
+<rect width="860" height="420" fill="#f6f7f9"/>
+<text x="30" y="34" font-family="system-ui, sans-serif" font-size="19" font-weight="700" fill="#0b1e3a">The 33 named W3 sub-series, by the Foundation site's own 8 categories</text>
+<text x="30" y="56" font-family="system-ui, sans-serif" font-size="13" fill="#5b6b7d">Counted from the Foundation site's article-category pages. Series only; projects and partner entities excluded.</text>
+<g font-family="system-ui, sans-serif" font-size="14" fill="#14202e">
+<g>
+<text x="30" y="102">Intelligence &amp; Mind</text>
+<rect x="300" y="86" width="165" height="20" fill="#0e7c7b"/><text x="472" y="101" font-weight="700">3</text>
+</g>
+<g>
+<text x="30" y="142">Health &amp; Life Sciences</text>
+<rect x="300" y="126" width="550" height="20" fill="#123a6b"/><text x="857" y="141" font-weight="700" text-anchor="end">10</text>
+</g>
+<g>
+<text x="30" y="182">Metaverse &amp; Spatial</text>
+<rect x="300" y="166" width="165" height="20" fill="#0e7c7b"/><text x="472" y="181" font-weight="700">3</text>
+</g>
+<g>
+<text x="30" y="222">Robotics &amp; Physical AI</text>
+<rect x="300" y="206" width="165" height="20" fill="#0e7c7b"/><text x="472" y="221" font-weight="700">3</text>
+</g>
+<g>
+<text x="30" y="262">Governance &amp; Law</text>
+<rect x="300" y="246" width="165" height="20" fill="#0e7c7b"/><text x="472" y="261" font-weight="700">3</text>
+</g>
+<g>
+<text x="30" y="302">Finance &amp; the Studio</text>
+<rect x="300" y="286" width="55" height="20" fill="#c9a227"/><text x="362" y="301" font-weight="700">1</text>
+</g>
+<g>
+<text x="30" y="342">Cities, Energy &amp; Infrastructure</text>
+<rect x="300" y="326" width="165" height="20" fill="#0e7c7b"/><text x="472" y="341" font-weight="700">3</text>
+</g>
+<g>
+<text x="30" y="382">Community, Learning &amp; Culture</text>
+<rect x="300" y="366" width="385" height="20" fill="#123a6b"/><text x="692" y="381" font-weight="700">7</text>
+</g>
+</g>
+<text x="30" y="410" font-family="system-ui, sans-serif" font-size="12" fill="#5b6b7d">Source: Foundation site category pages (category-1 to category-8), counting W3 series only. Total: 33. Locator.X sits in Metaverse &amp; Spatial (3 series).</text>
+</svg>

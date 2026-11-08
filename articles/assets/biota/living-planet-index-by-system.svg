@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="380" viewBox="0 0 720 380" role="img" aria-label="Bar chart of Living Planet Index change by system, 1970 to 2020">
+  <rect width="720" height="380" fill="#ffffff"/>
+  <text x="36" y="34" font-family="sans-serif" font-size="18" font-weight="bold" fill="#14202e">Living Planet Index: average change in monitored wildlife populations, 1970-2020</text>
+  <text x="36" y="58" font-family="sans-serif" font-size="13" fill="#5b6b7d">Average change in population size. Not a count of species lost. Source: WWF and ZSL, Living Planet Report 2024.</text>
+  <g font-family="sans-serif" font-size="14" fill="#14202e">
+    <text x="36" y="110">Freshwater</text>
+    <rect x="150" y="92" width="425" height="26" fill="#2471a3"/>
+    <text x="582" y="110" font-weight="bold">-85%</text>
+    <text x="36" y="160">Terrestrial</text>
+    <rect x="150" y="142" width="345" height="26" fill="#1e8449"/>
+    <text x="502" y="160" font-weight="bold">-69%</text>
+    <text x="36" y="210">Marine</text>
+    <rect x="150" y="192" width="280" height="26" fill="#117a65"/>
+    <text x="437" y="210" font-weight="bold">-56%</text>
+    <text x="36" y="260">Global (all systems)</text>
+    <rect x="150" y="242" width="365" height="26" fill="#c9a227"/>
+    <text x="522" y="260" font-weight="bold">-73%</text>
+  </g>
+  <text x="36" y="310" font-family="sans-serif" font-size="13" fill="#5b6b7d">Index covers about 35,000 monitored populations of 5,495 species of amphibians, birds, fish, mammals and reptiles.</text>
+  <text x="36" y="334" font-family="sans-serif" font-size="13" fill="#5b6b7d">Freshwater populations fell furthest; marine populations fell least among the three systems, but still by more than half.</text>
+  <text x="36" y="362" font-family="sans-serif" font-size="12" fill="#5b6b7d">Data: WWF (2024) Living Planet Report 2024. Chart drawn from the published figures only.</text>
+</svg>
