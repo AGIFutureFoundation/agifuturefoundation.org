@@ -46,7 +46,7 @@
       "url": "https://www.agifuturefoundation.org/series/index.html"
     },
     {
-      "displayName": "Articles hub — 44 deep articles",
+      "displayName": "Articles hub — deep articles (core set plus long-form set; see llms.txt for current counts)",
       "identifier": "urn:air:agifuturefoundation.org:page:articles-hub",
       "representativeQueries": [
         "What articles explain Cognition.X?",
@@ -57,7 +57,7 @@
       "url": "https://www.agifuturefoundation.org/articles/index.html"
     },
     {
-      "displayName": "Features hub — 11 long-form features",
+      "displayName": "Features hub — 21 long-form features",
       "identifier": "urn:air:agifuturefoundation.org:page:features-hub",
       "representativeQueries": [
         "What is the agentic venture studio feature?",
