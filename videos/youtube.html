@@ -54,6 +54,24 @@ small{color:var(--ink-2)}
 <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
 <link rel="service-doc" href="/llms.txt">
 <link rel="alternate" type="text/markdown" href="/llms.txt">
+<style>
+  :root{ --agi-soc-bg:#0b1e3a; --agi-soc-fg:#e8e6df; --agi-soc-accent:#c9a227; }
+  .agi-social{ background:var(--agi-soc-bg); color:var(--agi-soc-fg); padding:2.5rem 1.25rem; }
+  .agi-social h2{ margin:0 0 1rem; font-size:1.4rem; }
+  .agi-social .agi-chips{ display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1.5rem; padding:0; list-style:none; }
+  .agi-social .agi-chips a{ display:inline-block; padding:.45rem .8rem; border:1px solid var(--agi-soc-accent);
+    border-radius:999px; color:var(--agi-soc-fg); text-decoration:none; font-size:.9rem; }
+  .agi-social .agi-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.25rem; align-items:start; }
+  .agi-card{ border:1px solid rgba(255,255,255,.14); border-radius:12px; padding:1rem; }
+  .agi-card h3{ margin:.1rem 0 .4rem; font-size:1.05rem; }
+  .agi-card p{ margin:.25rem 0 .6rem; opacity:.85; font-size:.92rem; }
+  .agi-card a.agi-go{ color:var(--agi-soc-accent); font-weight:600; text-decoration:none; }
+  .agi-embed iframe{ width:100%; aspect-ratio:16/9; border:0; border-radius:8px; }
+  .agi-fb-slot{ min-height:500px; }
+  footer .agi-chips{ display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  footer .agi-chips a{ display:inline-block; padding:.45rem .8rem; border:1px solid var(--agi-soc-accent);
+    border-radius:999px; color:#fff; text-decoration:none; font-size:.9rem; }
+</style>
 </head>
 <body>
 <a href="#main" style="position:absolute;left:-9999px">Skip to content</a>
@@ -127,7 +145,13 @@ small{color:var(--ink-2)}
 <p><small>Nothing on this page is legal, tax, or financial advice, and no signing, membership, or payment is offered here.</small></p>
 </div></section>
 </main>
-<footer><div class="wrap"><p>AGI Future Foundation PBC · Architecting Global AGI Prosperity · <a href="https://www.agifuturefoundation.org/">agifuturefoundation.org</a> · Local build — YouTube page, not yet deployed. Related project: <a href="https://agifellowship.church/">AGI Fellowship Church</a> (contact agent@agifellowship.church).</p><p>Follow: <a href="https://www.facebook.com/profile.php?id=61596589254534">Facebook</a> · <a href="https://www.instagram.com/agifuturefoundation/">Instagram</a></p></div></footer>
+<footer><div class="wrap"><p>AGI Future Foundation PBC · Architecting Global AGI Prosperity · <a href="https://www.agifuturefoundation.org/">agifuturefoundation.org</a> · Local build — YouTube page, not yet deployed. Related project: <a href="https://agifellowship.church/">AGI Fellowship Church</a> (contact agent@agifellowship.church).</p><ul class="agi-chips" aria-label="Follow us">
+  <li><a href="https://www.facebook.com/AGIFutureFoundation" rel="noopener" target="_blank">Facebook — @AGIFutureFoundation</a></li>
+  <li><a href="https://www.instagram.com/agifuturefoundation/" rel="noopener" target="_blank">Instagram — @agifuturefoundation</a></li>
+  <li><a href="https://www.threads.net/@agifuturefoundation" rel="noopener" target="_blank">Threads — @agifuturefoundation</a></li>
+  <li><a href="https://www.youtube.com/channel/UC3WaAgfvuDfxlAnLKQvrXRw" rel="noopener" target="_blank">YouTube — @AGIFutureFoundation</a></li>
+  <li><a href="https://github.com/AGIFutureFoundation" rel="noopener" target="_blank">GitHub — AGIFutureFoundation</a></li>
+</ul></div></footer>
 <!-- BEGIN support-cta: PayPal "Support our work" — staged 2026-11-08, account: Mike's / the corporation's -->
 <aside class="support-cta" aria-label="Support our work" style="border-top:3px solid #c9a227;background:#fff;margin:2rem auto 0;max-width:880px;padding:1.25rem 1.5rem;">
 <div style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;">

@@ -89,6 +89,24 @@ header.top{box-shadow:0 2px 18px rgba(11,30,58,.25)}
 .node{box-shadow:0 4px 14px rgba(11,30,58,.08)}
 @media(prefers-reduced-motion:reduce){.btn,.card{transition:none}.btn:hover,.card:hover{transform:none}}
 </style>
+<style>
+  :root{ --agi-soc-bg:#0b1e3a; --agi-soc-fg:#e8e6df; --agi-soc-accent:#c9a227; }
+  .agi-social{ background:var(--agi-soc-bg); color:var(--agi-soc-fg); padding:2.5rem 1.25rem; }
+  .agi-social h2{ margin:0 0 1rem; font-size:1.4rem; }
+  .agi-social .agi-chips{ display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1.5rem; padding:0; list-style:none; }
+  .agi-social .agi-chips a{ display:inline-block; padding:.45rem .8rem; border:1px solid var(--agi-soc-accent);
+    border-radius:999px; color:var(--agi-soc-fg); text-decoration:none; font-size:.9rem; }
+  .agi-social .agi-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.25rem; align-items:start; }
+  .agi-card{ border:1px solid rgba(255,255,255,.14); border-radius:12px; padding:1rem; }
+  .agi-card h3{ margin:.1rem 0 .4rem; font-size:1.05rem; }
+  .agi-card p{ margin:.25rem 0 .6rem; opacity:.85; font-size:.92rem; }
+  .agi-card a.agi-go{ color:var(--agi-soc-accent); font-weight:600; text-decoration:none; }
+  .agi-embed iframe{ width:100%; aspect-ratio:16/9; border:0; border-radius:8px; }
+  .agi-fb-slot{ min-height:500px; }
+  footer .agi-chips{ display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  footer .agi-chips a{ display:inline-block; padding:.45rem .8rem; border:1px solid var(--agi-soc-accent);
+    border-radius:999px; color:#fff; text-decoration:none; font-size:.9rem; }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -228,6 +246,12 @@ header.top{box-shadow:0 2px 18px rgba(11,30,58,.25)}
 <nav aria-label="Footer"><a href="../index.html">Home</a> · <a href="../governance/index.html">Governance</a> · <a href="../series/index.html">Planned series</a> · <a href="../get-involved/index.html">Get Involved</a> · <a href="../get-involved/contact.html">Contact</a></nav>
 <p>AGI Future Foundation · Architecting Global AGI Prosperity · <a href="https://www.agifuturefoundation.org/">agifuturefoundation.org</a></p>
 <p><small>The filed-status box above follows the live homepage.</small></p>
-<p>Follow: <a href="https://www.facebook.com/profile.php?id=61596589254534">Facebook</a> · <a href="https://www.instagram.com/agifuturefoundation/">Instagram</a></p></div></footer>
+<ul class="agi-chips" aria-label="Follow us">
+  <li><a href="https://www.facebook.com/AGIFutureFoundation" rel="noopener" target="_blank">Facebook — @AGIFutureFoundation</a></li>
+  <li><a href="https://www.instagram.com/agifuturefoundation/" rel="noopener" target="_blank">Instagram — @agifuturefoundation</a></li>
+  <li><a href="https://www.threads.net/@agifuturefoundation" rel="noopener" target="_blank">Threads — @agifuturefoundation</a></li>
+  <li><a href="https://www.youtube.com/channel/UC3WaAgfvuDfxlAnLKQvrXRw" rel="noopener" target="_blank">YouTube — @AGIFutureFoundation</a></li>
+  <li><a href="https://github.com/AGIFutureFoundation" rel="noopener" target="_blank">GitHub — AGIFutureFoundation</a></li>
+</ul></div></footer>
 </body>
 </html>
