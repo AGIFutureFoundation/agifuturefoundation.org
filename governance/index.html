@@ -71,10 +71,25 @@ small{color:var(--ink-2)}
   footer .agi-chips a{ display:inline-block; padding:.45rem .8rem; border:1px solid var(--agi-soc-accent);
     border-radius:999px; color:#fff; text-decoration:none; font-size:.9rem; }
 </style>
+<!-- SITE UPGRADE 2026-11 — staging only, local build, not pushed -->
+<style>
+/* SITE UPGRADE 2026-11: leading lede, featured film, avatar imagery, library/store slots */
+.upgrade-lede{max-width:720px;font-size:1.08rem;line-height:1.65}
+.upgrade-hero-media{display:flex;gap:1.25rem;align-items:flex-start;flex-wrap:wrap;margin:1.25rem 0}
+.upgrade-avatar{width:120px;height:120px;border-radius:24px;flex:0 0 auto}
+.upgrade-film{flex:1 1 420px;min-width:280px;margin:0}
+.upgrade-film iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;display:block}
+.upgrade-film figcaption,.upgrade-figure figcaption{font-size:.92rem;margin-top:.5rem;opacity:.9}
+.upgrade-figure{margin:0 0 1.5rem}
+.upgrade-figure img{width:100%;max-width:640px;height:auto;border-radius:12px;display:block}
+.upgrade-slot{background:#fff;border:1px solid #e2e6ec;border-top:3px solid #c9a227;border-radius:14px;padding:1.5rem;margin:2rem auto;max-width:880px}
+.upgrade-slot h2{margin-top:0}
+section .upgrade-slot{margin:0}
+</style>
 </head>
 <body>
 <a href="#main" style="position:absolute;left:-9999px">Skip to content</a>
-<header class="top"><div class="wrap"><strong>AGI Future Foundation PBC</strong><nav aria-label="Site sections"><a href="../index.html">Home</a><a href="index.html">Governance</a><a href="fiduciary-shield.html">Fiduciary Shield</a><a href="windfall-clause.html">Windfall Clause</a><a href="share-structure.html">Share Structure</a><a href="steward-council.html">Steward Council</a><a href="open-global-investment.html">Open Global Investment</a></nav></div></header>
+<header class="top"><div class="wrap"><strong>AGI Future Foundation PBC</strong><nav aria-label="Site sections"><a href="../index.html">Home</a><a href="index.html">Governance</a><a href="fiduciary-shield.html">Fiduciary Shield</a><a href="windfall-clause.html">Windfall Clause</a><a href="share-structure.html">Share Structure</a><a href="steward-council.html">Steward Council</a><a href="open-global-investment.html">Open Global Investment</a><!-- SITE UPGRADE 2026-11: library/store nav entries (staging slots, BLUEPRINT §3) --><a href="/library/">Library</a><a href="/store/">Store — waitlist</a></nav></div></header>
 <main id="main">
 <section class="hero"><div class="wrap">
 <p class="eyebrow">Governance Hub</p>
@@ -83,6 +98,11 @@ small{color:var(--ink-2)}
 <p><a class="btn" href="#architecture">See the architecture</a><a class="btn ghost" href="#not-true-yet">What is not true yet</a></p>
 </div></section>
 
+<!-- SITE UPGRADE 2026-11: leading paragraph + imagery -->
+<section><div class="wrap">
+<p class="upgrade-lede">Governance starts with the filed record: the AGI Future Foundation is a California Nonprofit Public Benefit Corporation, filed April 24, 2026 (Entity No. B20260196664), in San Francisco. Its stewardship model is plain — stewardship, not ownership; agents help run it, and humans decide, sign, and hold funds.</p>
+<figure class="upgrade-figure"><img src="../assets/agi-future-foundation-avatar.png" alt="AGI Future Foundation avatar" loading="lazy"><figcaption>The AGI Future Foundation — one of the corporate holdings in the agentic network.</figcaption></figure>
+</div></section>
 <section><div class="wrap">
 <figure style="margin:0 0 1.5rem"><video controls preload="metadata" src="../assets/videos/long-structure-120s.mp4" style="width:100%;border-radius:10px;display:block;background:#000"></video><figcaption style="font-size:.85rem;color:#5b6b7d;margin:.4rem 0 0">AI-generated video — illustration, not footage of a real factory, event, or dashboard.</figcaption></figure><figure style="margin:0 0 1.5rem"><video controls preload="metadata" src="../assets/videos/deep-pbc-overview.mp4" style="width:100%;border-radius:10px;display:block;background:#000"></video><figcaption style="font-size:.85rem;color:#5b6b7d;margin:.4rem 0 0">AI-generated video — illustration, not footage of a real factory, event, or dashboard.</figcaption></figure>
 </div></section>
@@ -243,6 +263,14 @@ The AGI Future Foundation is a California Nonprofit Public Benefit Corporation, 
   <li><a href="https://www.youtube.com/channel/UC3WaAgfvuDfxlAnLKQvrXRw" rel="noopener" target="_blank">YouTube — @AGIFutureFoundation</a></li>
   <li><a href="https://github.com/AGIFutureFoundation" rel="noopener" target="_blank">GitHub — AGIFutureFoundation</a></li>
 </ul></div></footer>
+<!-- STAGING SLOT — books loop (BLUEPRINT §3): the Foundation /library/ and /store/ pages are NOT built in this upgrade. This slot only reserves their locations and contents. -->
+<section class="upgrade-slot" aria-label="Library and store — staging slot">
+<h2>Library &amp; Store — coming as a waitlist</h2>
+<p><strong><a href="/library/">Library</a></strong> — the Foundation reading room, planned for books B4&ndash;B7 and B9, the Foundation guides, the Foundation Slate music library, and the Founders.Podcast library.</p>
+<p><strong><a href="/store/">Store</a></strong> — <strong>waitlist mode only.</strong> Planned for Foundation books, a guide-bundle waitlist, and Foundation swag. There is no checkout and no payment is taken in the store slot.</p>
+<p>Every book in this programme is manuscript-complete — not published. Every store is a catalogue with waitlist capture.</p>
+</section>
+<!-- END STAGING SLOT — books loop -->
 <!-- BEGIN support-cta: PayPal "Support our work" — staged 2026-11-08, account: Mike's / the corporation's -->
 <aside class="support-cta" aria-label="Support our work" style="border-top:3px solid #c9a227;background:#fff;margin:2rem auto 0;max-width:880px;padding:1.25rem 1.5rem;">
 <div style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;">
