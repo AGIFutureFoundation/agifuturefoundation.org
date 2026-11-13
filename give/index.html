@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Give — AGI Future Foundation</title>
+<meta name="description" content="Support the AGI Future Foundation and help keep its research, articles and guides free and open to everyone. Give via PayPal. These are not tax deductible gifts.">
+<meta property="og:title" content="Give — AGI Future Foundation">
+<meta property="og:description" content="Support the AGI Future Foundation and help keep its research, articles and guides free and open to everyone.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.agifuturefoundation.org/give/">
+<meta property="og:image" content="https://www.agifuturefoundation.org/articles/assets/foundation/hero-stewardship.webp">
+<link rel="canonical" href="https://www.agifuturefoundation.org/give/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Give — AGI Future Foundation">
+<meta name="twitter:description" content="Support the AGI Future Foundation and help keep its research, articles and guides free and open to everyone.">
+<meta name="twitter:image" content="https://www.agifuturefoundation.org/articles/assets/foundation/hero-stewardship.webp">
+<style>
+:root{--navy:#0b1e3a;--navy-2:#123a6b;--gold:#c9a227;--gold-bright:#e2b55c;--teal:#0e7c7b;--teal-bright:#6fd3c1;--bg:#f6f7f9;--surface:#fff;--ink:#14202e;--ink-2:#5b6b7d;--line:#e2e6ec;--link:#0b5cab;--radius:14px;--radius-pill:999px}
+*,*::before,*::after{box-sizing:border-box}
+img,video,svg,iframe{max-width:100%;height:auto}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;overflow-wrap:break-word}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--gold);color:#111;padding:.75rem 1rem;font-weight:700;z-index:200}
+.skip-link:focus{left:0}
+header.top{background:var(--navy);color:#fff;position:relative;z-index:100}
+.topbar{display:flex;gap:1rem;align-items:center;justify-content:space-between;min-height:60px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.05rem;line-height:1.25;padding:.75rem 0}
+.brand:hover,.brand:focus-visible{text-decoration:underline}
+.nav-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,.6);border-radius:8px;color:#fff;min-width:44px;min-height:44px;padding:.5rem .6rem;font-size:1rem;cursor:pointer;line-height:1}
+.nav-toggle:hover{border-color:#fff}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.15rem}
+nav.main>ul>li{position:relative}
+nav.main>ul>li>a,nav.main .drop-btn{display:inline-flex;align-items:center;gap:.3rem;color:#fff;text-decoration:none;background:transparent;border:0;font:inherit;font-size:.95rem;cursor:pointer;padding:.7rem .7rem;min-height:44px;border-radius:8px}
+nav.main>ul>li>a:hover,nav.main .drop-btn:hover,nav.main>ul>li>a:focus-visible,nav.main .drop-btn:focus-visible{text-decoration:underline;background:rgba(255,255,255,.08)}
+.drop-btn .caret{font-size:.7rem;line-height:1}
+.dropdown{position:absolute;top:100%;left:0;min-width:280px;max-width:calc(100vw - 2rem);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(11,30,58,.25);padding:.5rem;display:none;z-index:120}
+.dropdown a{display:block;color:var(--ink);text-decoration:none;padding:.7rem .8rem;min-height:44px;border-radius:8px;line-height:1.4}
+.dropdown a:hover,.dropdown a:focus-visible{background:#eef3f8;text-decoration:underline}
+.dropdown a .sub{display:block;font-size:.85rem;color:var(--ink-2)}
+li.open>.dropdown,li:hover>.dropdown,li:focus-within>.dropdown{display:block}
+.dropdown .drop-head{display:block;padding:.6rem .8rem .3rem;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:3rem 0 2.5rem}
+.hero h1{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:clamp(2rem,5vw,2.9rem);line-height:1.12;margin:.35rem 0 .8rem}
+.hero p{max-width:46rem;color:#dbe6f5;font-size:1.12rem;line-height:1.55}
+.eyebrow{color:var(--gold-bright);letter-spacing:.14em;text-transform:uppercase;font-weight:800;font-size:.78rem;margin:0}
+section{padding:2.75rem 0}
+section h2{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:clamp(1.7rem,3.5vw,2.3rem);line-height:1.15;color:var(--navy);margin:0 0 1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:1.5rem}
+.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:20px;padding:1.5rem;box-shadow:0 10px 30px rgba(7,19,31,.07)}
+.card h3{margin:.2rem 0 .5rem;font-size:1.2rem;color:var(--navy)}
+.card p{margin:0;color:var(--ink-2)}
+.giving-card{background:var(--navy);color:#fff;border-top:4px solid var(--gold);border-radius:28px;padding:2rem;box-shadow:0 24px 60px rgba(7,19,31,.2);max-width:880px;margin:0 auto}
+.giving-card h2{color:#fff;margin-top:0}
+.giving-card p{color:#dbe6f5}
+.giving-flex{display:flex;gap:1.75rem;align-items:center;flex-wrap:wrap}
+.giving-qr{background:#fff;border-radius:16px;padding:.75rem;flex:0 0 auto;line-height:0}
+.giving-qr img{width:180px;height:180px}
+.btn-give{display:inline-block;background:var(--gold-bright);color:#111;font-weight:800;text-decoration:none;border-radius:999px;padding:.85rem 1.6rem;min-height:48px;font-size:1.05rem}
+.btn-give:hover,.btn-give:focus-visible{text-decoration:underline}
+.giving-note{font-weight:700;color:#fff !important}
+footer{background:var(--navy);color:#c7d2df;padding:2rem 0;margin-top:1rem}
+footer a{color:#fff}
+footer nav{margin-bottom:1rem}
+.agi-chips{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;padding:0;margin:1rem 0 0}
+@media (max-width:900px){
+.nav-toggle{display:block}
+nav.main{display:none;width:100%}
+header.nav-open nav.main{display:block}
+nav.main ul{flex-direction:column}
+.dropdown{position:static;max-width:none}
+.topbar{flex-wrap:wrap}
+}
+</style>
+<link rel="stylesheet" href="../design-system.css">
+</head>
+<body class="foundation-home design-v1">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="top" id="site-header"><div class="wrap topbar">
+<a class="brand" href="../index.html">AGI Future Foundation</a>
+<button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">&#9776; Menu</button>
+<nav class="main" id="site-nav" aria-label="Site sections">
+<ul>
+<li class="has-drop">
+<button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">About <span class="caret" aria-hidden="true">&#9662;</span></button>
+<div class="dropdown" role="menu">
+<span class="drop-head">The Foundation &amp; its governance</span>
+<a href="../governance/index.html" role="menuitem">Governance <span class="sub">How the Foundation governs</span></a>
+<a href="../governance/fiduciary-shield.html" role="menuitem">Fiduciary Shield <span class="sub">Safety-first legal protection</span></a>
+<a href="../governance/windfall-clause.html" role="menuitem">Windfall Clause <span class="sub">Sharing profits above a threshold</span></a>
+<a href="../governance/open-global-investment.html" role="menuitem">Open Global Investment <span class="sub">Broad ownership, founder governance</span></a>
+<a href="../governance/share-structure.html" role="menuitem">Share Structure <span class="sub">Class A / B / C, as proposed</span></a>
+<a href="../governance/steward-council.html" role="menuitem">Steward Council <span class="sub">Human oversight of the studio</span></a>
+<a href="../press/index.html" role="menuitem">Press <span class="sub">Announcements and site news</span></a>
+<a href="../vr/index.html" role="menuitem">VR Tour <span class="sub">Walk the mission in three steps</span></a>
+</div>
+</li>
+<li class="has-drop">
+<button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">Series &amp; Projects <span class="caret" aria-hidden="true">&#9662;</span></button>
+<div class="dropdown" role="menu">
+<span class="drop-head">33 planned W3 series — planned, not formed</span>
+<a href="../series/index.html" role="menuitem">All 33 planned series <span class="sub">The full series hub</span></a>
+<a href="../projects/index.html" role="menuitem">Projects <span class="sub">AGI Corp, Fellowship, WorldForge &amp; more</span></a>
+</div>
+</li>
+<li class="has-drop">
+<button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret" aria-hidden="true">&#9662;</span></button>
+<div class="dropdown" role="menu">
+<span class="drop-head">Articles published free and open</span>
+<a href="../articles/index.html" role="menuitem">All articles <span class="sub">The full article hub</span></a>
+</div>
+</li>
+<li class="has-drop">
+<button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">Support <span class="caret" aria-hidden="true">&#9662;</span></button>
+<div class="dropdown" role="menu">
+<span class="drop-head">Get involved — arranged by email</span>
+<a href="index.html" role="menuitem">Give <span class="sub">Support free, open research</span></a>
+<a href="../get-involved/index.html" role="menuitem">Get Involved <span class="sub">Build, steward, or partner</span></a>
+<a href="../get-involved/builders.html" role="menuitem">Builders</a>
+<a href="../get-involved/stewards.html" role="menuitem">Stewards</a>
+<a href="../get-involved/partners.html" role="menuitem">Partners</a>
+<a href="../get-involved/contact.html" role="menuitem">Contact <span class="sub">x@agifuturefoundation.org</span></a>
+<a href="../events/index.html" role="menuitem">Events <span class="sub">BuilderSpace onboarding and tour</span></a>
+<a href="../events/builderspace.html" role="menuitem">BuilderSpace</a>
+</div>
+</li>
+<li><a href="/library/" role="menuitem">Library</a></li>
+<li><a href="/store/" role="menuitem">Store — waitlist</a></li>
+</ul>
+</nav>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap">
+<p class="eyebrow">AGI Future Foundation · Give</p>
+<h1>Help keep open research and free public resources free for everyone.</h1>
+<p>Your support helps the AGI Future Foundation keep its research, articles and guides published free and open — available to anyone who wants to read, learn from and build on them.</p>
+</div></section>
+<section><div class="wrap">
+<p class="eyebrow" style="color:var(--teal)">Our story, in filed facts</p>
+<h2>A San Francisco foundation, built in the open</h2>
+<p>The AGI Future Foundation is a California Nonprofit Public Benefit Corporation. Its articles were filed on April 24, 2026, and it is based in San Francisco.</p>
+<p>From the start, the Foundation has published its work in the open: research, articles and guides are published free and open on this site, so the work can be read and used without a paywall.</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+<p class="eyebrow" style="color:var(--teal)">What your support funds</p>
+<h2>Support goes to keeping the work free, open and going</h2>
+<div class="grid">
+<div class="card">
+<h3>Research, kept open</h3>
+<p>Support helps the Foundation keep its research published free and open, rather than behind a paywall.</p>
+</div>
+<div class="card">
+<h3>Articles and guides, kept free</h3>
+<p>Support helps keep the Foundation&rsquo;s articles and guides free for every reader, learner and builder who finds them.</p>
+</div>
+<div class="card">
+<h3>The mission work itself</h3>
+<p>Support goes to the Foundation&rsquo;s mission work — stewarding its research and public resources in the open, from San Francisco.</p>
+</div>
+</div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+<div class="giving-card">
+<h2>Give to the AGI Future Foundation</h2>
+<div class="giving-flex">
+<div class="giving-qr"><img src="../assets/images/support-paypal-qr.png" alt="QR code for the AGI Future Foundation PayPal giving link" width="180" height="180" loading="lazy"></div>
+<div style="flex:1 1 260px;min-width:220px">
+<p>Give securely through PayPal using the button below, or scan the QR code with your phone.</p>
+<p><a class="btn-give" href="https://www.paypal.com/ncp/payment/KREMDFHSDLUWL" target="_blank" rel="noopener">Give via PayPal</a></p>
+<p class="giving-note">These are not tax deductible gifts.</p>
+<p style="font-size:.92rem">There is no payment form on this site. The button and the QR code both take you to the Foundation&rsquo;s PayPal giving link.</p>
+</div>
+</div>
+</div>
+<p style="text-align:center;margin-top:1.5rem">Prefer to talk first? <a href="../get-involved/contact.html">Contact the Foundation</a> or see the other ways to <a href="../get-involved/index.html">get involved</a>.</p>
+</div></section>
+</main>
+<footer><div class="wrap">
+<nav aria-label="Footer"><a href="../index.html">Home</a> · <a href="index.html">Give</a> · <a href="../sitemap.xml">Sitemap</a> · <a href="../llms.txt">llms.txt</a> · <a href="../agent.json">agent.json</a> · <a href="../.well-known/ai-catalog.json">ai-catalog</a> · <a href="../press/index.html">Press</a> · <a href="../events/index.html">Events</a></nav>
+<p>AGI Future Foundation · Architecting Global AGI Prosperity · <a href="https://www.agifuturefoundation.org/">agifuturefoundation.org</a> · Related project: <a href="https://agifellowship.church/">AGI Fellowship Church</a> (contact agent@agifellowship.church).</p>
+<ul class="agi-chips" aria-label="Follow us">
+  <li><a href="https://www.facebook.com/AGIFutureFoundation" rel="noopener" target="_blank">Facebook — @AGIFutureFoundation</a></li>
+  <li><a href="https://www.instagram.com/agifuturefoundation/" rel="noopener" target="_blank">Instagram — @agifuturefoundation</a></li>
+  <li><a href="https://www.threads.net/@agifuturefoundation" rel="noopener" target="_blank">Threads — @agifuturefoundation</a></li>
+  <li><a href="https://www.youtube.com/channel/UC3WaAgfvuDfxlAnLKQvrXRw" rel="noopener" target="_blank">YouTube — @AGIFutureFoundation</a></li>
+  <li><a href="https://github.com/AGIFutureFoundation" rel="noopener" target="_blank">GitHub — AGIFutureFoundation</a></li>
+</ul></div></footer>
+<script>
+(function(){
+  "use strict";
+  var header=document.getElementById("site-header");
+  var toggle=document.getElementById("nav-toggle");
+  function closeAllDrops(){
+    header.querySelectorAll("li.has-drop.open").forEach(function(li){
+      li.classList.remove("open");
+      var b=li.querySelector(".drop-btn");
+      if(b){b.setAttribute("aria-expanded","false");}
+    });
+  }
+  header.querySelectorAll(".drop-btn").forEach(function(btn){
+    btn.addEventListener("click",function(e){
+      e.stopPropagation();
+      var li=btn.closest("li.has-drop");
+      var isOpen=li.classList.contains("open");
+      closeAllDrops();
+      if(!isOpen){li.classList.add("open");btn.setAttribute("aria-expanded","true");}
+    });
+    btn.addEventListener("keydown",function(e){
+      if(e.key==="Escape"){closeAllDrops();btn.focus();}
+    });
+  });
+  document.addEventListener("click",function(e){if(!header.contains(e.target)){closeAllDrops();}});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeAllDrops();}});
+  toggle.addEventListener("click",function(){
+    var open=header.classList.toggle("nav-open");
+    toggle.setAttribute("aria-expanded",open?"true":"false");
+    if(!open){closeAllDrops();}
+  });
+})();
+</script>
+</body>
+</html>
