@@ -1,0 +1,135 @@
+/* Agentic Network Design System v1 — Foundation homepage proof.
+   Template/design layer only. This file intentionally contains no copy.
+   Foundation keeps its navy, gold and teal identity. */
+
+:root{
+  --ds-ink-950:#050f1f;
+  --ds-ink-900:#0b1e3a;
+  --ds-ink-800:#123152;
+  --ds-paper-50:#fffdf7;
+  --ds-paper-100:#f6f4ec;
+  --ds-text-700:#405364;
+  --ds-gold-600:#8a5f00;
+  --ds-gold-500:#c9a227;
+  --ds-gold-300:#e2b55c;
+  --ds-teal:#0e7c7b;
+  --ds-teal-bright:#6fd3c1;
+  --ds-display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --ds-shadow-md:0 14px 36px rgba(5,15,31,.13);
+  --ds-shadow-lg:0 24px 60px rgba(5,15,31,.2);
+}
+
+html{scroll-padding-top:1.25rem}
+body.foundation-home{
+  background:
+    radial-gradient(ellipse 72% 28rem at 50% -11rem,rgba(201,162,39,.13),transparent 68%),
+    var(--ds-paper-100);
+  font-size:16.5px;
+  line-height:1.65;
+}
+body.foundation-home ::selection{background:var(--ds-gold-300);color:#111}
+body.foundation-home .wrap{max-width:72rem;padding-left:clamp(1.25rem,4vw,3rem);padding-right:clamp(1.25rem,4vw,3rem)}
+body.foundation-home a{text-underline-offset:3px}
+body.foundation-home :focus-visible{outline:3px solid var(--ds-teal);outline-offset:3px}
+body.foundation-home header.top :focus-visible,
+body.foundation-home .hero :focus-visible,
+body.foundation-home footer :focus-visible{outline-color:var(--ds-gold-300)}
+
+body.foundation-home header.top{
+  position:sticky;top:0;
+  background:linear-gradient(90deg,var(--ds-ink-950),var(--ds-ink-900));
+  box-shadow:0 10px 30px rgba(5,15,31,.18);
+}
+body.foundation-home .topbar{min-height:4.5rem}
+body.foundation-home .brand{
+  font-family:var(--ds-display);font-size:1.22rem;font-weight:650;letter-spacing:-.01em;
+}
+body.foundation-home nav.main>ul>li>a,
+body.foundation-home nav.main .drop-btn{border-radius:999px;padding-left:.85rem;padding-right:.85rem}
+body.foundation-home .dropdown{
+  border-radius:18px;padding:.65rem;box-shadow:var(--ds-shadow-lg);
+}
+body.foundation-home .dropdown a{border-radius:12px}
+
+body.foundation-home main>section{padding:clamp(3.5rem,7vw,5.5rem) 0}
+body.foundation-home h1,
+body.foundation-home h2{
+  font-family:var(--ds-display);font-weight:650;color:var(--ds-ink-900);
+}
+body.foundation-home h2{
+  font-size:clamp(2rem,4vw,3rem);line-height:1.08;letter-spacing:-.018em;margin-bottom:1rem;
+}
+body.foundation-home h3{font-size:1.22rem;line-height:1.3;color:var(--ds-ink-900)}
+body.foundation-home .eyebrow{font-size:.78rem;letter-spacing:.16em}
+
+body.foundation-home .hero{
+  position:relative;overflow:hidden;
+  margin-top:1.25rem;padding:clamp(4rem,8vw,6.5rem) 0 clamp(3.5rem,7vw,5rem);
+  border:1px solid rgba(226,181,92,.42);border-radius:28px;
+  background:
+    radial-gradient(ellipse 52% 58% at 90% 0%,rgba(111,211,193,.17),transparent 66%),
+    radial-gradient(ellipse 58% 54% at 8% 108%,rgba(201,162,39,.22),transparent 68%),
+    linear-gradient(145deg,var(--ds-ink-950),var(--ds-ink-900) 55%,var(--ds-ink-800));
+  box-shadow:var(--ds-shadow-lg);
+}
+body.foundation-home .hero h1{
+  color:#fffdf7;font-size:clamp(2.9rem,6.4vw,4.8rem);line-height:.99;letter-spacing:-.025em;
+  max-width:13ch;margin:.55rem 0 1.1rem;
+}
+body.foundation-home .hero p{max-width:46rem;font-size:1.13rem;line-height:1.65;color:#dbe6f5}
+body.foundation-home .hero .eyebrow{color:var(--ds-gold-300)}
+body.foundation-home .btn{
+  min-height:3rem;padding:.8rem 1.35rem;box-shadow:0 10px 24px rgba(0,0,0,.2);
+  transition:transform 180ms cubic-bezier(.22,1,.36,1),background 180ms ease,box-shadow 180ms ease;
+}
+body.foundation-home .btn:hover{transform:translateY(-1px)}
+body.foundation-home .kpi{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  margin-top:2.25rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.22);
+}
+body.foundation-home .kpi strong{
+  font-family:var(--ds-display);font-size:2.2rem;line-height:1;color:#fff;
+}
+body.foundation-home .kpi span{color:#cbd5e1}
+
+body.foundation-home .banner{
+  border:1px solid #d9bd55;border-left:6px solid var(--ds-gold-500);
+  border-radius:16px;padding:1.25rem 1.4rem;background:#fff8dc;
+  box-shadow:0 8px 24px rgba(5,15,31,.06);line-height:1.65;
+}
+body.foundation-home .grid{gap:1.25rem}
+body.foundation-home .card{
+  background:linear-gradient(180deg,var(--ds-paper-50),#fffaf0);
+  border-color:rgba(151,119,37,.3);border-radius:20px;padding:1.5rem;
+  box-shadow:0 10px 30px rgba(5,15,31,.07);
+  transition:transform 200ms cubic-bezier(.22,1,.36,1),box-shadow 200ms ease,border-color 200ms ease;
+}
+body.foundation-home .card:hover,body.foundation-home .card:focus-within{
+  transform:translateY(-2px);border-color:rgba(14,124,123,.65);box-shadow:var(--ds-shadow-md);
+}
+body.foundation-home .card .tag{color:var(--ds-teal)}
+body.foundation-home .filter-btn{transition:border-color 160ms ease,background 160ms ease,color 160ms ease}
+body.foundation-home .search-row input[type="search"]{
+  border-radius:999px;padding-left:1rem;padding-right:1rem;
+}
+body.foundation-home footer{
+  background:var(--ds-ink-950);border-top:4px solid var(--ds-gold-500);padding:3rem 0;
+}
+
+@media(max-width:900px){
+  body.foundation-home header.top{position:relative}
+  body.foundation-home .kpi{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+  body.foundation-home .hero{border-radius:22px;padding-left:0;padding-right:0}
+  body.foundation-home .hero h1{font-size:2.8rem}
+  body.foundation-home .btn{width:100%;margin-right:0}
+  body.foundation-home .card{padding:1.25rem}
+  body.foundation-home .kpi strong{font-size:1.8rem}
+}
+@media (prefers-reduced-motion: reduce){
+  body.foundation-home *,body.foundation-home *::before,body.foundation-home *::after{
+    animation:none!important;transition:none!important;scroll-behavior:auto!important;
+  }
+  body.foundation-home .card:hover,body.foundation-home .btn:hover{transform:none}
+}
