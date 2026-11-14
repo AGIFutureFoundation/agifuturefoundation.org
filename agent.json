@@ -1,256 +1,357 @@
 {
- "agent_protocol": "PROPOSED, human-gated, receipt-required",
- "capabilities": [
-  "summarize",
-  "cite",
-  "route_inquiry"
- ],
- "contact": "x@agifuturefoundation.org",
- "events": {
-  "builder_night": "https://www.agifuturefoundation.org/events/builder-night.html",
-  "builderspace": "https://www.agifuturefoundation.org/events/builderspace.html",
-  "calendar": "https://www.agifuturefoundation.org/events/calendar.html",
-  "hub": "https://www.agifuturefoundation.org/events/",
-  "itinerary": "https://www.agifuturefoundation.org/events/itinerary.html",
-  "note": "BuilderSpace: 5 online onboarding events Nov-Dec 2026 + 11 tour events Jan-May 2027; all Private/unlisted on Luma; locations TBD unless Online; each event links to its Luma registration page by text link; itinerary page quotes each Luma description; Call for Sponsors page: no sponsor/tier/price/benefit confirmed.",
-  "onboarding": "https://www.agifuturefoundation.org/events/onboarding.html",
-  "sponsors": "https://www.agifuturefoundation.org/events/sponsors.html",
-  "tour": "https://www.agifuturefoundation.org/events/tour.html"
- },
- "features": {
-  "count": 21,
-  "hero_images": "/assets/images/features/feat-NN-*.jpg (AI-generated illustrations)",
-  "hub": "/features/index.html",
-  "note": "magazine-style features, zero invented quotes/people/dates/statistics; grounded in the GitHub review (only 8 of 33 series have repo coverage; 21 flagged repo-copy claims never stated as fact); Prev/Next chain 01-21; home page carries a studio spotlight section linking to feature 11 plus a second-wave paragraph; features 12-21 written 2026-11-06, hero images feat-01..feat-21 present in /assets/images/features/; features 12-21 carry video embeds (12, 13, 14, 15, 16, 18, 19, 20, 21), a Ken Burns fallback on 17",
-  "path": "/features/",
-  "spotlight": "/features/feature-11-agentic-venture-studio.html",
-  "word_target": "4000-5000 words each"
- },
- "filed_status": {
-  "articles_filed": "2026-04-24",
-  "ein_assigned": "2026-05-07",
-  "entity": "AGI Future Foundation",
-  "entity_no": "B20260196664",
-  "form": "California Nonprofit Public Benefit Corporation",
-  "irs_501c3_determination_letter": "not_in_files",
-  "note": "The live site calls the organisation PBC in the for-profit benefit-corporation sense; that fork is unresolved. This site follows the filed nonprofit status."
- },
- "machine_readable": [
-  "/.well-known/api-catalog",
-  "/.well-known/agent-skills/index.json",
-  "/.well-known/ai-catalog.json",
-  "/auth.md",
-  "/llms.txt",
-  "/agent.json",
-  "/sitemap.xml"
- ],
- "name": "AGI Future Foundation",
- "not_capabilities": [
-  "commit",
-  "transfer_funds",
-  "sign",
-  "represent_organization"
- ],
- "sections": {
-  "articles": {
-   "categories": [
-    "1 Intelligence & Mind (01-03)",
-    "2 Health & Life Sciences (04-13)",
-    "3 Metaverse & Spatial (14-18)",
-    "4 Robotics & Physical AI (19-21)",
-    "5 Governance & Law (22-28)",
-    "6 Finance & the Studio (29-32)",
-    "7 Cities, Energy & Infrastructure (33-36)",
-    "8 Community, Learning & Culture (37-44)"
-   ],
-   "chain": "Prev/Next 01-44 continuous; article 44 has no Next",
-   "count": 44,
-   "grounding": "GitHub review of all 56 org repos 2026-11-05; only 8 of 33 series have repo coverage; 21 flagged repo-copy claims never stated as fact; repo links where real code exists",
-   "hub": "/articles/index.html",
-   "path": "/articles/",
-   "status": "intended/planned unless a filing is cited; status banner on all 44; nothing is an offering",
-   "total_words": 106690,
-   "word_range": "2000-2500 words each in <main>, tags stripped; category hubs 1200-1800"
+  "affordances": [
+    {
+      "state": "LIVE",
+      "verb": "discover"
+    },
+    {
+      "route": "PRICES.json (registry entry ids named in this manifest)",
+      "state": "LIVE",
+      "verb": "quote"
+    },
+    {
+      "state": "LIVE",
+      "verb": "cite"
+    },
+    {
+      "route": "mailto:x@agifuturefoundation.org",
+      "state": "LIVE",
+      "verb": "request-human"
+    },
+    {
+      "route": "mailto:x@agifuturefoundation.org (subject: CODE: <CODE> — <product>)",
+      "state": "LIVE",
+      "verb": "register-honour-code"
+    },
+    {
+      "route": "mailto:x@agifuturefoundation.org (subject: WAITLIST: <product-id>)",
+      "state": "LIVE",
+      "verb": "join-waitlist"
+    },
+    {
+      "gate": "Only registry entries whose state is LIVE or LIVE-WITH-DEFECT, one entry at a time, route verbatim from the registry. Every other entry returns its state and gate instead.",
+      "route": "The PayPal route recorded in the PRICES.json entry",
+      "state": "LIVE",
+      "verb": "purchase"
+    }
+  ],
+  "citation": "cite:foundation",
+  "deployment": "LIVE — merged manifest pushed 2026-11-13 (agent-layer merge pass, approved by Mike 2026-11-13 17:06 PT). This validated manifest is the base; substantive content unique to the earlier hand-written live agent.json is preserved under liveSiteRecord.",
+  "holding": "foundation",
+  "houseLaw": {
+    "approval": "Draft-first, exact-copy: no agent sends, posts, publishes, or submits outward without Mike's approval of the exact version. Nightshift work also requires Bino's approval.",
+    "caps": {
+      "coldEmailPerDayProgrammeWide": 250,
+      "emailPerMailboxPerDay": 90,
+      "social": "One platform at a time; ~2 minutes between same-platform actions; <=3 posts/account/day; <=25 actions/platform/day network-wide; first platform warning = full stop on that platform that day. Caps bind the account, never the device or agent count."
+    },
+    "contacts": "Published institutional contacts only. Pattern/inferred emails are never mailable. The filings graph is never a contact source.",
+    "evidenceLabels": "Claims carry VERIFIED / REPORTED / HYPOTHESIS. Filed fact and intended plan are never blended. Tax status, stated only as: California nonprofit corporation; EIN assigned; no IRS determination letter on file.",
+    "holdingSeparation": "Holdings keep separate lanes, contacts, and claims. Cross-holding work splits into one Agent-Net packet per holding. Fellowship surfaces carry no commerce, ever.",
+    "humanHandoff": "Anyone who asks for a human, or opens a price/scope conversation beyond published registry prices, leaves the automated thread the same day, flagged to the human (Mike; Russell Vacanti on Foundation matters; a Fellowship steward on Fellowship matters). Agents state published prices; they never quote custom terms, discounts, or timelines.",
+    "neverForAgents": [
+      "sign",
+      "move funds",
+      "hire or fire",
+      "offer securities",
+      "enact doctrine or charters",
+      "complete payment, KYC, or signature steps"
+    ],
+    "standard": "AGENT-FRIENDLY-STANDARD.md",
+    "suppression": "Suppressed contacts are locked out of every queue on every surface. Suppression is checked before a queue is built and again before any draft. An agent that cannot check suppression does not send; it hands off."
   },
-  "get-involved": {
-   "hub": "/get-involved/index.html",
-   "pages": [
-    "/get-involved/builders.html",
-    "/get-involved/stewards.html",
-    "/get-involved/partners.html",
-    "/get-involved/contact.html"
-   ],
-   "path": "/get-involved/",
-   "status": "steward-gated engagement; no signing, membership, or payment offered"
+  "id": "foundation",
+  "identity": {
+    "agentNet": {
+      "identityNote": "An agent identifies by its Agent-Net agent id. Identity grants authorship, never transaction authority. Packet contents stay off-chain; per-agent SHA-256 hash chains roll to a Merkle root anchored on Base.",
+      "protocol": "PROTOCOL.md v1 — packets (AN-YYYYMMDD-NNN, signed header, exactly one holding project), claim-by-commit (first claim wins), steward merges to main",
+      "repo": "AGIFutureFoundation/agent-net (private mirror); local ~/workspace/agent-net/",
+      "wallets": "Model on record: per-agent operational wallets capped at $10 USDC; one dedicated anchor wallet (~$25 ETH, gas only). NO real wallets are provisioned; provisioning and funding are Mike's hand alone."
+    },
+    "principal": "Mike Rice",
+    "stewardAgent": "AGI",
+    "x402FirstContact": [
+      {
+        "point": "hire-briefs",
+        "pricePerCall": 0.1,
+        "state": "GATED-DEPLOY"
+      },
+      {
+        "point": "lab-data (LAB-009 / LAB-010)",
+        "pricePerCall": 0.25,
+        "state": "GATED-DEPLOY"
+      },
+      {
+        "point": "tips",
+        "pricePerCall": 1.0,
+        "state": "GATED-DEPLOY"
+      }
+    ],
+    "x402Note": "These three points are the ONLY priced first-contact points. Known agents and people use free lanes. Deploy gated on the Cloudflare token + CDP sign-in."
   },
-  "governance": {
-   "hub": "/governance/index.html",
-   "pages": [
-    "/governance/fiduciary-shield.html",
-    "/governance/windfall-clause.html",
-    "/governance/share-structure.html",
-    "/governance/steward-council.html",
-    "/governance/open-global-investment.html"
-   ],
-   "path": "/governance/",
-   "status": "mechanisms_tiers_share_classes_steward_council; filed fact and intended plan labelled; nothing issued, no offering"
+  "liveSiteRecord": {
+    "agent_protocol": "PROPOSED, human-gated, receipt-required",
+    "capabilities": [
+      "summarize",
+      "cite",
+      "route_inquiry"
+    ],
+    "contact": "x@agifuturefoundation.org",
+    "events": {
+      "builder_night": "https://www.agifuturefoundation.org/events/builder-night.html",
+      "builderspace": "https://www.agifuturefoundation.org/events/builderspace.html",
+      "calendar": "https://www.agifuturefoundation.org/events/calendar.html",
+      "hub": "https://www.agifuturefoundation.org/events/",
+      "itinerary": "https://www.agifuturefoundation.org/events/itinerary.html",
+      "note": "BuilderSpace: 5 online onboarding events Nov-Dec 2026 + 11 tour events Jan-May 2027; all Private/unlisted on Luma; locations TBD unless Online; each event links to its Luma registration page by text link; itinerary page quotes each Luma description; Call for Sponsors page: no sponsor/tier/price/benefit confirmed.",
+      "onboarding": "https://www.agifuturefoundation.org/events/onboarding.html",
+      "sponsors": "https://www.agifuturefoundation.org/events/sponsors.html",
+      "tour": "https://www.agifuturefoundation.org/events/tour.html"
+    },
+    "features": {
+      "count": 21,
+      "hero_images": "/assets/images/features/feat-NN-*.jpg (AI-generated illustrations)",
+      "hub": "/features/index.html",
+      "note": "magazine-style features, zero invented quotes/people/dates/statistics; grounded in the GitHub review (only 8 of 33 series have repo coverage; 21 flagged repo-copy claims never stated as fact); Prev/Next chain 01-21; home page carries a studio spotlight section linking to feature 11 plus a second-wave paragraph; features 12-21 written 2026-11-06, hero images feat-01..feat-21 present in /assets/images/features/; features 12-21 carry video embeds (12, 13, 14, 15, 16, 18, 19, 20, 21), a Ken Burns fallback on 17",
+      "path": "/features/",
+      "spotlight": "/features/feature-11-agentic-venture-studio.html",
+      "word_target": "4000-5000 words each"
+    },
+    "filed_status": {
+      "articles_filed": "2026-04-24",
+      "ein_assigned": "2026-05-07",
+      "entity": "AGI Future Foundation",
+      "entity_no": "B20260196664",
+      "form": "California Nonprofit Public Benefit Corporation",
+      "irs_501c3_determination_letter": "not_in_files",
+      "note": "The live site calls the organisation PBC in the for-profit benefit-corporation sense; that fork is unresolved. This site follows the filed nonprofit status."
+    },
+    "machine_readable": [
+      "/.well-known/api-catalog",
+      "/.well-known/agent-skills/index.json",
+      "/.well-known/ai-catalog.json",
+      "/auth.md",
+      "/llms.txt",
+      "/agent.json",
+      "/sitemap.xml"
+    ],
+    "not_capabilities": [
+      "commit",
+      "transfer_funds",
+      "sign",
+      "represent_organization"
+    ],
+    "sections": {
+      "articles": {
+        "categories": [
+          "1 Intelligence & Mind (01-03)",
+          "2 Health & Life Sciences (04-13)",
+          "3 Metaverse & Spatial (14-18)",
+          "4 Robotics & Physical AI (19-21)",
+          "5 Governance & Law (22-28)",
+          "6 Finance & the Studio (29-32)",
+          "7 Cities, Energy & Infrastructure (33-36)",
+          "8 Community, Learning & Culture (37-44)"
+        ],
+        "chain": "Prev/Next 01-44 continuous; article 44 has no Next",
+        "count": 44,
+        "grounding": "GitHub review of all 56 org repos 2026-11-05; only 8 of 33 series have repo coverage; 21 flagged repo-copy claims never stated as fact; repo links where real code exists",
+        "hub": "/articles/index.html",
+        "path": "/articles/",
+        "status": "intended/planned unless a filing is cited; status banner on all 44; nothing is an offering",
+        "total_words": 106690,
+        "word_range": "2000-2500 words each in <main>, tags stripped; category hubs 1200-1800"
+      },
+      "get-involved": {
+        "hub": "/get-involved/index.html",
+        "pages": [
+          "/get-involved/builders.html",
+          "/get-involved/stewards.html",
+          "/get-involved/partners.html",
+          "/get-involved/contact.html"
+        ],
+        "path": "/get-involved/",
+        "status": "steward-gated engagement; no signing, membership, or payment offered"
+      },
+      "governance": {
+        "hub": "/governance/index.html",
+        "pages": [
+          "/governance/fiduciary-shield.html",
+          "/governance/windfall-clause.html",
+          "/governance/share-structure.html",
+          "/governance/steward-council.html",
+          "/governance/open-global-investment.html"
+        ],
+        "path": "/governance/",
+        "status": "mechanisms_tiers_share_classes_steward_council; filed fact and intended plan labelled; nothing issued, no offering"
+      },
+      "investors": {
+        "hub": "/investors/index.html",
+        "pages": [
+          "/investors/studio.html",
+          "/investors/smartciti-x.html",
+          "/investors/series-raises.html",
+          "/investors/process.html",
+          "/investors/faq.html"
+        ],
+        "path": "/investors/",
+        "status": "information only, not an offer to sell securities; nothing issued"
+      },
+      "operations": {
+        "hub": "/operations/index.html",
+        "pages": [
+          "/operations/agent-roles.html",
+          "/operations/studio-model.html",
+          "/operations/proposal-flow.html",
+          "/operations/human-gate.html"
+        ],
+        "path": "/operations/",
+        "status": "intended operating model, not a live system; agents operate, humans govern"
+      },
+      "press": {
+        "hub": "/press/index.html",
+        "media_contact": "x@agifuturefoundation.org",
+        "pages": [
+          "/press/site-expansion.html",
+          "/press/builderspace-calendar.html",
+          "/press/youtube-video-library.html",
+          "/press/new-features.html",
+          "/press/deep-articles.html",
+          "/press/metaverse-fabrics.html",
+          "/press/magazine-features.html",
+          "/press/governance-operations.html"
+        ],
+        "path": "/press/",
+        "status": "draft releases, not for distribution; each needs Mike's approval of the exact text and carries one [QUOTE — for Mike to approve]; new-features HOLD (features 12-21 live on GitHub Pages; release body still says not-yet-live and needs rewording before distribution); deep-articles, magazine-features, governance-operations HOLD (live on GitHub Pages only, www cutover pending); metaverse-fabrics is a status account, no HOLD on the facts"
+      },
+      "projects": {
+        "agi_corp": {
+          "ein_notice": "IRS CP575A, 2026-05-16, name AGI, 111 Maiden Ln Ste 540, San Francisco, CA 94108, Form 1120",
+          "safe_issued": false,
+          "status": "EIN only; incorporation unverified"
+        },
+        "agi_fellowship": {
+          "ein_assigned": "2026-05-18",
+          "entity_no": "B20260229217",
+          "filed": "2026-05-13",
+          "form": "California Nonprofit Religious Corporation",
+          "irs_501c3_determination_letter": "not_in_files",
+          "site": "https://www.agifellowship.church",
+          "status": "partner, not a series or subsidiary"
+        },
+        "ambiguous_mapping": "genomic-go-platform may relate to S27 Genomic DAO or S28 Genome.Blockchain; no merger invented",
+        "biodao_tools": {
+          "page": "/projects/biodao-tools.html",
+          "verified": "2026-11-06/07 inventory; 15 public BioDAO-related repos + 1 private; no repos for S4/S5/S11 dedicated/S14/S28; charts from verified numbers only"
+        },
+        "hub": "/projects/index.html",
+        "pages": [
+          "/projects/worldforge.html",
+          "/projects/metropolis-smartciti.html",
+          "/projects/fiduciary-corporate-shield.html",
+          "/projects/insidr-w3llc.html",
+          "/projects/trueforge.html",
+          "/projects/sentinel-stream.html",
+          "/projects/plaudguard-ai.html",
+          "/projects/dyva.html",
+          "/projects/rp1-ecosystem.html",
+          "/projects/agi-corp.html",
+          "/projects/agi-fellowship.html",
+          "/projects/biodao-tools.html"
+        ],
+        "path": "/projects/",
+        "rp1_verified_facts": {
+          "anchored_fabrics_on_github_pages": 6,
+          "artemis": "native browser, early alpha v0.4.3, desktop only",
+          "biota_series_number": "none assigned",
+          "fabric_service_attached_for_agi_corp": "none",
+          "glb_assets_and_map_wasm_hosted": false,
+          "map_viewer": "DB-backed editor, not a JSON renderer",
+          "spatial_fabrics": "hosted on your own infrastructure",
+          "vrs": "registry",
+          "worlds_live_on_rp1": 0
+        },
+        "ventures_that_are_series": {
+          "BioDAO": "S18",
+          "Blockchain": "S06",
+          "Cognition.X": "S01",
+          "Diagnostic.X": "S03",
+          "Empathic.X": "S02",
+          "Genome.Blockchain": "S28",
+          "Genomic DAO": "S27",
+          "Locator.X": "S08",
+          "Metaverse DAO": "S29",
+          "Robotics DAO": "S30"
+        }
+      },
+      "series": {
+        "count": 33,
+        "hub": "/series/index.html",
+        "path": "/series/",
+        "series": [
+          "S01 Cognition.X",
+          "S02 Empathic.X",
+          "S03 Diagnostic.X",
+          "S04 Curable.X",
+          "S05 BioPharma.Go",
+          "S06 Blockchain",
+          "S07 Divine DAO",
+          "S08 Locator.X",
+          "S09 Astrological.X",
+          "S10 SmartCiti.X",
+          "S11 Molecular.",
+          "S12 ParkingSmart.X",
+          "S13 Gonstead.X",
+          "S14 AskDoc.X",
+          "S15 RomanBridge.DAO",
+          "S16 EchoDawn DAO",
+          "S17 Curable.Blockchain DAO",
+          "S18 BioDAO.blockchain DAO",
+          "S19 Moscone.X",
+          "S20 CMMC",
+          "S21 Incubator DAO",
+          "S22 Get.Delivery DAO",
+          "S23 Avatar.Chat DAO",
+          "S24 Donatello DAO",
+          "S25 Mypet.AI",
+          "S26 Lyka DAO",
+          "S27 Genomic DAO",
+          "S28 Genome.Blockchain",
+          "S29 Metaverse DAO",
+          "S30 Robotics DAO",
+          "S31 Aerospace DAO",
+          "S32 Solar DAO",
+          "S33 InfoGurus"
+        ],
+        "source": "April 2026 internal W3 series list (Series 1-33)",
+        "status": "intended_planned_not_formed_funded_or_offered"
+      },
+      "videos": {
+        "asset_dir": "/assets/videos/",
+        "count": 40,
+        "hub": "/videos/index.html",
+        "note": "all videos AI-generated illustrations, not footage of real places, events, or products",
+        "path": "/videos/",
+        "youtube": {
+          "channel": "https://www.youtube.com/@AGI-Corp",
+          "channel_id": "UCIo7DheD7j3VQIPaZCjBp8w",
+          "note": "channel embed is the uploads playlist; no video titles, view counts, or subscriber numbers listed",
+          "page": "/videos/youtube.html",
+          "uploads_playlist": "UUIo7DheD7j3VQIPaZCjBp8w"
+        }
+      }
+    },
+    "sitemap": "/sitemap.xml",
+    "sitemap_url_count": 254,
+    "status": "draft_not_live",
+    "video_count": 40
   },
-  "investors": {
-   "hub": "/investors/index.html",
-   "pages": [
-    "/investors/studio.html",
-    "/investors/smartciti-x.html",
-    "/investors/series-raises.html",
-    "/investors/process.html",
-    "/investors/faq.html"
-   ],
-   "path": "/investors/",
-   "status": "information only, not an offer to sell securities; nothing issued"
-  },
-  "operations": {
-   "hub": "/operations/index.html",
-   "pages": [
-    "/operations/agent-roles.html",
-    "/operations/studio-model.html",
-    "/operations/proposal-flow.html",
-    "/operations/human-gate.html"
-   ],
-   "path": "/operations/",
-   "status": "intended operating model, not a live system; agents operate, humans govern"
-  },
-  "press": {
-   "hub": "/press/index.html",
-   "pages": [
-    "/press/site-expansion.html",
-    "/press/builderspace-calendar.html",
-    "/press/youtube-video-library.html",
-    "/press/new-features.html",
-    "/press/deep-articles.html",
-    "/press/metaverse-fabrics.html",
-    "/press/magazine-features.html",
-    "/press/governance-operations.html"
-   ],
-   "path": "/press/",
-   "status": "draft releases, not for distribution; each needs Mike's approval of the exact text and carries one [QUOTE \u2014 for Mike to approve]; new-features HOLD (features 12-21 live on GitHub Pages; release body still says not-yet-live and needs rewording before distribution); deep-articles, magazine-features, governance-operations HOLD (live on GitHub Pages only, www cutover pending); metaverse-fabrics is a status account, no HOLD on the facts",
-   "media_contact": "x@agifuturefoundation.org"
-  },
-  "projects": {
-   "agi_corp": {
-    "ein_notice": "IRS CP575A, 2026-05-16, name AGI, 111 Maiden Ln Ste 540, San Francisco, CA 94108, Form 1120",
-    "safe_issued": false,
-    "status": "EIN only; incorporation unverified"
-   },
-   "agi_fellowship": {
-    "ein_assigned": "2026-05-18",
-    "entity_no": "B20260229217",
-    "filed": "2026-05-13",
-    "form": "California Nonprofit Religious Corporation",
-    "irs_501c3_determination_letter": "not_in_files",
-    "site": "https://www.agifellowship.church",
-    "status": "partner, not a series or subsidiary"
-   },
-   "ambiguous_mapping": "genomic-go-platform may relate to S27 Genomic DAO or S28 Genome.Blockchain; no merger invented",
-   "biodao_tools": {"page": "/projects/biodao-tools.html", "verified": "2026-11-06/07 inventory; 15 public BioDAO-related repos + 1 private; no repos for S4/S5/S11 dedicated/S14/S28; charts from verified numbers only"},
-   "hub": "/projects/index.html",
-   "pages": [
-    "/projects/worldforge.html",
-    "/projects/metropolis-smartciti.html",
-    "/projects/fiduciary-corporate-shield.html",
-    "/projects/insidr-w3llc.html",
-    "/projects/trueforge.html",
-    "/projects/sentinel-stream.html",
-    "/projects/plaudguard-ai.html",
-    "/projects/dyva.html",
-    "/projects/rp1-ecosystem.html",
-    "/projects/agi-corp.html",
-    "/projects/agi-fellowship.html",
-    "/projects/biodao-tools.html"
-   ],
-   "path": "/projects/",
-   "rp1_verified_facts": {
-    "anchored_fabrics_on_github_pages": 6,
-    "artemis": "native browser, early alpha v0.4.3, desktop only",
-    "biota_series_number": "none assigned",
-    "fabric_service_attached_for_agi_corp": "none",
-    "glb_assets_and_map_wasm_hosted": false,
-    "map_viewer": "DB-backed editor, not a JSON renderer",
-    "spatial_fabrics": "hosted on your own infrastructure",
-    "vrs": "registry",
-    "worlds_live_on_rp1": 0
-   },
-   "ventures_that_are_series": {
-    "BioDAO": "S18",
-    "Blockchain": "S06",
-    "Cognition.X": "S01",
-    "Diagnostic.X": "S03",
-    "Empathic.X": "S02",
-    "Genome.Blockchain": "S28",
-    "Genomic DAO": "S27",
-    "Locator.X": "S08",
-    "Metaverse DAO": "S29",
-    "Robotics DAO": "S30"
-   }
-  },
-  "series": {
-   "count": 33,
-   "hub": "/series/index.html",
-   "path": "/series/",
-   "series": [
-    "S01 Cognition.X",
-    "S02 Empathic.X",
-    "S03 Diagnostic.X",
-    "S04 Curable.X",
-    "S05 BioPharma.Go",
-    "S06 Blockchain",
-    "S07 Divine DAO",
-    "S08 Locator.X",
-    "S09 Astrological.X",
-    "S10 SmartCiti.X",
-    "S11 Molecular.",
-    "S12 ParkingSmart.X",
-    "S13 Gonstead.X",
-    "S14 AskDoc.X",
-    "S15 RomanBridge.DAO",
-    "S16 EchoDawn DAO",
-    "S17 Curable.Blockchain DAO",
-    "S18 BioDAO.blockchain DAO",
-    "S19 Moscone.X",
-    "S20 CMMC",
-    "S21 Incubator DAO",
-    "S22 Get.Delivery DAO",
-    "S23 Avatar.Chat DAO",
-    "S24 Donatello DAO",
-    "S25 Mypet.AI",
-    "S26 Lyka DAO",
-    "S27 Genomic DAO",
-    "S28 Genome.Blockchain",
-    "S29 Metaverse DAO",
-    "S30 Robotics DAO",
-    "S31 Aerospace DAO",
-    "S32 Solar DAO",
-    "S33 InfoGurus"
-   ],
-   "source": "April 2026 internal W3 series list (Series 1-33)",
-   "status": "intended_planned_not_formed_funded_or_offered"
-  },
-  "videos": {
-   "asset_dir": "/assets/videos/",
-   "count": 40,
-   "hub": "/videos/index.html",
-   "note": "all videos AI-generated illustrations, not footage of real places, events, or products",
-   "path": "/videos/",
-   "youtube": {
-    "channel": "https://www.youtube.com/@AGI-Corp",
-    "channel_id": "UCIo7DheD7j3VQIPaZCjBp8w",
-    "note": "channel embed is the uploads playlist; no video titles, view counts, or subscriber numbers listed",
-    "page": "/videos/youtube.html",
-    "uploads_playlist": "UUIo7DheD7j3VQIPaZCjBp8w"
-   }
-  }
- },
- "sitemap": "/sitemap.xml",
- "sitemap_url_count": 254,
- "status": "draft_not_live",
- "url": "https://www.agifuturefoundation.org/",
- "video_count": 40
+  "manifestVersion": "2026-11-13.1",
+  "name": "AGI Future Foundation",
+  "registryEntries": [],
+  "standard": "AGENT-FRIENDLY-STANDARD.md",
+  "summary": "California Nonprofit Public Benefit Corporation (Entity B20260196664, filed 2026-04-24). EIN assigned; no IRS 501(c)(3) determination letter on file — the Foundation does not claim tax-exempt status. Stewardship of the holdings to mission standards; runs the venture-studio mission gate.",
+  "surface": "Staged agent layer — the live page set lands with the design-system push batch.",
+  "type": "nonprofit",
+  "url": "https://www.agifuturefoundation.org"
 }
